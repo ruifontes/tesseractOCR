@@ -1,0 +1,6 @@
+C:\Users\Utilizador\AppData\Roaming\nvda\addons\tesseractOCR\globalPlugins\tesseractOCR\images\ocr-000001.png
+C:\Users\Utilizador\AppData\Roaming\nvda\addons\tesseractOCR\globalPlugins\tesseractOCR\images\ocr-000002.png
+C:\Users\Utilizador\AppData\Roaming\nvda\addons\tesseractOCR\globalPlugins\tesseractOCR\images\ocr-000003.png
+C:\Users\Utilizador\AppData\Roaming\nvda\addons\tesseractOCR\globalPlugins\tesseractOCR\images\ocr-000004.png
+C:\Users\Utilizador\AppData\Roaming\nvda\addons\tesseractOCR\globalPlugins\tesseractOCR\images\ocr-000005.png
+C:\Users\Utilizador\AppData\Roaming\nvda\addons\tesseractOCR\globalPlugins\tesseractOCR\images\ocr-000006.png

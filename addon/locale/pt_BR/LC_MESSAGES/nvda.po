@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tesseractOCR 1.0\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2022-05-29 14:24+0100\n"
+"PO-Revision-Date: 2022-05-29 14:32+0100\n"
+"Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
+"Language-Team: Equipa Portuguesa do NVDA <angelomiguelabrantes@gmail.com; "
+"rui.fontes@tiflotecnia.com>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../../../globalPlugins/tesseractOCR\n"
+"X-Poedit-SearchPath-0: __init__.py\n"
+
+#. Translators: Label of a  combobox used to choose a recognition language
+#: addon\globalPlugins\tesseractOCR\__init__.py:126
+msgid "Recognition &language"
+msgstr "&Idioma de reconhecimento"
+
+#. Translators: Label of a  combobox used to choose a type of document to recognize
+#: addon\globalPlugins\tesseractOCR\__init__.py:144
+msgid "&Type of document"
+msgstr "&Tipo de documento"
+
+#. Translators: The entry for various types of docs, invoices, bills, magazines and so on....
+#: addon\globalPlugins\tesseractOCR\__init__.py:149
+msgid "Various"
+msgstr "Documentos variados"
+
+#. Translators: The entry for text only, like books and letters for instance...
+#: addon\globalPlugins\tesseractOCR\__init__.py:151
+#: addon\globalPlugins\tesseractOCR\__init__.py:174
+msgid "Text"
+msgstr "Livros e cartas"
+
+#. Translators: Checkbox name in the configuration dialog
+#: addon\globalPlugins\tesseractOCR\__init__.py:165
+msgid "Check for updates at startup"
+msgstr "Verificar por actualizações no arranque"
+
+#. For translators: Message to be announced during Keyboard Help
+#: addon\globalPlugins\tesseractOCR\__init__.py:332
+msgid "Performs OCR to focused file in File Explorer"
+msgstr "Executa OCR ao ficheiro seleccionado no Explorador de ficheiros"
+
+#: addon\globalPlugins\tesseractOCR\__init__.py:336
+#: addon\globalPlugins\tesseractOCR\__init__.py:360
+msgid "Processing... Please wait... This operation can takes some seconds..."
+msgstr ""
+"A processar… Por favor aguarde… Esta operação pode demorar alguns momentos..."
+
+#: addon\globalPlugins\tesseractOCR\__init__.py:352
+msgid "File not supported"
+msgstr "Ficheiro não suportado"
+
+#. For translators: Message to be announced during Keyboard Help
+#: addon\globalPlugins\tesseractOCR\__init__.py:356
+msgid "Performs OCR to a document on the scanner"
+msgstr "Executa OCR a um documento no scanner"
+
+#. Translators: Message dialog box to ask user if wants to update.
+#: addon\globalPlugins\tesseractOCR\update.py:82
+msgid ""
+"It is available a new version of this add-on.\n"
+" Do you want to update?"
+msgstr ""
+"Está disponível uma nova versão deste extra.\n"
+" Quer actualizar?"
+
+#. Translators: Message dialog box to inform user that the add-on is not compatible
+#: addon\globalPlugins\tesseractOCR\update.py:117
+msgid ""
+"This new version of this add-on is not compatible with your version of "
+"NVDA.\n"
+" The update process will be terminated."
+msgstr ""
+"Esta nova versão deste extra não é compatível com a sua versão do NVDA.\n"
+" O processo de actualização será terminado."
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: buildVars.py:17
+msgid "TesseractOCR: An OCR add-on"
+msgstr "TesseractOCR: um extra de OCR"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:20
+msgid ""
+"\n"
+"Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
+"document through a scanner and shows the results in a TXT file.\n"
+"Windows+Control+r - Performs OCR to the selected image file\n"
+"Windows+Control+Shift+r - Scans and recognize the document in the scanner\n"
+msgstr ""
+"\n"
+"Permite executar OCR no ficheiro de imagem seleccionado, PDF, JPG, TIF, etc, "
+"ou num documento através de um scanner e mostra os resultados num ficheiro "
+"TXT.\n"
+"Windows+Control+r - Executa o OCR no ficheiro de imagem seleccionado\n"
+"Windows+Control+Shift+r - Digitaliza e reconhece o documento no scanner\n"
+
+#. Author(s)
+#: buildVars.py:28
+msgid ""
+"Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
+"com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
+msgstr ""
+"Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
+"com> e Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
+
+#~ msgid "TesseractOCR settings"
+#~ msgstr "Configurações do TesseractOCR"
+
+#~ msgid "All types"
+#~ msgstr "Todos os ficheiros"
+
+#~ msgid "Announce Dropbox state and make preferences tabs accessible"
+#~ msgstr ""
+#~ "Anuncia o estado do Dropbox e torna as páginas de Preferências acessíveis."
+
+#~ msgid ""
+#~ "Announces Dropbox status, version or open the Dropbox systray menu.\n"
+#~ "Shortcut: NVDA+Alt+D\n"
+#~ "Page tabs are also working in the preferences dialog with Ctrl+tab and "
+#~ "Shift+Ctrl+Tab.\n"
+#~ "Ctrl+Alt+T announce the active tab.\n"
+#~ "You can activate cancel by pressing the escape key."
+#~ msgstr ""
+#~ "Anuncia o estado do Dropbox, a versão ou abre o menu do Dropbox, na barra "
+#~ "do sistema.\n"
+#~ "Tecla de atalho: NVDA+Shift+D\n"
+#~ "As páginas de Preferências também estão a funcionar, alternando entre "
+#~ "elas com Ctrl+tab e Shift+Ctrl+Tab.\n"
+#~ "Ctrl+Alt+T anuncia o título da página activa.\n"
+#~ "Pode activar o botão Cancelar pressionando a tecla Escape."
