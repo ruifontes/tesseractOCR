@@ -223,6 +223,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				focusedItem=window.Document.FocusedItem
 				break
 		else: # loop exhausted
+			desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
+			docPath = desktop_path + '\\' + api.getDesktopObject().objectWithFocus().name
 			return
 		# Now that we have the current folder, we can explore the SelectedItems collection.
 		targetFile= focusedItem.path
@@ -339,7 +341,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Obtain the full path of the selected file
 		self.getDocName()
 		# Check if is a supported file, and if yes if it is PDF or image file
-		ext = docPath[-5:-1].lower()
+		ext = os.path.splitext(docPath)[-1].lower().replace(r'"', '')
 		if ext == ".pdf":
 			self._thread = threading.Thread(target = self._doRoutines)
 			self._thread.setDaemon(True)
