@@ -281,14 +281,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def digitalizeDocument(self):
 		# Digitalize one page from scanner
-		jpgBatPath = os.path.join(PLUGIN_DIR, "ocr.bat")
-		wiaCMDPath = os.path.join (PLUGIN_DIR, "wia-cmd-scanner")
 		# The next two lines are to prevent the cmd from being displayed.
 		si = subprocess.STARTUPINFO()
 		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-		command = "{} cwd={}".format(jpgBatPath, wiaCMDPath)
+		command = "{exe} /w 210 /h 297 /dpi {dpi} /color {color} /format JPG /output {output} cwd={cwd}".format(
+		exe = os.path.join(PLUGIN_DIR, "wia-cmd-scanner", "wia-cmd-scanner.exe"),
+		dpi = 150,
+		color = "GRAY",
+		output = os.path.join(PLUGIN_DIR, "images", "ocr.jpg"),
+		cwd = os.path.join(PLUGIN_DIR, "wia-cmd-scanner")
+		)
 		p = Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=si)
 		stdout, stderr = p.communicate()
+		if stderr or stdout == b'No compatible scanners found\r\n':
+			raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
 
 	def showResults(self):
 		# Opening the TXT file with OCR results.
