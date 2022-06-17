@@ -223,6 +223,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				focusedItem=window.Document.FocusedItem
 				break
 		else: # loop exhausted
+			desktop_path = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
+			docPath = desktop_path + '\\' + api.getDesktopObject().objectWithFocus().name
 			return
 		# Now that we have the current folder, we can explore the SelectedItems collection.
 		targetFile= focusedItem.path
@@ -279,14 +281,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def digitalizeDocument(self):
 		# Digitalize one page from scanner
-		jpgBatPath = os.path.join(PLUGIN_DIR, "ocr.bat")
-		wiaCMDPath = os.path.join (PLUGIN_DIR, "wia-cmd-scanner")
 		# The next two lines are to prevent the cmd from being displayed.
 		si = subprocess.STARTUPINFO()
 		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-		command = "{} cwd={}".format(jpgBatPath, wiaCMDPath)
+		command = "{exe} /w 210 /h 297 /dpi {dpi} /color {color} /format JPG /output {output} cwd={cwd}".format(
+		exe = os.path.join(PLUGIN_DIR, "wia-cmd-scanner", "wia-cmd-scanner.exe"),
+		dpi = 150,
+		color = "GRAY",
+		output = os.path.join(PLUGIN_DIR, "images", "ocr.jpg"),
+		cwd = os.path.join(PLUGIN_DIR, "wia-cmd-scanner")
+		)
 		p = Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=si)
 		stdout, stderr = p.communicate()
+		if stderr or stdout == b'No compatible scanners found\r\n':
+			raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
 
 	def showResults(self):
 		# Opening the TXT file with OCR results.
@@ -339,7 +347,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Obtain the full path of the selected file
 		self.getDocName()
 		# Check if is a supported file, and if yes if it is PDF or image file
-		ext = docPath[-5:-1].lower()
+		ext = os.path.splitext(docPath)[-1].lower().replace(r'"', '')
 		if ext == ".pdf":
 			self._thread = threading.Thread(target = self._doRoutines)
 			self._thread.setDaemon(True)
