@@ -43,7 +43,9 @@ bundle = getOurAddon()
 
 def initConfiguration():
 	confspec = {
-		"announce": "boolean(default=True)",
+		"language" : "string(default="")",
+		"language2" : "string(default="")",
+		"docType" : "integer(default=6)",
 		"isUpgrade": "boolean(default=False)",
 	}
 	config.conf.spec[ourAddon.name] = confspec
