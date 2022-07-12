@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'tesseractOCR' '2022.05'\n"
+"Project-Id-Version: 'tesseractOCR' '2022.06.27'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-06-05 01:13+0100\n"
-"PO-Revision-Date: 2022-06-05 01:23+0100\n"
+"POT-Creation-Date: 2022-07-07 19:28+0100\n"
+"PO-Revision-Date: 2022-07-08 18:07+0100\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
@@ -16,60 +16,125 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
-
-#. Translators: Label of a  combobox used to choose a recognition language
-#: addon\globalPlugins\tesseractOCR\__init__.py:196
-msgid "Recognition &language"
-msgstr "Tanıma di&li"
-
-#. Translators: Label of a  combobox used to choose a type of document to recognize
-#: addon\globalPlugins\tesseractOCR\__init__.py:225
-msgid "&Type of document"
-msgstr "Belge &türü"
-
-#. Translators: The entry for various types of docs, invoices, bills, magazines and so on...
-#: addon\globalPlugins\tesseractOCR\__init__.py:230
-msgid "Various"
-msgstr "Çeşitli"
-
-#. Translators: The entry for text only, like books and letters for instance...
-#: addon\globalPlugins\tesseractOCR\__init__.py:232
-#: addon\globalPlugins\tesseractOCR\__init__.py:277
-msgid "Text"
-msgstr "Metin"
-
-#. Translators: Label of a  combobox used to choose a recognition language to import the data files
-#: addon\globalPlugins\tesseractOCR\__init__.py:262
-msgid "&Import language"
-msgstr "&İthalat dili"
-
-#. Translators: Checkbox name in the configuration dialog
-#: addon\globalPlugins\tesseractOCR\__init__.py:267
-msgid "Check for updates at startup"
-msgstr "Başlangıçta güncellemeleri denetle"
+"X-Generator: Poedit 3.1\n"
 
 #. For translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:452
+#: addon\globalPlugins\tesseractOCR\__init__.py:199
 msgid "Performs OCR to focused file in File Explorer"
 msgstr "Dosya Gezgini'nde odaklanmış dosyaya OCR gerçekleştirir"
 
-#: addon\globalPlugins\tesseractOCR\__init__.py:458
-#: addon\globalPlugins\tesseractOCR\__init__.py:482
+#. Translators: Asking to wait untill the process is concluded
+#: addon\globalPlugins\tesseractOCR\__init__.py:207
+#: addon\globalPlugins\tesseractOCR\__init__.py:236
 msgid "Processing... Please wait... This operation can takes some seconds..."
 msgstr "İşleniyor... Lütfen bekleyin... Bu işlem birkaç saniye sürebilir..."
 
-#: addon\globalPlugins\tesseractOCR\__init__.py:472
+#. Translators: Informing that the file is not from supported types...
+#: addon\globalPlugins\tesseractOCR\__init__.py:225
 msgid "File not supported"
 msgstr "Dosya desteklenmiyor"
 
 #. For translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:476
+#: addon\globalPlugins\tesseractOCR\__init__.py:229
 msgid "Performs OCR to a document on the scanner"
 msgstr "Tarayıcı kullanarak taranan belgeye OCR işlemi uygulanır"
 
+#. Translators: Label of a  combobox used to choose a recognition language
+#: addon\globalPlugins\tesseractOCR\configPanel.py:41
+#, fuzzy
+#| msgid "Recognition &language"
+msgid "Available recognition &language"
+msgstr "Tanıma di&li"
+
+#: addon\globalPlugins\tesseractOCR\configPanel.py:51
+msgid "&Add"
+msgstr ""
+
+#. Translators: Name of a list with the languages selected for OCR use
+#: addon\globalPlugins\tesseractOCR\configPanel.py:55
+#, fuzzy
+#| msgid "&Forget second language"
+msgid "Selected languages"
+msgstr "İ&kinci dili unut"
+
+#: addon\globalPlugins\tesseractOCR\configPanel.py:61
+msgid "&Remove"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\configPanel.py:64
+msgid "Move &up"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\configPanel.py:67
+msgid "Move &down"
+msgstr ""
+
+#. Translators: Label of a  combobox used to choose a type of document to recognize
+#: addon\globalPlugins\tesseractOCR\configPanel.py:73
+msgid "&Type of document"
+msgstr "Belge &türü"
+
+#. Translators: Checkbox name in the configuration dialog
+#: addon\globalPlugins\tesseractOCR\configPanel.py:83
+msgid "Check for updates at startup"
+msgstr "Başlangıçta güncellemeleri denetle"
+
+#. Translators: The entry for text only, like books and letters for instance...
+#: addon\globalPlugins\tesseractOCR\configPanel.py:155
+#: addon\globalPlugins\tesseractOCR\vars.py:49
+msgid "Text"
+msgstr "Metin"
+
+#. Translators: The entry for various types of docs, invoices, bills, magazines and so on...
+#: addon\globalPlugins\tesseractOCR\configPanel.py:157
+#: addon\globalPlugins\tesseractOCR\vars.py:47
+msgid "Various"
+msgstr "Çeşitli"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:28
+msgid "Cebuan"
+msgstr "Cebuan"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:41
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:43
+msgid "Math equations"
+msgstr "Matematik denklemleri"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:46
+msgid "Filipino"
+msgstr "Filipin"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:55
+msgid "Haitian"
+msgstr "Haiti"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:65
+msgid "Javanese"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:107
+msgid "Sundanese"
+msgstr "Sunda dili"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:110
+msgid "Syriac"
+msgstr "Süryanice"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:117
+msgid "Tonga"
+msgstr "Tonga"
+
+#. interrupted before stop
+#. Translators: message to user to report an interuption before stop.
+#: addon\globalPlugins\tesseractOCR\runInThread.py:44
+msgid "interrupted"
+msgstr "kesintiye uğradı"
+
 #. Translators: Message dialog box to ask user if wants to update.
-#: addon\globalPlugins\tesseractOCR\update.py:83
+#: addon\globalPlugins\tesseractOCR\update.py:84
 msgid ""
 "It is available a new version of this add-on.\n"
 " Do you want to update?"
@@ -78,7 +143,7 @@ msgstr ""
 " Güncellemek istiyor musunuz?"
 
 #. Translators: Message dialog box to inform user that the add-on is not compatible
-#: addon\globalPlugins\tesseractOCR\update.py:118
+#: addon\globalPlugins\tesseractOCR\update.py:119
 msgid ""
 "This new version of this add-on is not compatible with your version of "
 "NVDA.\n"
@@ -86,6 +151,11 @@ msgid ""
 msgstr ""
 "Bu yeni sürüm, NVDA sürümünüzle uyumlu değil.\n"
 " Güncelleme işlemi sonlandırılacak."
+
+#. Translators: The entry for various docs,  with auto-orientation...
+#: addon\globalPlugins\tesseractOCR\vars.py:45
+msgid "With auto-orientation"
+msgstr "Otomatik yönlendirme ile"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
@@ -96,12 +166,20 @@ msgstr "TesseractOCR: Bir OCR eklentisi"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:20
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
+#| "document through a scanner and shows the results in a TXT file.\n"
+#| "Windows+Control+r - Performs OCR to the selected image file\n"
+#| "Windows+Control+Shift+r - Scans and recognize the document in the "
+#| "scanner\n"
 msgid ""
 "\n"
 "Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
 "document through a scanner and shows the results in a TXT file.\n"
 "Windows+Control+r - Performs OCR to the selected image file\n"
-"Windows+Control+Shift+r - Scans and recognize the document in the scanner\n"
+"Windows+Control+w - Scans and recognize the document in the scanner\n"
 msgstr ""
 "\n"
 "Seçilen görüntü dosyası, PDF, JPG, TIF, vb. üzerinde veya tarayıcı "
@@ -118,3 +196,10 @@ msgid ""
 msgstr ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
 "com> ve Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
+
+#~| msgid "Recognition &language"
+#~ msgid "&Second recognition language"
+#~ msgstr "İkinci &tanıma dili"
+
+#~ msgid "&Import language"
+#~ msgstr "&dili içe aktar"

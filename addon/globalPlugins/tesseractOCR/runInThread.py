@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+# Module to manage the threads with beeps to signalize the working state of the add-on, get from NVDAExtensionGlobalPlugin
 # NVDAExtensionGlobalPlugin/runInThread.py
 # A part of NVDAExtensionGlobalPlugin add-on
 # Copyright (C) 2017 - 2020 paulber19

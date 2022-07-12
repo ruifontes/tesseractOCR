@@ -20,10 +20,10 @@ addon_info = {
 	"addon_description": _("""
 Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a document through a scanner and shows the results in a TXT file.
 Windows+Control+r - Performs OCR to the selected image file
-Windows+Control+Shift+r - Scans and recognize the document in the scanner
+Windows+Control+w - Scans and recognize the document in the scanner
 """),
 	# version
-	"addon_version": "2022.06.27",
+	"addon_version": "2022.07",
 	# Author(s)
 	"addon_author": _("Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"),
 	# URL for the add-on documentation support
@@ -33,7 +33,7 @@ Windows+Control+Shift+r - Scans and recognize the document in the scanner
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
 	"addon_minimumNVDAVersion": 2019.3,
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": 2022.1,
+	"addon_lastTestedNVDAVersion": 2022.2,
 	# Add-on update channel (default is None, denoting stable releases, and for development releases, use "dev"; do not change unless you know what you are doing)
 	"addon_updateChannel": None,
 }

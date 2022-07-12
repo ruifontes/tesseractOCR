@@ -2,7 +2,7 @@
 
 
 * Autores: Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> e Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-* Actualizado em 26/06/2022
+* Actualizado em 08/07/2022
 * Descarregar a [versão estável][1]
 * Compatibilidade: NVDA 2019.3 e seguintes
 
@@ -11,24 +11,35 @@
 
 Este extra utiliza o motor de OCR Tesseract, de código aberto e gratuito, para executar o reconhecimento óptico de caracteres a um documento de imagem, seja PDF, JPG, TIF ou outro, sem necessidade de abrir o documento.
 Também usa o módulo wia-cmd-scanner para aceder a scanners compatíveis WIA para digitalizar e reconhecer um documento em papel.
-No menu do NVDA, Preferências é adicionada uma secção TesseractOCR, onde poderá configurar o primeiro e segundo idioma a utilizar no reconhecimento e o tipo de documentos a reconhecer.
-Está também disponível uma caixa comvinada para seleccionar mais idiomas de reconhecimento para descarregar e instalar no extra. Assim, o extra é agora distribuido apenas com os idiomas de reconhecimento em português e inglês.
-Note que a utilização de dois idiomas de reconhecimento torna o processo de OCR um pouco mais lento. Por isso, está disponível um botão para esquecer o segundo idioma. Note também que a qualidade do reconhecimento pode variar de acordo com a ordem dos idiomas.
-
+No menu do NVDA, Preferências é adicionada uma secção TesseractOCR, onde poderá configurar os idiomas a utilizar no reconhecimento e o tipo de documentos a reconhecer.
+À excepção dos idiomas português e inglês, que já são incluidos no extra, os restantes idiomas serão descarregados e instalados quando for seleccionado um idioma que ainda não exista no extra.
+Note que à medida que aumenta o número de idiomas de reconhecimento seleccionados, o processo de OCR será mais longo.
+Por isso, recomendamos a utilização apenas dos idiomas necessários.
+Note também que a qualidade do reconhecimento pode variar de acordo com a ordem dos idiomas.
+Portanto, se o resultado do reconhecimento não for satisfatório, pode tentar outra ordenação dos idiomas.
 
 
 ## Comandos
 
 Os comandos predefinidos são:
 Windows+Control+r - Para reconhecer o ficheiro seleccionado;
-Windows+Control+Shift+r - Para digitalizar e reconhecer um documento através do scanner.
+Windows+Control+w - Para digitalizar e reconhecer um documento através do scanner.
 
 Depois é só esperar que se abra o ficheiro ocr.txt.
 Se pretender preservar o texto reconhecido, não se esqueça de guardar o documento com outro nome e noutro local, pois todos os ficheiros da pasta temporária são eliminados no início do próximo processo de OCR!
 
 
+## Atualização automática
+
+Este extra inclui um recurso de atualização automática.
+A verificação de existência de nova versão será executada cada vez que o NVDA é carregado.
+Se não desejar que isso aconteça, vá ao menu do NVDA, Preferências, Configurações e na categoria do extra desmarque a caixa de verificação.
+
+
 ## Problemas conhecidos
 
+* Em alguns sistemas é possível que o add-on se recuse a trabalhar devido a um erro nos comtypes...
+Em alguns sistemas é suficiente ir à pasta temp, e apagar a pasta comtypes_cache.
 * Quando se selecciona a opção "Documentos variados" na caixa combinada "Tipo de documento", é provável que o texto reconhecido fique com demasiadas linhas em branco.
 
 
@@ -167,4 +178,4 @@ spix
 webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.06.27/tesseractOCR-2022.06.27.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07/tesseractOCR-2022.07.nvda-addon

@@ -117,4 +117,4 @@ spix
 webp  
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.06.27/tesseractOCR-2022.06.27.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07/tesseractOCR-2022.07.nvda-addon
