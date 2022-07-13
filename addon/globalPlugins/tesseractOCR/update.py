@@ -83,9 +83,9 @@ class AddonFlow(Thread):
 			if githubApi[0]["tag_name"] != ourAddon.manifest["version"]:
 				# Translators: Message dialog box to ask user if wants to update.
 				if gui.messageBox(_("It is available a new version of this add-on.\n Do you want to update?"), ourAddon.manifest["summary"], style=wx.ICON_QUESTION|wx.YES_NO) == wx.YES:
-					self.transfer = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
-					self.transfer.start()
-					download = threading.Thread(target = AddonFlow.download)
+					transfer = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
+					transfer.start()
+					download = Thread(target = AddonFlow.download)
 					download.setDaemon(True)
 					download.start()
 				else:
@@ -118,7 +118,6 @@ class AddonFlow(Thread):
 		if addonHandler.addonVersionCheck.isAddonCompatible(ourAddon):
 			# It is compatible, so install
 			AddonFlow.install()
-			self.transfer.stop()
 		# It is not compatible, so do not install and inform user
 		else:
 			# Translators: Message dialog box to inform user that the add-on is not compatible
