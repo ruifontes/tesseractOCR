@@ -124,4 +124,4 @@ TesseractOCR: Дополнение для распознавания текст�
 * Русский язык: Валентин Куприянов.
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07/tesseractOCR-2022.07.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07.13/tesseractOCR-2022.07.13.nvda-addon

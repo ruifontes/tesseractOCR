@@ -2,7 +2,7 @@
 
 
 * Authors: Rui Fontes <rui.fontes@tiflotecnia.com> and  Angelo Abrantes <ampa4374@gmail.com>
-* Updated in 08/07/2022
+* Updated in 13/07/2022
 * Download [stable version][1]
 * Compatibility: NVDA version 2019.3 and beyond
 
@@ -180,4 +180,4 @@ spix
 webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07/tesseractOCR-2022.07.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07.13/tesseractOCR-2022.07.13.nvda-addon

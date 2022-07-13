@@ -2,7 +2,7 @@
 
 
 * Автори: Rui Fontes <rui.fontes@tiflotecnia.com> і  Angelo Abrantes <ampa4374@gmail.com>
-* Оновлено 08/07/2022
+* Оновлено 13/07/2022
 * Завантажити [стабільну версію][1]
 * Сумісність: NVDA версія 2019.3 і вище
 
@@ -183,4 +183,4 @@ spix
 webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07/tesseractOCR-2022.07.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07.13/tesseractOCR-2022.07.13.nvda-addon

@@ -143,13 +143,7 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		lista = self.recogLanguageCB.Items
 		langsDesc = self.enabledLangs.Items
 		lang = ""
-		n = 0
-		while n < len(langsDesc):
-			if n == 0:
-				lang += availableLangs[langsDesc[n]]
-			else:
-				lang = lang + "+" + availableLangs[langsDesc[n]]
-			n += 1
+		lang = "+".join(availableLangs[l] for l in langsDesc)
 		config.conf["tesseractOCR"]["language"] = lang
 
 		doc = docTypesChoices[self.recogDocTypeCB.GetSelection()]
@@ -186,7 +180,7 @@ class OCRSettingsPanel(gui.SettingsPanel):
 				# Full URL of the language file...
 				urlName = urlRepos + urlN
 				# Full path where to save the file
-				filepath = os.path.join (os.path.dirname(__file__), "tesseract", "tessdata")
+				filepath = os.path.join(os.path.dirname(__file__), "tesseract", "tessdata")
 				file = os.path.join(filepath, urlN)
 				# Download the file content
 				req = urllib.request.Request(urlName, headers={'User-Agent': 'Mozilla/5.0'})

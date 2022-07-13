@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2021 Rui Fontes <rui.fontes@tiflotecnia.com> and Ângelo Abrantes <ampa4374@gmail.com>
+# Copyright (C) 2020-2022 Rui Fontes <rui.fontes@tiflotecnia.com> and Ângelo Abrantes <ampa4374@gmail.com>
 # Update add-ons module based on the work of several add-on authors
 # This file is covered by the GNU General Public License.
 #
@@ -31,6 +31,7 @@ from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
 from gui import guiHelper
 import core
 import shutil
+from . import runInThread
 
 # For translation
 addonHandler.initTranslation()
@@ -44,7 +45,7 @@ bundle = getOurAddon()
 def initConfiguration():
 	confspec = {
 		"language" : "string(default="")",
-		"language2" : "string(default="")",
+		#"language2" : "string(default="")",
 		"docType" : "integer(default=6)",
 		"isUpgrade": "boolean(default=False)",
 	}
@@ -82,7 +83,11 @@ class AddonFlow(Thread):
 			if githubApi[0]["tag_name"] != ourAddon.manifest["version"]:
 				# Translators: Message dialog box to ask user if wants to update.
 				if gui.messageBox(_("It is available a new version of this add-on.\n Do you want to update?"), ourAddon.manifest["summary"], style=wx.ICON_QUESTION|wx.YES_NO) == wx.YES:
-					AddonFlow.download()
+					self.transfer = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
+					self.transfer.start()
+					download = threading.Thread(target = AddonFlow.download)
+					download.setDaemon(True)
+					download.start()
 				else:
 					AddonFlow.doNothing()
 
@@ -113,6 +118,7 @@ class AddonFlow(Thread):
 		if addonHandler.addonVersionCheck.isAddonCompatible(ourAddon):
 			# It is compatible, so install
 			AddonFlow.install()
+			self.transfer.stop()
 		# It is not compatible, so do not install and inform user
 		else:
 			# Translators: Message dialog box to inform user that the add-on is not compatible

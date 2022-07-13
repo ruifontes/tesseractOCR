@@ -18,7 +18,7 @@ wiaCwd = os.path.join(PLUGIN_DIR, "wia-cmd-scanner")
 wiaCMDPath = os.path.join(PLUGIN_DIR, "wia-cmd-scanner", "wia-cmd-scanner.exe")
 
 # Supported file types:
-suppFiles = [".bmp", ".pnm", ".pbm", ".pgm", ".png", ".jpg", ".jp2", ".gif", ".tif", "jfif", "jpeg", "tiff", "spix", "webp"]
+suppFiles = ["bmp", "pnm", "pbm", "pgm", "png", "jpg", "jp2", "gif", "tif", "jfif", "jpeg", "tiff", "spix", "webp"]
 
 # Location of files:
 pngFilesPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr")+"\""    # Folder where to place the PNG files extracted from the PDF file

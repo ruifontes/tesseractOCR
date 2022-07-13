@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'tesseractOCR' '2022.06.27'\n"
+"Project-Id-Version: 'tesseractOCR' '2022.07'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2022-07-07 19:28+0100\n"
-"PO-Revision-Date: 2022-07-08 18:07+0100\n"
+"PO-Revision-Date: 2022-07-12 12:45+0300\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
@@ -16,7 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-Basepath: ../../../globalPlugins/tesseractOCR\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #. For translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:199
@@ -41,33 +43,29 @@ msgstr "Tarayıcı kullanarak taranan belgeye OCR işlemi uygulanır"
 
 #. Translators: Label of a  combobox used to choose a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:41
-#, fuzzy
-#| msgid "Recognition &language"
 msgid "Available recognition &language"
-msgstr "Tanıma di&li"
+msgstr "Mevcut tanıma di&li"
 
 #: addon\globalPlugins\tesseractOCR\configPanel.py:51
 msgid "&Add"
-msgstr ""
+msgstr "&Ekle"
 
 #. Translators: Name of a list with the languages selected for OCR use
 #: addon\globalPlugins\tesseractOCR\configPanel.py:55
-#, fuzzy
-#| msgid "&Forget second language"
 msgid "Selected languages"
-msgstr "İ&kinci dili unut"
+msgstr "Seçilen diller"
 
 #: addon\globalPlugins\tesseractOCR\configPanel.py:61
 msgid "&Remove"
-msgstr ""
+msgstr "&Kaldır"
 
 #: addon\globalPlugins\tesseractOCR\configPanel.py:64
 msgid "Move &up"
-msgstr ""
+msgstr "Y&ukarı taşı"
 
 #: addon\globalPlugins\tesseractOCR\configPanel.py:67
 msgid "Move &down"
-msgstr ""
+msgstr "A&şağı taşı"
 
 #. Translators: Label of a  combobox used to choose a type of document to recognize
 #: addon\globalPlugins\tesseractOCR\configPanel.py:73
@@ -105,7 +103,7 @@ msgstr "Matematik denklemleri"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:46
 msgid "Filipino"
-msgstr "Filipin"
+msgstr "Filipince"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:55
 msgid "Haitian"
@@ -113,7 +111,7 @@ msgstr "Haiti"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:65
 msgid "Javanese"
-msgstr ""
+msgstr "Javanese"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:107
 msgid "Sundanese"
@@ -166,7 +164,6 @@ msgstr "TesseractOCR: Bir OCR eklentisi"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:20
-#, fuzzy
 #| msgid ""
 #| "\n"
 #| "Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
@@ -197,9 +194,5 @@ msgstr ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
 "com> ve Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 
-#~| msgid "Recognition &language"
-#~ msgid "&Second recognition language"
-#~ msgstr "İkinci &tanıma dili"
-
 #~ msgid "&Import language"
-#~ msgstr "&dili içe aktar"
+#~ msgstr "&İthalat dili"

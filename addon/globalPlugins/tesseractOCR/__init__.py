@@ -214,13 +214,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		global docPath
 		docPath = self.getDocName()
 		# Check if is a supported file, and if yes if it is PDF or image file
-		ext = docPath[-5:-1].lower()
-		if ext == ".pdf":
+		ext = docPath.split(".")[-1].lower()[:-1]  # The last [:-1] is to remove the last " sign...
+		if ext == "pdf":
 			# Starting the PDF recognition process
 			self.recogPDF = threading.Thread(target = self._doRoutines)
 			self.recogPDF.setDaemon(True)
 			self.recogPDF.start()
-		elif (str(ext) in suppFiles):
+		elif (ext in suppFiles):
 			# Starting the image file recognition process
 			self.recogFile = threading.Thread(target = self._doRoutines1)
 			self.recogFile.setDaemon(True)
