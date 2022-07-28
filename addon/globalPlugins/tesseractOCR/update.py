@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
-# Copyright (C) 2020-2022 Rui Fontes <rui.fontes@tiflotecnia.com> and Ângelo Abrantes <ampa4374@gmail.com>
 # Update add-ons module based on the work of several add-on authors
+# written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
+# Copyright (C) 2020-2022 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 #
 # You just need to place this module in the appModule or globalPlugin folder and include in the __init__.py file in the import section:
@@ -45,8 +46,8 @@ bundle = getOurAddon()
 def initConfiguration():
 	confspec = {
 		"language" : "string(default="")",
-		#"language2" : "string(default="")",
 		"docType" : "integer(default=6)",
+		"askPassword" : "boolean(default=False)",
 		"isUpgrade": "boolean(default=False)",
 	}
 	config.conf.spec[ourAddon.name] = confspec

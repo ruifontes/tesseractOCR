@@ -1,8 +1,8 @@
 # TesseractOCR
 
 
-* Authors: Rui Fontes <rui.fontes@tiflotecnia.com> and  Angelo Abrantes <ampa4374@gmail.com>
-* Updated in 13/07/2022
+* Authors: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
+* Updated in 23/07/2022
 * Download [stable version][1]
 * Compatibility: NVDA version 2019.3 and beyond
 
@@ -12,6 +12,8 @@
 This add-on uses the free and open source Tesseract OCR engine, to perform optical character recognition on an image file, PDF, JPG, TIF or other, without the need to open it.
 It also uses wia-cmd-scanner to be able to access WIA enabled scanners and perform OCR to a paper document.
 In the NVDA menu, Preferences, a TesseractOCR section is added, where you can configure the languages to be used in recognition and the type of documents to be recognized.
+In this dialog, to be able to make OCR to password protected PDF files, you can mark to be asked for a password.
+If you have this option checked, and the PDF does not have a password, just press Enter in the dialog asking for password.
 With the exception of English and Portuguese, which are already included in add-on, the other languages will be downloaded and installed when you select a language that does not already exist in the add-on.
 Note that as the number of selected recognition languages increases, the OCR process will take longer.
 We therefore recommend that you use only the languages you need.
@@ -48,136 +50,136 @@ This is a known problem with Tesseract, and, without consumming lots of processi
 ## Languages supported
 
 The supported languages in this version are:
-Afrikans
-Albanian
-Amharik
-Arabic
-Armenian
-Assamese
-Azerbaijani (Latin)
-Basque
-Belarusian
-Bengali
-Bosnian
-Breton
-Bulgarian
-Burnese
-Catalan/Valencian
-Cebuano
-Cherokee
-Chinese simplified
-Chinese traditional
-Corsican
-Croatian
-Czech
-Dannish
-Deutch
-Dhivehi
-Dutch (Flemish)
-Dzongkha
-English
-Esperanto
-Estonian
-Faroese
-Filipino
-Finnish
-French
-Galician
-Georgian
-Greek
-Gujarati
-Haitian
-Hebrew
-Hindi
-Hungarian
-Icelandic
-Indonesian
-Inuktitut
-Irish
-Italian
-Javanese
-Japanese
-Kannada
-Kazakh
-Khmer (Central)
-Kirghiz
-Korean
-Kurdish Kurmanji
-Lao
-Latin
-Lativia
-Lituanian
-Luxembourgish
-Macedonian
-Malay
-Malayalam
-Maltese
-Maori
-Marathi
-Math / equation detection module
-Mongolian
-Nepali
-Norwegian
-Occitan
-Oriya
-Panjabi
-Pashto
-Persian
-Polish
-Portuguese
-Quechua
-Romanian/Moldave
-Russian
-Sanskrit
-Scottish Gaelic
-Serbian (Latin)
-Slovak)
-Slovenian)
-Sindhi
-Sinhalese
-Spanish
-Sundanese
-Swahili
-Swedish
-Syriac
-Tajik
-Tamil
-Tatar
-Telugu
-Thai
-Tibetan
-Tigrinya
-Tonga
-Turkish
-Uighur
-Ukrainian
-Urdu 
-Uzbek (Latin)
-Vietnamese
-Welsh
-West Frisian
-Yiddish
-Yoruba
+* Afrikans
+* Albanian
+* Amharik
+* Arabic
+* Armenian
+* Assamese
+* Azerbaijani (Latin)
+* Basque
+* Belarusian
+* Bengali
+* Bosnian
+* Breton
+* Bulgarian
+* Burnese
+* Catalan/Valencian
+* Cebuano
+* Cherokee
+* Chinese simplified
+* Chinese traditional
+* Corsican
+* Croatian
+* Czech
+* Dannish
+* Deutch
+* Dhivehi
+* Dutch (Flemish)
+* Dzongkha
+* English
+* Esperanto
+* Estonian
+* Faroese
+* Filipino
+* Finnish
+* French
+* Galician
+* Georgian
+* Greek
+* Gujarati
+* Haitian
+* Hebrew
+* Hindi
+* Hungarian
+* Icelandic
+* Indonesian
+* Inuktitut
+* Irish
+* Italian
+* Javanese
+* Japanese
+* Kannada
+* Kazakh
+* Khmer (Central)
+* Kirghiz
+* Korean
+* Kurdish Kurmanji
+* Lao
+* Latin
+* Lativia
+* Lituanian
+* Luxembourgish
+* Macedonian
+* Malay
+* Malayalam
+* Maltese
+* Maori
+* Marathi
+* Math / equation detection module
+* Mongolian
+* Nepali
+* Norwegian
+* Occitan
+* Oriya
+* Panjabi
+* Pashto
+* Persian
+* Polish
+* Portuguese
+* Quechua
+* Romanian/Moldave
+* Russian
+* Sanskrit
+* Scottish Gaelic
+* Serbian (Latin)
+* Slovak)
+* Slovenian)
+* Sindhi
+* Sinhalese
+* Spanish
+* Sundanese
+* Swahili
+* Swedish
+* Syriac
+* Tajik
+* Tamil
+* Tatar
+* Telugu
+* Thai
+* Tibetan
+* Tigrinya
+* Tonga
+* Turkish
+* Uighur
+* Ukrainian
+* Urdu 
+* Uzbek (Latin)
+* Vietnamese
+* Welsh
+* West Frisian
+* Yiddish
+* Yoruba
 
 
 ## Image types supported
 
 This add-on supports the following types of files:
-PDF
-jpg
-tif
-png
-bmp
-pnm
-pbm
-pgm
-jp2
-gif
-jfif
-jpeg
-tiff
-spix
-webp
+* PDF
+* jpg
+* tif
+* png
+* bmp
+* pnm
+* pbm
+* pgm
+* jp2
+* gif
+* jfif
+* jpeg
+* tiff
+* spix
+* webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07.13/tesseractOCR-2022.07.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.07.23/tesseractOCR-2022.07.23.nvda-addon

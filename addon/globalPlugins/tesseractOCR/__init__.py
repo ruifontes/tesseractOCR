@@ -1,10 +1,12 @@
 #-*- coding: utf-8 -*-
+# Main file for Tesseract OCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
 # Copyright (C) 2020-2022 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
 import globalPluginHandler
 import ui
+import gui
 import sys
 import os
 import threading
@@ -39,6 +41,8 @@ sys.path.append(os.path.join(PLUGIN_DIR, "tesseract", "tessdata"))
 del sys.path[-1]
 
 docPath = ""
+showPwdValue = False
+pwd = ""
 
 initConfiguration()
 
@@ -65,10 +69,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		_MainWindows.start()
 
 	def terminate(self):
-		super(GlobalPlugin, self).terminate()
+		super(self).terminate()
 		core.postNvdaStartup.unregister(self.networkTasks)
 		from .configPanel import OCRSettingsPanel
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(OCRSettingsPanel)
+
+	def deleteFiles(self):
+		from .vars import listPath
+		# Delete the temporary images folder
+		shutil.rmtree(os.path.join(PLUGIN_DIR, "images"), ignore_errors=True)
+		os.mkdir(os.path.join(PLUGIN_DIR, "images"))
+		# Delete the temporary list file
+		try:
+			filePath = listPath[1:-1]
+			os.remove(filePath)
+		except FileNotFoundError:
+			pass
 
 	def getDocName(self):
 		docPath = ""
@@ -95,24 +111,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		docPath = '\"'+str(targetFile)+'\"'
 		return docPath
 
-	def backgroundProcessing(self, command):
-		self.command = command
-		# The next two lines are to prevent the cmd from being displayed.
-		si = subprocess.STARTUPINFO()
-		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-		p = subprocess.Popen(self.command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=si)
-		stdout, stderr = p.communicate()
-		#if b"finished" not in (stderr or stdout) and (stderr or stdout) != b"":
-			#raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
-			#self.digitalize.stop()
-
-	def convertPDFToPNG(self):
+	def convertPDFToPNG():
 		from .vars import pdf2PNGPath, pngFilesPath
+		from .configPanel import shouldAskPwd
 		# Transform PDF files in PNG files, since those are accepted by Tesseract...
-		command = "{} -r 400 -gray {} {}".format(pdf2PNGPath, docPath, pngFilesPath)
-		self.backgroundProcessing(command)
+		# Check if should ask for password
+		shouldAskPwd = config.conf["tesseractOCR"]["askPassword"]
+		if shouldAskPwd == True and pwd != "":
+			command = "{} -r 400 -gray -upw {} {} {}".format(pdf2PNGPath, pwd, docPath, pngFilesPath)
+		else:
+			command = "{} -r 400 -gray {} {}".format(pdf2PNGPath, docPath, pngFilesPath)
+		GlobalPlugin.backgroundProcessing(command)
 
-	def createList(self):
+	def createList():
 		from .vars import listPath
 		# Check the PNG files created and list them in list.txt...
 		items = os.listdir(os.path.join(PLUGIN_DIR, "images"))
@@ -120,10 +131,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		for names in items:
 			if names.endswith(".png"):
 				list.append(os.path.join(PLUGIN_DIR, "images", names))
-		with open(listPath[1:-1], "w", encoding = "latin1") as f:
-			for x in range(len(list)):
-				f.write(list[x]+"\n")
-			f.close()
+		if len(list) != 0:
+			with open(listPath[1:-1], "w", encoding = "latin1") as f:
+				for x in range(len(list)):
+					f.write(list[x]+"\n")
+				f.close()
+			# Perform OCR to all PNG files in the list.txt
+			GlobalPlugin.OCR_image_files(listPath)
+		else:
+			return
 
 	def digitalizeDocument(self):
 		from .vars import wiaCMDPath, jpgFilePath, wiaCwd
@@ -135,56 +151,70 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		jpgFilePath,
 		wiaCwd
 		)
-		self.backgroundProcessing(command)
+		GlobalPlugin.backgroundProcessing(command)
 
-	def OCR_image_files(self, path):
+	def OCR_image_files(path):
 		from .vars import tesseractPath, pngFilesPath
 		from .configPanel import lang, doc
 		if doc == 1:
 			lang = "osd"+"+"+lang
-		self.ocr = runInThread.RepeatBeep(delay=2.0, beep=(300, 300), isRunning=None)
-		self.ocr.start()
-		self.path = path
+		GlobalPlugin.ocr = runInThread.RepeatBeep(delay=2.0, beep=(300, 300), isRunning=None)
+		GlobalPlugin.ocr.start()
+		Path = path
 		# Perform OCR to the selected image file
-		command = "{} {} {} --dpi 300 --psm {} --oem 1 -l {} quiet".format(tesseractPath, self.path, pngFilesPath, doc, lang)
-		self.backgroundProcessing(command)
-		self.ocr.stop()
-		self.showResults()
+		command = "{} {} {} --dpi 300 --psm {} --oem 1 -l {} quiet".format(tesseractPath, Path, pngFilesPath, doc, lang)
+		GlobalPlugin.backgroundProcessing(command)
+		GlobalPlugin.ocr.stop()
+		GlobalPlugin.showResults()
 
-	def showResults(self):
+	def showResults():
 		from .vars import ocrTxtPath
 		# Opening the TXT file with OCR results.
 		z = ctypes.windll.shell32.ShellExecuteW(None, "open", ocrTxtPath, None, None, 10)
 
-	def deleteFiles(self):
-		from .vars import listPath
-		# Delete the temporary images folder
-		shutil.rmtree(os.path.join(PLUGIN_DIR, "images"), ignore_errors=True)
-		os.mkdir(os.path.join(PLUGIN_DIR, "images"))
-		# Delete the temporary list file
-		try:
-			filePath = listPath[1:-1]
-			os.remove(filePath)
-		except FileNotFoundError:
-			pass
+	def backgroundProcessing(command):
+		Command = command
+		# The next two lines are to prevent the cmd from being displayed.
+		si = subprocess.STARTUPINFO()
+		si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+		p = subprocess.Popen(Command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=si)
+		stdout, stderr = p.communicate()
+		if "wia" in Command:
+			if b"finished" not in (stderr or stdout) and (stderr or stdout) != b"":
+				#self.scan.stop()
+				#raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
+				message = _("Process wia-cmd-scanner failed:\n") + "{error}".format(error=stderr.decode() if stderr else stdout.decode()+_("\nPlease make sure your scanner is WIA-compliant and can scan in another application before trying again!"))
+				gui.messageBox ("Scan error\n"+message, "TesseractOCR")
+		elif "xpdf" in Command:
+			if b"Syntax Warning: May not be a PDF file" in stderr:
+				GlobalPlugin.conv.stop()
+				gui.messageBox(_("It is not a true PDF file!"), "TesseractOCR")
+				return
+			if b"Command Line Error: Incorrect password" in stderr:
+				GlobalPlugin.conv.stop()
+				gui.messageBox(_("The PDF is password protected.\n\nIf you have introduced the password, make sure it is the correct one.\n\nOtherwise, please go to NVDA configurations, TesseractOCR options and mark the checkbox 'Ask for password'"), "TesseractOCR")
+				return
+			elif b"Unknown font in field's DA string" in stderr:
+				pass
+			elif stdout == b"":
+				#gui.messageBox(stderr, "título")
+				pass #return
+			GlobalPlugin.conv.stop()
 
-	def _doRoutines(self):
-		from .vars import listPath
-		self.conv = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
-		self.conv.start()
+	def doRoutines(self):
+		GlobalPlugin.conv = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
+		GlobalPlugin.conv.start()
 		# Convert PDF in PNG files compatibles with Tesseract...
-		self.convertPDFToPNG()
+		GlobalPlugin.convertPDFToPNG()
 		# Create the list of PNG files
-		self.createList()
-		self.conv.stop()
-		# Perform OCR to all PNG files in the list.txt
-		self.OCR_image_files(listPath)
+		from .vars import listPath
+		GlobalPlugin.createList()
 
-	def _doRoutines1(self):
+	def doRoutines1(self):
 		# Perform OCR to the selected image file...
-		self.OCR_image_files(docPath)
+		GlobalPlugin.ocr_image_files(docPath)
 
-	def _doRoutines2(self):
+	def doRoutines2(self):
 		from .vars import jpgFilePath
 		self.scan = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
 		self.scan.start()
@@ -197,7 +227,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if os.path.exists(jpgFilePath):
 			self.scan.stop()
 			# We already have the file, so recognize it...
-			self.OCR_image_files(jpgFilePath)
+			GlobalPlugin.OCR_image_files(jpgFilePath)
 
 	@script( 
 		# For translators: Message to be announced during Keyboard Help 
@@ -216,13 +246,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Check if is a supported file, and if yes if it is PDF or image file
 		ext = docPath.split(".")[-1].lower()[:-1]  # The last [:-1] is to remove the last " sign...
 		if ext == "pdf":
-			# Starting the PDF recognition process
-			self.recogPDF = threading.Thread(target = self._doRoutines)
-			self.recogPDF.setDaemon(True)
-			self.recogPDF.start()
+			from .configPanel import shouldAskPwd
+			if shouldAskPwd == True:
+				gui.mainFrame._popupSettingsDialog(Password)
+			else:
+				# Starting the PDF recognition process
+				self.recogPDF = threading.Thread(target = self.doRoutines)
+				self.recogPDF.setDaemon(True)
+				self.recogPDF.start()
 		elif (ext in suppFiles):
 			# Starting the image file recognition process
-			self.recogFile = threading.Thread(target = self._doRoutines1)
+			self.recogFile = threading.Thread(target = self.doRoutines1)
 			self.recogFile.setDaemon(True)
 			self.recogFile.start()
 		else:
@@ -240,6 +274,85 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: Asking to wait untill the process is concluded
 		ui.message(_("Processing... Please wait... This operation can takes some seconds..."))
 		# Starting the scanning and recognition process
-		self.digitalize = threading.Thread(target = self._doRoutines2)
+		self.digitalize = threading.Thread(target = self.doRoutines2)
 		self.digitalize.setDaemon(True)
 		self.digitalize.start()
+
+
+class Password(wx.Dialog):
+	def __init__(self, *args, **kwds):
+		kwds["style"] = kwds.get("style", 0) | wx.DEFAULT_DIALOG_STYLE
+		wx.Dialog.__init__(self, *args, **kwds)
+		self.SetTitle(_("TesseractOCR"))
+		global showPwdValue, pwd
+
+		sizer_1 = wx.BoxSizer(wx.VERTICAL)
+
+		# Translators: Asking user to enter the PDF password
+		label_1 = wx.StaticText(self, wx.ID_ANY, _("Enter your password"))
+		sizer_1.Add(label_1, 0, 0, 0)
+
+		if showPwdValue == False:
+			self.text_ctrl_1 = wx.TextCtrl(self, wx.ID_ANY, "", style=wx.TE_PASSWORD)
+			self.text_ctrl_1.SetFocus()
+			self.text_ctrl_1.SetValue(pwd)
+			sizer_1.Add(self.text_ctrl_1, 0, 0, 0)
+
+		else:
+			self.text_ctrl_1 = wx.TextCtrl(self, wx.ID_ANY, "", style=wx.TE_PROCESS_ENTER)
+			self.text_ctrl_1.SetFocus()
+			self.text_ctrl_1.SetValue(pwd)
+			sizer_1.Add(self.text_ctrl_1, 0, 0, 0)
+
+		# For translators: Name of a check box
+		showPwd = wx.CheckBox(self, wx.ID_ANY, _("Show password"))
+		sizer_1.Add(showPwd, 0, 0, 0)
+		showPwd.SetValue(showPwdValue)
+
+		sizer_2 = wx.StdDialogButtonSizer()
+		sizer_1.Add(sizer_2, 0, wx.ALIGN_RIGHT | wx.ALL, 4)
+
+		self.button_OK = wx.Button(self, wx.ID_OK, "")
+		self.button_OK.SetDefault()
+		sizer_2.AddButton(self.button_OK)
+
+		self.button_CANCEL = wx.Button(self, wx.ID_CANCEL, "")
+		sizer_2.AddButton(self.button_CANCEL)
+
+		sizer_2.Realize()
+
+		self.SetSizer(sizer_1)
+		sizer_1.Fit(self)
+
+		self.SetAffirmativeId(self.button_OK.GetId())
+		self.SetEscapeId(self.button_CANCEL.GetId())
+
+		self.Layout()
+		self.CentreOnScreen()
+
+		self.Bind(wx.EVT_CHECKBOX, self.onChange, showPwd)
+		self.Bind(wx.EVT_BUTTON, self.onOkButton, self.button_OK)
+
+	def onChange(self, event):
+		global showPwdValue, pwd
+		pwd == ""
+		if showPwdValue == False:
+			pwd == self.text_ctrl_1.GetLineText(0)
+			showPwdValue = True
+		else:
+			pwd == self.text_ctrl_1.GetLineText(0)
+			showPwdValue = False
+		self.Destroy()
+		gui.mainFrame._popupSettingsDialog(Password)
+
+	def onOkButton(self, event):
+		global pwd
+		pwd = self.text_ctrl_1.GetValue()
+		self.Destroy()
+		# Starting the PDF recognition process
+		self.recogPDF = threading.Thread(target = GlobalPlugin.doRoutines(GlobalPlugin))
+		self.recogPDF.setDaemon(True)
+		self.recogPDF.start()
+		event.Skip()
+		pwd = ""
+

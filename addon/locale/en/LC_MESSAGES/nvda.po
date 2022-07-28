@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tesseractOCR 1.0\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2022-07-07 19:28+0100\n"
-"PO-Revision-Date: 2022-07-08 18:09+0100\n"
+"POT-Creation-Date: 2022-07-22 11:35+0100\n"
+"PO-Revision-Date: 2022-07-22 11:37+0100\n"
 "Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -16,77 +16,127 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../../globalPlugins/tesseractOCR\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
 
+#. self.scan.stop()
+#. raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
+#: addon\globalPlugins\tesseractOCR\__init__.py:186
+msgid "Process wia-cmd-scanner failed:\n"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\__init__.py:186
+msgid ""
+"\n"
+"Please make sure your scanner is WIA-compliant and can scan in another "
+"application before trying again!"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\__init__.py:191
+msgid "It is not a true PDF file!"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\__init__.py:195
+msgid ""
+"The PDF is password protected.\n"
+"\n"
+"If you have introduced the password, make sure it is the correct one.\n"
+"\n"
+"Otherwise, please go to NVDA configurations, TesseractOCR options and mark "
+"the checkbox 'Ask for password'"
+msgstr ""
+
 #. For translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:199
+#: addon\globalPlugins\tesseractOCR\__init__.py:234
 msgid "Performs OCR to focused file in File Explorer"
 msgstr ""
 
 #. Translators: Asking to wait untill the process is concluded
-#: addon\globalPlugins\tesseractOCR\__init__.py:207
-#: addon\globalPlugins\tesseractOCR\__init__.py:236
+#: addon\globalPlugins\tesseractOCR\__init__.py:242
+#: addon\globalPlugins\tesseractOCR\__init__.py:275
 msgid "Processing... Please wait... This operation can takes some seconds..."
 msgstr ""
 
 #. Translators: Informing that the file is not from supported types...
-#: addon\globalPlugins\tesseractOCR\__init__.py:225
+#: addon\globalPlugins\tesseractOCR\__init__.py:264
 msgid "File not supported"
 msgstr ""
 
 #. For translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:229
+#: addon\globalPlugins\tesseractOCR\__init__.py:268
 msgid "Performs OCR to a document on the scanner"
 msgstr ""
 
+#: addon\globalPlugins\tesseractOCR\__init__.py:286
+#: addon\globalPlugins\tesseractOCR\dialogs.py:24
+#, fuzzy
+#| msgid "TesseractOCR settings"
+msgid "TesseractOCR"
+msgstr "Configurações do TesseractOCR"
+
+#. Translators: Asking user to enter the PDF password
+#: addon\globalPlugins\tesseractOCR\__init__.py:292
+#: addon\globalPlugins\tesseractOCR\dialogs.py:29
+msgid "Enter your password"
+msgstr ""
+
+#. For translators: Name of a check box
+#: addon\globalPlugins\tesseractOCR\__init__.py:308
+msgid "Show password"
+msgstr ""
+
 #. Translators: Label of a  combobox used to choose a recognition language
-#: addon\globalPlugins\tesseractOCR\configPanel.py:41
+#: addon\globalPlugins\tesseractOCR\configPanel.py:43
 msgid "Available recognition &language"
 msgstr ""
 
-#: addon\globalPlugins\tesseractOCR\configPanel.py:51
+#: addon\globalPlugins\tesseractOCR\configPanel.py:53
 msgid "&Add"
 msgstr ""
 
 #. Translators: Name of a list with the languages selected for OCR use
-#: addon\globalPlugins\tesseractOCR\configPanel.py:55
+#: addon\globalPlugins\tesseractOCR\configPanel.py:57
 msgid "Selected languages"
 msgstr ""
 
-#: addon\globalPlugins\tesseractOCR\configPanel.py:61
+#: addon\globalPlugins\tesseractOCR\configPanel.py:63
 msgid "&Remove"
 msgstr ""
 
-#: addon\globalPlugins\tesseractOCR\configPanel.py:64
+#: addon\globalPlugins\tesseractOCR\configPanel.py:66
 msgid "Move &up"
 msgstr ""
 
-#: addon\globalPlugins\tesseractOCR\configPanel.py:67
+#: addon\globalPlugins\tesseractOCR\configPanel.py:69
 msgid "Move &down"
 msgstr ""
 
 #. Translators: Label of a  combobox used to choose a type of document to recognize
-#: addon\globalPlugins\tesseractOCR\configPanel.py:73
+#: addon\globalPlugins\tesseractOCR\configPanel.py:75
 msgid "&Type of document"
 msgstr ""
 
 #. Translators: Checkbox name in the configuration dialog
-#: addon\globalPlugins\tesseractOCR\configPanel.py:83
+#: addon\globalPlugins\tesseractOCR\configPanel.py:85
+msgid "Ask for password"
+msgstr ""
+
+#. Translators: Checkbox name in the configuration dialog
+#: addon\globalPlugins\tesseractOCR\configPanel.py:89
 msgid "Check for updates at startup"
 msgstr ""
 
 #. Translators: The entry for text only, like books and letters for instance...
-#: addon\globalPlugins\tesseractOCR\configPanel.py:155
-#: addon\globalPlugins\tesseractOCR\vars.py:49
+#: addon\globalPlugins\tesseractOCR\configPanel.py:157
+#: addon\globalPlugins\tesseractOCR\vars.py:52
 msgid "Text"
 msgstr ""
 
 #. Translators: The entry for various types of docs, invoices, bills, magazines and so on...
-#: addon\globalPlugins\tesseractOCR\configPanel.py:157
-#: addon\globalPlugins\tesseractOCR\vars.py:47
+#: addon\globalPlugins\tesseractOCR\configPanel.py:159
+#: addon\globalPlugins\tesseractOCR\vars.py:50
 msgid "Various"
 msgstr ""
 
@@ -133,14 +183,14 @@ msgid "interrupted"
 msgstr ""
 
 #. Translators: Message dialog box to ask user if wants to update.
-#: addon\globalPlugins\tesseractOCR\update.py:84
+#: addon\globalPlugins\tesseractOCR\update.py:86
 msgid ""
 "It is available a new version of this add-on.\n"
 " Do you want to update?"
 msgstr ""
 
 #. Translators: Message dialog box to inform user that the add-on is not compatible
-#: addon\globalPlugins\tesseractOCR\update.py:119
+#: addon\globalPlugins\tesseractOCR\update.py:125
 msgid ""
 "This new version of this add-on is not compatible with your version of "
 "NVDA.\n"
@@ -148,7 +198,7 @@ msgid ""
 msgstr ""
 
 #. Translators: The entry for various docs,  with auto-orientation...
-#: addon\globalPlugins\tesseractOCR\vars.py:45
+#: addon\globalPlugins\tesseractOCR\vars.py:48
 msgid "With auto-orientation"
 msgstr ""
 
@@ -175,9 +225,6 @@ msgid ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
 "com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 msgstr ""
-
-#~ msgid "TesseractOCR settings"
-#~ msgstr "Configurações do TesseractOCR"
 
 #~ msgid "All types"
 #~ msgstr "Todos os ficheiros"

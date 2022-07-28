@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 # Language list and construction of language variables for tesseractOCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-# Copyright (C) 2020-2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
 import os

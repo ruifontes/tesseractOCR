@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
-# Code for create a config panel in NVDA settings for tesseractOCR add-on
+# Code for settings panel of Tesseract OCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-# Copyright (C) 2020-2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
 import gui
@@ -23,6 +23,7 @@ langsDesc = []
 docTypesChoices = []
 lang = ""
 doc = 3
+shouldAskPwd = False
 from .languages import lista, langsDesc, availableLangs, getAvailableTesseractLanguages
 from .vars import PLUGIN_DIR, docTypesChoices, docTypesLabel, doc, DOC_OSD, DOC_ALL, DOC_TEXT, lang
 
@@ -79,6 +80,10 @@ class OCRSettingsPanel(gui.SettingsPanel):
 			style = wx.CB_SORT
 		)
 		self.recogDocTypeCB.SetSelection(docTypesLabel.index(doc))
+
+		# Translators: Checkbox name in the configuration dialog
+		self.askPwd = sHelper.addItem(wx.CheckBox(self, label=_("Ask for password")))
+		self.askPwd.SetValue(config.conf[ourAddon.name]["askPassword"])
 
 		# Translators: Checkbox name in the configuration dialog
 		self.shouldUpdateChk = sHelper.addItem(wx.CheckBox(self, label=_("Check for updates at startup")))
@@ -139,13 +144,15 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		self.removeButton.Disable() if len(self.enabledLangs.Items) == 0 else self.removeButton.Enable()
 
 	def onSave (self):
-		global lista, langsDesc, lang, doc
+		global lista, langsDesc, lang, doc, shouldAskPwd
+		# Saving OCR languages
 		lista = self.recogLanguageCB.Items
 		langsDesc = self.enabledLangs.Items
 		lang = ""
 		lang = "+".join(availableLangs[l] for l in langsDesc)
 		config.conf["tesseractOCR"]["language"] = lang
 
+		# Saving OCR doc types
 		doc = docTypesChoices[self.recogDocTypeCB.GetSelection()]
 		if doc == pgettext("docType", _("Text")):
 			doc = 6
@@ -155,6 +162,11 @@ class OCRSettingsPanel(gui.SettingsPanel):
 			doc = 1
 		config.conf["tesseractOCR"]["docType"] = doc
 
+		# Saving the need of asking for a password
+		shouldAskPwd = self.askPwd.GetValue()
+		config.conf[ourAddon.name]["askPassword"] = shouldAskPwd
+
+		# Saving the upgrade check flag
 		if not config.conf.profiles[-1].name:
 			config.conf[ourAddon.name]["isUpgrade"] = self.shouldUpdateChk.GetValue()
 

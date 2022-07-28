@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 # Variables for the TesseractOCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-# Copyright (C) 2020-2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
 import os
@@ -27,11 +27,14 @@ jpgFilePath = os.path.join(PLUGIN_DIR, "images", "ocr.jpg")            # Locatio
 ocrTxtPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr.txt")+"\""  # Location of the text file with the results
 
 # Variables read from config
+# Reading or setting OCR language...
 try:
 	if config.conf["tesseractOCR"]["language"]:
 		lang = config.conf["tesseractOCR"]["language"]
 except KeyError:
 	lang = "eng"
+
+#Reading or setting OCR doc type...
 try:
 	if config.conf["tesseractOCR"]["docType"]:
 		doc = int(config.conf["tesseractOCR"]["docType"])
@@ -50,3 +53,10 @@ DOC_LABELS = {
 }
 docTypesLabel = (DOC_OSD, DOC_ALL, DOC_TEXT)
 docTypesChoices = [DOC_LABELS[Type] for Type in docTypesLabel]
+
+# Reading if is needed to ask PDF password...
+try:
+	if config.conf["tesseractOCR"]["askPassword"]:
+		shouldAskPwd = config.conf["tesseractOCR"]["askPassword"]
+except KeyError:
+	shouldAskPwd = False
