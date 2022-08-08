@@ -23,7 +23,7 @@ Windows+Control+r - Performs OCR to the selected image file
 Windows+Control+w - Scans and recognize the document in the scanner
 """),
 	# version
-	"addon_version": "2022.07.23",
+	"addon_version": "2022.08",
 	# Author(s)
 	"addon_author": _("Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"),
 	# URL for the add-on documentation support

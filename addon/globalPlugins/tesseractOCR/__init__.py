@@ -43,6 +43,8 @@ del sys.path[-1]
 docPath = ""
 showPwdValue = False
 pwd = ""
+jpgFilePath = ""
+endTask = False
 
 initConfiguration()
 
@@ -118,9 +120,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Check if should ask for password
 		shouldAskPwd = config.conf["tesseractOCR"]["askPassword"]
 		if shouldAskPwd == True and pwd != "":
-			command = "{} -r 400 -gray -upw {} {} {}".format(pdf2PNGPath, pwd, docPath, pngFilesPath)
+			command = "{} -r 300 -gray -upw {} {} {}".format(pdf2PNGPath, pwd, docPath, pngFilesPath)
 		else:
-			command = "{} -r 400 -gray {} {}".format(pdf2PNGPath, docPath, pngFilesPath)
+			command = "{} -r 300 -gray {} {}".format(pdf2PNGPath, docPath, pngFilesPath)
 		GlobalPlugin.backgroundProcessing(command)
 
 	def createList():
@@ -142,30 +144,66 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return
 
 	def digitalizeDocument(self):
-		from .vars import wiaCMDPath, jpgFilePath, wiaCwd
-		# Digitalize one page from scanner
-		command = "{} /w 0 /h 0 /dpi {} /color {} /format JPG /output {} cwd = {}".format(
-		wiaCMDPath,
-		300,
-		"GRAY",
-		jpgFilePath,
-		wiaCwd
-		)
-		GlobalPlugin.backgroundProcessing(command)
+		from .vars import wiaCMDPath, wiaCwd
+		global endTask, num, jpgFilePath
+		num = ""
+		n = 1
+		while n <= 999:
+			num = "{:03d}".format(n)
+			jpgFilePath = os.path.join(PLUGIN_DIR, "images", "ocr"+num+".jpg")
+			# Digitalize one page from scanner
+			command = "{} /w 0 /h 0 /dpi {} /color {} /format JPG /output {} cwd = {}".format(
+				wiaCMDPath,
+				300,
+				"GRAY",
+				jpgFilePath,
+				wiaCwd
+			)
+			GlobalPlugin.backgroundProcessing(command)
+			if gui.messageBox(_("Do you want to scan one more page?"), "TesseractOCR", style=wx.ICON_QUESTION|wx.YES_NO) == wx.YES:
+				n+= 1
+				# Perform OCR to the JPG created...
+				# Wait until file be put on right local
+				while not  os.path.exists(jpgFilePath):
+					time.sleep(0.01)
+				if os.path.exists(jpgFilePath):
+					self.scan.stop()
+					# We already have the file, so recognize it...
+					GlobalPlugin.OCR_image_files(jpgFilePath)
+			else:
+				# Perform OCR to the JPG created...
+				# Wait until file be put on right local
+				while not  os.path.exists(jpgFilePath):
+					time.sleep(0.01)
+				if os.path.exists(jpgFilePath):
+					self.scan.stop()
+					# We already have the file, so recognize it...
+					endTask = True
+					GlobalPlugin.OCR_image_files(jpgFilePath)
+				break
 
 	def OCR_image_files(path):
 		from .vars import tesseractPath, pngFilesPath
+		global pngFilesPath
 		from .configPanel import lang, doc
 		if doc == 1:
 			lang = "osd"+"+"+lang
 		GlobalPlugin.ocr = runInThread.RepeatBeep(delay=2.0, beep=(300, 300), isRunning=None)
 		GlobalPlugin.ocr.start()
+		if path == jpgFilePath:
+			pngFilesPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr"+jpgFilePath[-7:-4])+"\""    # To save the recognized files as ocr001, ocr002 and so on
 		Path = path
 		# Perform OCR to the selected image file
-		command = "{} {} {} --dpi 300 --psm {} --oem 1 -l {} quiet".format(tesseractPath, Path, pngFilesPath, doc, lang)
+		command = "{} {} {} --dpi 300 --psm {} --oem 1 -c tessedit_do_invert=0 -l {} quiet".format(tesseractPath, Path, pngFilesPath, doc, lang)
 		GlobalPlugin.backgroundProcessing(command)
 		GlobalPlugin.ocr.stop()
+		if endTask == True:
+			GlobalPlugin.creatTXTFromVariousTXT()
 		GlobalPlugin.showResults()
+
+	def creatTXTFromVariousTXT():
+		command = 'copy "%s" "%s"' %(os.path.join(PLUGIN_DIR, "images", "ocr*.txt"), os.path.join(PLUGIN_DIR, "images", "ocr.txt"))
+		subprocess.call(command, shell=True)
 
 	def showResults():
 		from .vars import ocrTxtPath
@@ -184,7 +222,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				#self.scan.stop()
 				#raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
 				message = _("Process wia-cmd-scanner failed:\n") + "{error}".format(error=stderr.decode() if stderr else stdout.decode()+_("\nPlease make sure your scanner is WIA-compliant and can scan in another application before trying again!"))
-				gui.messageBox ("Scan error\n"+message, "TesseractOCR")
+				gui.messageBox (_("Scan error\n")+message, "TesseractOCR")
 		elif "xpdf" in Command:
 			if b"Syntax Warning: May not be a PDF file" in stderr:
 				GlobalPlugin.conv.stop()
@@ -212,22 +250,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def doRoutines1(self):
 		# Perform OCR to the selected image file...
-		GlobalPlugin.ocr_image_files(docPath)
+		GlobalPlugin.OCR_image_files(docPath)
 
 	def doRoutines2(self):
-		from .vars import jpgFilePath
 		self.scan = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
 		self.scan.start()
 		# Digitalize page from scanner
 		self.digitalizeDocument()
-		# Perform OCR to the JPG created...
-		# Wait until file be put on right local
-		while not  os.path.exists(jpgFilePath):
-			time.sleep(0.01)
-		if os.path.exists(jpgFilePath):
-			self.scan.stop()
-			# We already have the file, so recognize it...
-			GlobalPlugin.OCR_image_files(jpgFilePath)
 
 	@script( 
 		# For translators: Message to be announced during Keyboard Help 
@@ -354,5 +383,6 @@ class Password(wx.Dialog):
 		self.recogPDF.setDaemon(True)
 		self.recogPDF.start()
 		event.Skip()
+# To reset the password...
 		pwd = ""
 
