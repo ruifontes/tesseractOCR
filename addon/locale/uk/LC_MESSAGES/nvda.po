@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: tesseractOCR\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2022-08-08 19:54+0100\n"
-"PO-Revision-Date: 2022-08-08 20:06+0100\n"
+"PO-Revision-Date: 2022-08-12 09:02+0300\n"
 "Last-Translator: Ukrainian NVDA Community <vp88.mobile@gmail.com>\n"
 "Language-Team: Heorhii\n"
 "Language: uk\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:163
 msgid "Do you want to scan one more page?"
-msgstr ""
+msgstr "Хочете відсканувати ще одну сторінку?"
 
 #. self.scan.stop()
 #. raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
@@ -41,7 +41,7 @@ msgstr ""
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:225
 msgid "Scan error\n"
-msgstr ""
+msgstr "Помилка сканування\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:229
 msgid "It is not a true PDF file!"
@@ -104,7 +104,7 @@ msgstr "Показати пароль"
 #. Translators: Label of a  combobox used to choose a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:43
 msgid "Available recognition &language"
-msgstr "Доступна мова розпізнавання"
+msgstr "Доступна мова &розпізнавання"
 
 #: addon\globalPlugins\tesseractOCR\configPanel.py:53
 msgid "&Add"
