@@ -2,7 +2,7 @@
 
 
 * Yazarlar: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
-* 3/08/2022'de güncellendi
+* 08/04/2023'de güncellendi
 * [Kararlı sürümü indirin][1]
 * Uyumluluk: NVDA sürüm 2019.3 ve sonrası
 
@@ -27,17 +27,10 @@ Varsayılan komutlar şunlardır:
 Windows+Control+r - seçilen belgeyi tanımak için;  
 Windows+Control+w - tarayıcı aracılığıyla bir belgeyi taramak ve OCR yapmak için.  
 
-Ardından, tanınan metinle ocr.txt dosyasının açılmasını bekleyin.  
+Ardından, tanınan metinle ocr.pdf dosyasının açılmasını bekleyin.  
 Tanınan metni korumak istiyorsanız, geçici dizindeki tüm dosyalar bir sonraki OCR işleminin başlangıcında silineceğinden, belgeyi başka bir ad altında ve başka bir konuma kaydetmeyi unutmayın!  
 
 Bu komutlar, "Girdi hareketleri" "TesseractOCR" bölümündeki  iletişim kutusunda değiştirilebilir.  
-
-
-## Otomatik güncelleme:
-
-Bu eklenti bir otomatik güncelleme özelliği içerir.  
-NVDA her açıldığında yeni bir sürüm kontrolü gerçekleştirilecektir.  
-Bunu istiyorsanız, NVDA, Tercihler, Ayarlar'a gidin ve eklenti kategorisinde onay kutusunu işaretleyin.  
 
 
 ## Bilinen sorunlar:
@@ -183,4 +176,4 @@ Bu eklenti aşağıdaki dosya türlerini destekler:
 * webp,  
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.08/tesseractOCR-2022.08.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.04.08/tesseractOCR-2023.04.08.nvda-addon

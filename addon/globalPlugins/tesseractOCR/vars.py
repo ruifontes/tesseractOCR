@@ -1,14 +1,23 @@
 #-*- coding: utf-8 -*-
 # Variables for the TesseractOCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-# Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2022-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
+# import the necessary modules.
 import os
+import wx
+import ui
+import globalVars
 import config
 # For translation
 import addonHandler
 addonHandler.initTranslation()
+
+def getOurAddon():
+	return addonHandler.getCodeAddon()
+
+ourAddon = getOurAddon()
 
 # Location of executables:
 PLUGIN_DIR = os.path.dirname(__file__)
@@ -25,8 +34,20 @@ pngFilesPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr")+"\""    # Folder 
 listPath = "\""+os.path.join (PLUGIN_DIR, "list.txt")+"\""             # Location of the PNG files list
 ocrTxtPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr.txt")+"\""  # Location of the text file with the results
 
+def initConfiguration():
+	confspec = {
+		"language" : "string(default="")",
+		"docType" : "integer(default=6)",
+		"askPassword" : "boolean(default=false)",
+		"isUpgrade": "boolean(default=false)",
+	}
+	config.conf.spec[ourAddon.name] = confspec
+
+initConfiguration()
+
 # Variables read from config
 # Reading or setting OCR language...
+lang = ""
 try:
 	if config.conf["tesseractOCR"]["language"]:
 		lang = config.conf["tesseractOCR"]["language"]

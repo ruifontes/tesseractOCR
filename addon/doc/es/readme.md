@@ -2,7 +2,7 @@
 
 
 * Autores: Rui Fontes, Ângelo Abrantes y Abel Passos do Nascimento Jr.
-* Actualizado el 3/08/2022
+* Actualizado el 08/04/2023
 * Descargar [versión estable][1]
 * Compatibilidad con NVDA: versión 2019.3 y posteriores
 
@@ -27,16 +27,10 @@ Los atajos por defecto son:
 Windows+Control+r - para reconocer el documento seleccionado;
 Windows+Control+w - para escanear y reconocer un documento desde el escáner.
 
-A continuación, espera a que se abra el archivo ocr.txt con el texto reconocido.
+A continuación, espera a que se abra el archivo ocr.pdf con el texto reconocido.
 Si quieres conservar el texto reconocido, ¡no olvides guardar el documento con otro nombre y en otro lugar, ya que todos los archivos de la carpeta temporal se eliminan al comienzo del siguiente proceso OCR!
 
 Estas órdenes pueden modificarse desde el diálogo Gestos de entrada, en la categoría "TesseractOCR".
-
-
-## Actualización automática
-Este complemento incluye una función de actualización automática.
-La comprobación de una nueva versión se realizará cada vez que se cargue NVDA.
-Si quieres que esto suceda, vas al menú de NVDA, Preferencias, Opciones y en la categoría del complemento marcas la casilla de verificación.
 
 
 ## Problemas conocidos
@@ -182,4 +176,4 @@ Este complemento soporta los siguientes tipos de archivos:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.08/tesseractOCR-2022.08.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.04.08/tesseractOCR-2023.04.08.nvda-addon

@@ -2,7 +2,7 @@
 
 
 * Authors: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
-* Updated in 3/08/2022
+* Updated in 08/04/2023
 * Download [stable version][1]
 * Compatibility: NVDA version 2019.3 and beyond
 
@@ -27,16 +27,10 @@ The default commands are:
 Windows+Control+r - to recognize the selected document;
 Windows+Control+w - to scan and recognize a document through the scanner.
 
-Then just wait that ocr.txt opens with the recognized text.
+Then just wait that ocr.pdf opens with the recognized text.
 If you want to preserve the recognized text, don't forget to save the document under another name and in another location, as all files in the temporary directory are deleted at the start of the next OCR process!
 
 This commands can be modified in the "Input gestures" dialog in the "TesseractOCR" section.
-
-
-## Automatic update
-This add-on includes an automatic update feature.
-The check for a new version will be executed everytime NVDA is loaded.
-If you want this, go to NVDA, Preferences, Options and in the add-on category check the check box.
 
 
 ## Known problems
@@ -182,4 +176,4 @@ This add-on supports the following types of files:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.08/tesseractOCR-2022.08.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.04.08/tesseractOCR-2023.04.08.nvda-addon

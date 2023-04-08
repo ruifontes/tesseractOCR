@@ -6,11 +6,13 @@
 # This file is covered by the GNU General Public License.
 # See the file COPYING for more details.
 
-import addonHandler
+# Import the necessary modules
 from logHandler import log
 import tones
 import threading
 import ui
+# For translation process
+import addonHandler
 addonHandler.initTranslation()
 
 

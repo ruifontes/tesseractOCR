@@ -1,9 +1,10 @@
 #-*- coding: utf-8 -*-
 # Language list and construction of language variables for tesseractOCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-# Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2022-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
+# import the necessary modules.
 import os
 import config
 import languageHandler
@@ -125,7 +126,7 @@ localesToTesseractLangs = {
 	"yo" : "yor"
 }
 
-# Correspondence between language codes between Tesseract and NVDA
+# Correspondence between language codes of Tesseract and NVDA
 tesseractLangsToLocales = {v : k for k, v in localesToTesseractLangs.items()}
 
 def getAvailableTesseractLanguages():

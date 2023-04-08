@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'tesseractOCR' '2022.07'\n"
+"Project-Id-Version: 'tesseractOCR' '2022.08'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2022-08-08 19:54+0100\n"
-"PO-Revision-Date: 2022-08-08 20:06+0100\n"
+"PO-Revision-Date: 2022-08-08 23:30+0300\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:163
 msgid "Do you want to scan one more page?"
-msgstr ""
+msgstr "Bir sayfa daha taramak istiyor musunuz?"
 
 #. self.scan.stop()
 #. raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
@@ -42,7 +42,7 @@ msgstr ""
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:225
 msgid "Scan error\n"
-msgstr ""
+msgstr "Tarama hatası\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:229
 msgid "It is not a true PDF file!"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tesseractOCR 1.0\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2022-08-08 19:54+0100\n"
-"PO-Revision-Date: 2022-08-08 19:59+0100\n"
+"PO-Revision-Date: 2022-08-18 12:33+0200\n"
 "Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../../globalPlugins/tesseractOCR\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:163
 msgid "Do you want to scan one more page?"
-msgstr ""
+msgstr "Voulez-vous scannériser une autre page?"
 
 #. self.scan.stop()
 #. raise RuntimeError("Subprocess wia-cmd-scanner failed:\n {error}".format(error=stderr.decode()) if stderr else stdout.decode())
@@ -43,7 +43,7 @@ msgstr ""
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:225
 msgid "Scan error\n"
-msgstr ""
+msgstr "Erreur de balayage\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:229
 msgid "It is not a true PDF file!"

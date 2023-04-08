@@ -2,7 +2,7 @@
 
 
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos do Nascimento Jr.
-* Actualizado em 3/08/2022
+* Actualizado em 08/04/2023
 * Descarregar a [versão estável][1]
 * Compatibilidade: NVDA 2019.3 e seguintes
 
@@ -28,15 +28,8 @@ Os comandos predefinidos são:
 Windows+Control+r - Para reconhecer o ficheiro seleccionado;
 Windows+Control+w - Para digitalizar e reconhecer um documento através do scanner.
 
-Depois é só esperar que se abra o ficheiro ocr.txt.
+Depois é só esperar que se abra o ficheiro ocr.pdf.
 Se pretender preservar o texto reconhecido, não se esqueça de guardar o documento com outro nome e noutro local, pois todos os ficheiros da pasta temporária são eliminados no início do próximo processo de OCR!
-
-
-## Atualização automática
-
-Este extra inclui um recurso de atualização automática.
-A verificação de existência de nova versão será executada cada vez que o NVDA é carregado.
-Se não desejar que isso aconteça, vá ao menu do NVDA, Preferências, Configurações e na categoria do extra desmarque a caixa de verificação.
 
 
 ## Problemas conhecidos
@@ -181,4 +174,4 @@ Este extra suporta os seguintes tipos de ficheiros:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2022.08/tesseractOCR-2022.08.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.04.08/tesseractOCR-2023.04.08.nvda-addon

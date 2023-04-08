@@ -1,23 +1,20 @@
 #-*- coding: utf-8 -*-
 # Code for settings panel of Tesseract OCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-# Copyright (C) 2022 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2022-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
+# import the necessary modules.
+from .runInThread import *
+from .vars import *
 import gui
-import wx
-import config
+from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
+from gui import guiHelper
 import functools
 from configobj import ConfigObj
-#import languageHandler
-import threading
-# For update process
-from .update import *
-# For translation
-import addonHandler
+# For translation process
 addonHandler.initTranslation()
 
-from . import runInThread
 lista = []
 langsDesc = []
 docTypesChoices = []
@@ -50,6 +47,7 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		# Set selection to the first item
 		self.recogLanguageCB.SetSelection(0)
 
+		# Translators: Label of a  button used to add more recognition languages
 		self.addButton = sHelper.addItem(wx.Button(self, label = _("&Add"), name="Add"))
 		self.addButton.Bind(wx.EVT_BUTTON, self.onAdd)
 
@@ -60,12 +58,15 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		self.enabledLangs.Bind(wx.EVT_LISTBOX, self.onChange)
 		self.enabledLangs.Bind(wx.EVT_KEY_DOWN, self.onKeyDown)
 
+		# Translators: Label of a  button used to remove a recognition language
 		self.removeButton = sHelper.addItem(wx.Button(self, label = _("&Remove"), name="Remove"))
 		self.removeButton.Bind(wx.EVT_BUTTON, self.onRemove)
 
+		# Translators: Label of a  button used to move up a recognition language
 		self.moveUpButton = sHelper.addItem(wx.Button(self, label = _("Move &up"), name = "Up"))
 		self.moveUpButton.Bind(wx.EVT_BUTTON, self.onMoveUp)
 
+		# Translators: Label of a  button used to move down a recognition language
 		self.moveDownButton = sHelper.addItem(wx.Button(self, label = _("Move &down"), name = "Down"))
 		self.moveDownButton.Bind(wx.EVT_BUTTON, self.onMoveDown)
 
@@ -81,15 +82,9 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		)
 		self.recogDocTypeCB.SetSelection(docTypesLabel.index(doc))
 
-		# Translators: Checkbox name in the configuration dialog
+		# Translators: Name  of a checkbox in the configuration dialog ask or not for a password
 		self.askPwd = sHelper.addItem(wx.CheckBox(self, label=_("Ask for password")))
 		self.askPwd.SetValue(config.conf[ourAddon.name]["askPassword"])
-
-		# Translators: Checkbox name in the configuration dialog
-		self.shouldUpdateChk = sHelper.addItem(wx.CheckBox(self, label=_("Check for updates at startup")))
-		self.shouldUpdateChk.SetValue(config.conf[ourAddon.name]["isUpgrade"])
-		if config.conf.profiles[-1].name:
-			self.shouldUpdateChk.Disable()
 
 	def onAdd(self, evt):
 		self.swapItems(evt, self.recogLanguageCB, self.enabledLangs)
@@ -151,7 +146,6 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		lang = ""
 		lang = "+".join(availableLangs[l] for l in langsDesc)
 		config.conf["tesseractOCR"]["language"] = lang
-
 		# Saving OCR doc types
 		doc = docTypesChoices[self.recogDocTypeCB.GetSelection()]
 		if doc == pgettext("docType", _("Text")):
@@ -161,14 +155,9 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		else:
 			doc = 1
 		config.conf["tesseractOCR"]["docType"] = doc
-
 		# Saving the need of asking for a password
 		shouldAskPwd = self.askPwd.GetValue()
 		config.conf[ourAddon.name]["askPassword"] = shouldAskPwd
-
-		# Saving the upgrade check flag
-		if not config.conf.profiles[-1].name:
-			config.conf[ourAddon.name]["isUpgrade"] = self.shouldUpdateChk.GetValue()
 
 		# Routine to download the files to the right folder...
 		# Get the language name of file to download
@@ -179,7 +168,7 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		self._downloadThread.start()
 
 	def _download(self):
-		self.doDownload = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
+		self.doDownload = RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)
 		self.doDownload.start()
 		for lang in self.ocrLangs:
 			lang = availableLangs[lang]
