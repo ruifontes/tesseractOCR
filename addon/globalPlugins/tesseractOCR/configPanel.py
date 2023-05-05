@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-# Code for settings panel of Tesseract OCR add-on
+# Module for settings panel of Tesseract OCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
 # Copyright (C) 2022-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
@@ -7,11 +7,12 @@
 # import the necessary modules.
 from .runInThread import *
 from .vars import *
+import urllib.request
+import json
 import gui
 from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
 from gui import guiHelper
 import functools
-from configobj import ConfigObj
 # For translation process
 addonHandler.initTranslation()
 
@@ -21,14 +22,14 @@ docTypesChoices = []
 lang = ""
 doc = 3
 shouldAskPwd = False
+DPI = "300"
 from .languages import lista, langsDesc, availableLangs, getAvailableTesseractLanguages
-from .vars import PLUGIN_DIR, docTypesChoices, docTypesLabel, doc, DOC_OSD, DOC_ALL, DOC_TEXT, lang
+from .vars import PLUGIN_DIR, docTypesChoices, docTypesLabel, doc, DOC_OSD, DOC_ALL, DOC_TEXT, DPI, dpiList, lang
 
 initConfiguration()
 
 
 class OCRSettingsPanel(gui.SettingsPanel):
-	# Translators: Title of the OCR settings dialog in the NVDA settings.
 	title = "TesseractOCR"
 
 	def makeSettings(self, settingsSizer):
@@ -53,6 +54,7 @@ class OCRSettingsPanel(gui.SettingsPanel):
 
 		# Translators: Name of a list with the languages selected for OCR use
 		self.enabledLangs = sHelper.addLabeledControl(_("Selected languages"), wx.ListBox, choices = langsDesc, style = wx.LB_SINGLE)
+		# Set selection to the first item if some are present
 		if len(self.enabledLangs.Items) != 0:
 			self.enabledLangs.SetSelection(0)
 		self.enabledLangs.Bind(wx.EVT_LISTBOX, self.onChange)
@@ -67,7 +69,7 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		self.moveUpButton.Bind(wx.EVT_BUTTON, self.onMoveUp)
 
 		# Translators: Label of a  button used to move down a recognition language
-		self.moveDownButton = sHelper.addItem(wx.Button(self, label = _("Move &down"), name = "Down"))
+		self.moveDownButton = sHelper.addItem(wx.Button(self, label = _("&Move down"), name = "Down"))
 		self.moveDownButton.Bind(wx.EVT_BUTTON, self.onMoveDown)
 
 		self.updateControls()
@@ -80,19 +82,45 @@ class OCRSettingsPanel(gui.SettingsPanel):
 			choices = list(docTypesChoices),
 			style = wx.CB_SORT
 		)
+		# Set selection to the item set in configurations
 		self.recogDocTypeCB.SetSelection(docTypesLabel.index(doc))
+
+		# Translators: Label of a  combobox used to choose the device  to be used to digitalize
+		deviceLabel = _("&Scanner:")
+		self.deviceCB = sHelper.addLabeledControl(
+			deviceLabel,
+			wx.Choice,
+			choices = WIAList,
+			style = 0
+		)
+		# Set selection to the item set in configurations
+		self.deviceCB.SetSelection(WIAList.index(scanner))
+
+		# Translators: Label of a  combobox used to choose a value for DPI used to digitalize from scanner
+		dpiLabel = _("Resolution in &DPI")
+		self.dpiCB = sHelper.addLabeledControl(
+			dpiLabel,
+			wx.Choice,
+			choices = dpiList,
+			style = wx.CB_SORT
+		)
+		# Set selection to the item set in configurations
+		self.dpiCB.SetSelection(dpiList.index(DPI))
 
 		# Translators: Name  of a checkbox in the configuration dialog ask or not for a password
 		self.askPwd = sHelper.addItem(wx.CheckBox(self, label=_("Ask for password")))
 		self.askPwd.SetValue(config.conf[ourAddon.name]["askPassword"])
 
 	def onAdd(self, evt):
+		# Move the language add to the enabled languages list
 		self.swapItems(evt, self.recogLanguageCB, self.enabledLangs)
 
 	def onRemove(self, evt):
+		# Remove the language removed  from the enabled languages list
 		self.swapItems(evt, self.enabledLangs, self.recogLanguageCB)
 
 	def swapItems(self, evt, source, target):
+		# Moving languages from one list to the other...
 		index = source.GetSelection()
 		if index == -1:
 			return
@@ -139,13 +167,14 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		self.removeButton.Disable() if len(self.enabledLangs.Items) == 0 else self.removeButton.Enable()
 
 	def onSave (self):
-		global lista, langsDesc, lang, doc, shouldAskPwd
+		global lista, langsDesc, lang, doc, DPI,scanner,  shouldAskPwd
 		# Saving OCR languages
 		lista = self.recogLanguageCB.Items
 		langsDesc = self.enabledLangs.Items
 		lang = ""
 		lang = "+".join(availableLangs[l] for l in langsDesc)
 		config.conf["tesseractOCR"]["language"] = lang
+
 		# Saving OCR doc types
 		doc = docTypesChoices[self.recogDocTypeCB.GetSelection()]
 		if doc == pgettext("docType", _("Text")):
@@ -155,6 +184,15 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		else:
 			doc = 1
 		config.conf["tesseractOCR"]["docType"] = doc
+
+		# Saving device to use
+		scanner = WIAList[self.deviceCB.GetSelection()]
+		config.conf["tesseractOCR"]["device"] = scanner
+
+		# Saving OCR DPI resolution
+		DPI = dpiList[self.dpiCB.GetSelection()]
+		config.conf["tesseractOCR"]["dpi"] = DPI
+
 		# Saving the need of asking for a password
 		shouldAskPwd = self.askPwd.GetValue()
 		config.conf[ourAddon.name]["askPassword"] = shouldAskPwd

@@ -2,7 +2,7 @@
 
 
 * Authors: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
-* Updated in 08/04/2023
+* Updated in 04/05/2023
 * Download [stable version][1]
 * Compatibility: NVDA version 2019.3 and beyond
 
@@ -10,10 +10,14 @@
 ## Informations
 
 This add-on uses the free and open source Tesseract OCR engine, to perform optical character recognition on an image file, PDF, JPG, TIF or other, without the need to open it.
-It also uses wia-cmd-scanner to be able to access WIA enabled scanners and perform OCR to a paper document.
-In the NVDA menu, Preferences, a TesseractOCR section is added, where you can configure the languages to be used in recognition and the type of documents to be recognized.
-In this dialog, to be able to make OCR to password protected PDF files, you can mark to be asked for a password.
-If you have this option checked, and the PDF does not have a password, just press Enter in the dialog asking for password.
+It also allows access to WIA enabled scanners to perform OCR to a paper document.
+In the NVDA menu, Preferences, a TesseractOCR section is added, where you can configure the following:
+- languages to be used in recognition;
+- the type of documents to be recognized;
+- if should be asked or not a PDF password. If you have this option checked, and the PDF does not have a password, just press Enter in the dialog asking for password;
+- Select the scanner to be used;
+- set the scanner resolution between 150 and 400 dpi.
+
 With the exception of English and Portuguese, which are already included in add-on, the other languages will be downloaded and installed when you select a language that does not already exist in the add-on.
 Note that as the number of selected recognition languages increases, the OCR process will take longer.
 We therefore recommend that you use only the languages you need.
@@ -25,18 +29,18 @@ Therefore, if the recognition result is not satisfactory, you may want to try an
 
 The default commands are:
 Windows+Control+r - to recognize the selected document;
-Windows+Control+w - to scan and recognize a document through the scanner.
+Windows+Control+w - to scan and recognize a document through the scanner;
+Windows+Control+c - To cancel the scanning process.
+Please note: It must be issued before the dialog asking if you want to scan more pages appear!
 
-Then just wait that ocr.pdf opens with the recognized text.
-If you want to preserve the recognized text, don't forget to save the document under another name and in another location, as all files in the temporary directory are deleted at the start of the next OCR process!
+Then just wait the browseable message appears with the recognized text.
+If you want to preserve the recognized text, don't forget to save it in some folder, as the results are deleted at the start of the next OCR process!
 
 This commands can be modified in the "Input gestures" dialog in the "TesseractOCR" section.
 
 
 ## Known problems
 
-* In some systems it is possible that add-on do not work due to a comtypes error...
-In some machines it is enough going to the temp folder, and deleting the comtypes_cache folder.
 * When selecting the "Various" option in the "Documents type" combobox, the recognized text probably appear with many blank lines
 This is a known problem with Tesseract, and, without consumming lots of processing time, I haven't yet found any solution. But, I still haven't given up!
 
@@ -176,4 +180,5 @@ This add-on supports the following types of files:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.04.08/tesseractOCR-2023.04.08.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.05.04/tesseractOCR-2023.05.04.nvda-addon
+

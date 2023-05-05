@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 # Variables for the TesseractOCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
+# Colaboration of Chatt GPT ito list available scanners...
 # Copyright (C) 2022-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
@@ -10,6 +11,7 @@ import wx
 import ui
 import globalVars
 import config
+import comtypes.client
 # For translation
 import addonHandler
 addonHandler.initTranslation()
@@ -23,8 +25,6 @@ ourAddon = getOurAddon()
 PLUGIN_DIR = os.path.dirname(__file__)
 tesseractPath = "\""+os.path.join (PLUGIN_DIR, "tesseract", "tesseract.exe")+"\""
 pdf2PNGPath = "\""+os.path.join (PLUGIN_DIR, "xpdf-tools", "pdftopng.exe")+"\""
-wiaCwd = os.path.join(PLUGIN_DIR, "wia-cmd-scanner")
-wiaCMDPath = os.path.join(PLUGIN_DIR, "wia-cmd-scanner", "wia-cmd-scanner.exe")
 
 # Supported file types:
 suppFiles = ["bmp", "pnm", "pbm", "pgm", "png", "jpg", "jp2", "gif", "tif", "jfif", "jpeg", "tiff", "spix", "webp"]
@@ -39,7 +39,8 @@ def initConfiguration():
 		"language" : "string(default="")",
 		"docType" : "integer(default=6)",
 		"askPassword" : "boolean(default=false)",
-		"isUpgrade": "boolean(default=false)",
+		"dpi": "string(default="")",
+		"device" : "string(default="")",
 	}
 	config.conf.spec[ourAddon.name] = confspec
 
@@ -54,12 +55,13 @@ try:
 except KeyError:
 	lang = "eng"
 
-#Reading or setting OCR doc type...
+# Reading or setting OCR doc type...
 try:
 	if config.conf["tesseractOCR"]["docType"]:
 		doc = int(config.conf["tesseractOCR"]["docType"])
 except KeyError:
 	doc = 3
+
 DOC_OSD = 1
 DOC_ALL = 3
 DOC_TEXT = 6
@@ -80,3 +82,33 @@ try:
 		shouldAskPwd = config.conf["tesseractOCR"]["askPassword"]
 except KeyError:
 	shouldAskPwd = False
+
+# Reading or setting OCR DPI
+try:
+	if config.conf["tesseractOCR"]["dpi"]:
+		DPI = config.conf["tesseractOCR"]["dpi"]
+except KeyError:
+	DPI = "300"
+
+dpiList = ["150", "200", "300", "400"]
+
+# Create a list of WIA devices for settings panel
+# Create WIA connection
+d = comtypes.client.CreateObject("WIA.DeviceManager")
+# Check if WIA devices are present
+if not d.DeviceInfos.count:
+	# Translators: Reported when no WIA devices are available
+	ui.message(_("No WIA devices available. Please check if your scanner is conected and if is WIA compatible"))
+else:
+	k = d.DeviceInfos.count
+	n = 0
+	WIAList = []
+	for n in range(k):
+		WIAList.append(d.DeviceInfos[n+1].Properties["Name"].Value)
+
+# Reading or setting device to use
+try:
+	if config.conf["tesseractOCR"]["device"]:
+		scanner = config.conf["tesseractOCR"]["device"]
+except KeyError:
+	scanner = WIAList[0]

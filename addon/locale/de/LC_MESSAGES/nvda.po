@@ -5,24 +5,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'tesseractOCR' '2023.04.30'\n"
+"Project-Id-Version: 'tesseractOCR' '2022.07.23'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2023-05-04 21:07+0100\n"
-"PO-Revision-Date: 2023-05-04 23:33+0100\n"
-"Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
-"Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
-"Language: tr_TR\n"
+"PO-Revision-Date: 2023-05-04 21:13+0100\n"
+"Last-Translator: Rainer Brell <nvda@brell.net>\n"
+"Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3\n"
-"X-Poedit-Basepath: ../../../globalPlugins/tesseractOCR\n"
-"X-Poedit-SearchPath-0: .\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:216
 msgid "It is not a true PDF file!"
-msgstr "Bu gerçek bir PDF dosyası değil!"
+msgstr "Es ist keine echte PDF-Datei!"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:220
 msgid ""
@@ -33,17 +31,18 @@ msgid ""
 "Otherwise, please go to NVDA configurations, TesseractOCR options and mark "
 "the checkbox 'Ask for password'"
 msgstr ""
-"PDF parola korumalıdır.\n"
-"\n"
-"Şifreyi girdiyseniz, doğru olduğundan emin olun.\n"
-"\n"
-"Aksi takdirde, lütfen NVDA konfigürasyonlarına, TesseractOCR seçeneklerine "
-"gidin ve 'Parola sor' onay kutusunu işaretleyin."
+"Das PDF ist passwortgeschützt.\\n\n"
+"\\N\n"
+"Wenn Sie das Passwort eingegeben haben, vergewissern Sie sich, dass es das "
+"richtige ist.\\n\n"
+"\\N\n"
+"Andernfalls gehen Sie bitte zu NVDA-Konfigurationen, TesseractOCR-Optionen "
+"und aktivieren Sie das Kontrollkästchen „Nach Passwort fragen“."
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:273
 msgid "Performs OCR to focused file in File Explorer"
-msgstr "Dosya Gezgini'nde odaklanmış dosyaya OCR gerçekleştirir"
+msgstr "Führt OCR für die fokussierte Datei im Datei-Explorer durch"
 
 #. Translators: Announcing we are not in File Explorer and the key stroke will not do anything...
 #: addon\globalPlugins\tesseractOCR\__init__.py:282
@@ -55,100 +54,101 @@ msgstr ""
 #: addon\globalPlugins\tesseractOCR\__init__.py:307
 #: addon\globalPlugins\tesseractOCR\__init__.py:325
 msgid "Processing... Please wait... This operation can takes some seconds..."
-msgstr "İşleniyor... Lütfen bekleyin... Bu işlem birkaç saniye sürebilir..."
+msgstr ""
+"Verarbeitung... Bitte warten... Dieser Vorgang kann einige Sekunden dauern..."
 
 #. Translators: Informing that the file is not from supported types...
 #: addon\globalPlugins\tesseractOCR\__init__.py:314
 msgid "File not supported"
-msgstr "Dosya desteklenmiyor"
+msgstr "Datei wird nicht unterstützt"
 
 #. For translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:318
 msgid "Performs OCR to a document on the scanner"
-msgstr "Tarayıcı kullanarak taranan belgeye OCR işlemi uygulanır"
+msgstr "Führt OCR für ein Dokument auf dem WIA-Scanner durch"
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:333
 msgid "Cancel scanning"
-msgstr "Taramayı iptal eder"
+msgstr ""
 
 #. Translators: Informing user the process was terminated
 #: addon\globalPlugins\tesseractOCR\__init__.py:343
 msgid "Scanning process terminated!"
-msgstr "Tarama işlemi sonlandırıldı!"
+msgstr ""
 
 #. Translators: Asking user to enter the PDF password
 #: addon\globalPlugins\tesseractOCR\__init__.py:355
 msgid "Enter your password"
-msgstr "Parolanızı girin"
+msgstr "Geben Sie Ihr Passwort ein"
 
 #. Translators: Label of a  combobox used to choose a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:41
 msgid "Available recognition &language"
-msgstr "Mevcut di&ller"
+msgstr "Verfügbare Erkennungs&sprache"
 
 #. Translators: Label of a  button used to add more recognition languages
 #: addon\globalPlugins\tesseractOCR\configPanel.py:52
 msgid "&Add"
-msgstr "&Ekle"
+msgstr "&Hinzufügen"
 
 #. Translators: Name of a list with the languages selected for OCR use
 #: addon\globalPlugins\tesseractOCR\configPanel.py:56
 msgid "Selected languages"
-msgstr "Seçilen diller"
+msgstr "Ausgewählte Sprachen"
 
 #. Translators: Label of a  button used to remove a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:64
 msgid "&Remove"
-msgstr "&Kaldır"
+msgstr "&Entfernen"
 
 #. Translators: Label of a  button used to move up a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:68
 msgid "Move &up"
-msgstr "Y&ukarı taşı"
+msgstr "Nach &oben verschieben"
 
 #. Translators: Label of a  button used to move down a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:72
+#, fuzzy
+#| msgid "Move &down"
 msgid "&Move down"
-msgstr "A&şağı taşı"
+msgstr "Nach &unten verschieben"
 
 #. Translators: Label of a  combobox used to choose a type of document to recognize
 #: addon\globalPlugins\tesseractOCR\configPanel.py:78
 msgid "&Type of document"
-msgstr "Belge &türü"
+msgstr "&Art des Dokuments"
 
 #. Translators: Label of a  combobox used to choose the device  to be used to digitalize
 #: addon\globalPlugins\tesseractOCR\configPanel.py:89
-#, fuzzy
-#| msgid "Scan error\n"
 msgid "&Scanner:"
-msgstr "Tarama hatası\n"
+msgstr ""
 
 #. Translators: Label of a  combobox used to choose a value for DPI used to digitalize from scanner
 #: addon\globalPlugins\tesseractOCR\configPanel.py:100
 msgid "Resolution in &DPI"
-msgstr "&DPI olarak çözünürlük"
+msgstr ""
 
 #. Translators: Name  of a checkbox in the configuration dialog ask or not for a password
 #: addon\globalPlugins\tesseractOCR\configPanel.py:111
 msgid "Ask for password"
-msgstr "Parola sor"
+msgstr "&Passwort anfordern"
 
 #. Translators: The entry for text only, like books and letters for instance...
 #: addon\globalPlugins\tesseractOCR\configPanel.py:180
 #: addon\globalPlugins\tesseractOCR\vars.py:74
 msgid "Text"
-msgstr "Metin"
+msgstr "Text"
 
 #. Translators: The entry for various types of docs, invoices, bills, magazines and so on...
 #: addon\globalPlugins\tesseractOCR\configPanel.py:182
 #: addon\globalPlugins\tesseractOCR\vars.py:72
 msgid "Various"
-msgstr "Çeşitli"
+msgstr "Verschieden"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:29
 msgid "Cebuan"
-msgstr "Cebuan"
+msgstr "Cebuano"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:42
 msgid "Esperanto"
@@ -156,27 +156,27 @@ msgstr "Esperanto"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:44
 msgid "Math equations"
-msgstr "Matematik denklemleri"
+msgstr "Mathematische Gleichungen"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:47
 msgid "Filipino"
-msgstr "Filipince"
+msgstr "Philippinisch"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:56
 msgid "Haitian"
-msgstr "Haiti"
+msgstr "haitianisch"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:66
 msgid "Javanese"
-msgstr "Javanese"
+msgstr "Javanisch"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:108
 msgid "Sundanese"
-msgstr "Sunda dili"
+msgstr "Sundanesisch"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:111
 msgid "Syriac"
-msgstr "Süryanice"
+msgstr "Syrisch"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:118
 msgid "Tonga"
@@ -186,7 +186,7 @@ msgstr "Tonga"
 #. Translators: message to user to report an interuption before stop.
 #: addon\globalPlugins\tesseractOCR\runInThread.py:46
 msgid "interrupted"
-msgstr "kesintiye uğradı"
+msgstr "unterbrochen"
 
 #. Translators: Reported when no WIA devices are available
 #: addon\globalPlugins\tesseractOCR\scanFromWia.py:40
@@ -196,26 +196,24 @@ msgid ""
 "No WIA devices available. Please check if your scanner is conected and if is "
 "WIA compatible"
 msgstr ""
-"Etkin WIA cihazı bulunamadı. Lütfen Tarayıcınızın bağlı ve WIA destekli "
-"olduğundan emin olun"
 
 #. Check if are more pages to scan...
 #: addon\globalPlugins\tesseractOCR\scanFromWia.py:64
 #: addon\globalPlugins\tesseractOCR\scanFromWia.py:75
 msgid "Do you want to scan one more page?"
-msgstr "Bir sayfa daha taramak istiyor musunuz?"
+msgstr ""
 
 #. Translators: The entry for various docs,  with auto-orientation...
 #: addon\globalPlugins\tesseractOCR\vars.py:70
 msgid "With auto-orientation"
-msgstr "Otomatik yönlendirme ile"
+msgstr "Mit Autoorientierung"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
 #: buildVars.py:23
 msgid "TesseractOCR: An OCR add-on"
-msgstr "TesseractOCR: Bir OCR eklentisi"
+msgstr "TesseractOCR: Ein OCR-Add-on"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
@@ -235,11 +233,12 @@ msgid ""
 "Windows+Control+w - Scans and recognize the document in the scanner\n"
 msgstr ""
 "\n"
-"Seçilen görüntü dosyası, PDF, JPG, TIF, vb. üzerinde veya tarayıcı "
-"aracılığıyla bir belgede OCR gerçekleştirir ve sonuçları bir TXT dosyasında "
-"gösterir.\n"
-"Windows+Control+r - Seçilen görüntü dosyasına OCR uygular\n"
-"Windows+Control+Shift+r - Tarayıcıdaki belgeyi tarar ve tanır\n"
+"Führt OCR für die ausgewählte Bilddatei, PDF, JPG, TIF usw. oder in einem "
+"Dokument durch einen WIA-Scanner durch und zeigt die Ergebnisse in einer PDF-"
+"Datei an.\n"
+"Windows+Strg+r - Führt OCR für die ausgewählte Bilddatei durch\\n\n"
+"Windows+Strg+w - Scannt und erkennt das Dokument im WIA-Scanner.\n"
+"\n"
 
 #. Author(s)
 #: buildVars.py:34
@@ -248,26 +247,10 @@ msgid ""
 "com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 msgstr ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
-"com> ve Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
-
-#~ msgid ""
-#~ "No WIA devices available. is your scanner conected? and WIA compatibel?"
-#~ msgstr ""
-#~ "Etkin WIA cihazı bulunamadı. Tarayıcınızın bağlı ve WIA destekli "
-#~ "olduğundan emin misiniz?"
-
-#~ msgid ""
-#~ "No TWAIN devices available. is your scanner conected? and TWAIN "
-#~ "compatibel?"
-#~ msgstr ""
-#~ "Etkin TWAIN cihazı bulunamadı. tarayıcınızın bağlı ve TWAIN uyumlu "
-#~ "olduğundan emin misiniz?"
-
-#~ msgid "Scanning via TWAIN Scanner and recognization with Windows OCR"
-#~ msgstr "TWAIN Tarayıcı ile tarama ve Windows OCR ile tanıma"
+"com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 
 #~ msgid "Process wia-cmd-scanner failed:\n"
-#~ msgstr "Wia-cmd-tarayıcı işlemi başarısız oldu:\n"
+#~ msgstr "Verarbeitung wia-cmd-scanner fehlgeschlagen:\\n\n"
 
 #~ msgid ""
 #~ "\n"
@@ -275,32 +258,31 @@ msgstr ""
 #~ "application before trying again!"
 #~ msgstr ""
 #~ "\n"
-#~ "Lütfen tekrar denemeden önce tarayıcınızın WIA uyumlu olduğundan ve başka "
-#~ "bir uygulamada çalıştığından emin olun!"
+#~ "\n"
+#~ "Bitte stellen Sie sicher, dass Ihr Scanner WIA-kompatibel ist und in "
+#~ "einer anderen Anwendung scannen kann, bevor Sie es erneut versuchen!"
 
 #~ msgid "TesseractOCR"
 #~ msgstr "TesseractOCR"
 
 #~ msgid "Show password"
-#~ msgstr "Parolayı göster"
+#~ msgstr "Passwort anzeigen"
 
 #~ msgid "Check for updates at startup"
-#~ msgstr "Başlangıçta güncellemeleri denetle"
+#~ msgstr "Beim Start nach Updates suchen"
 
 #~ msgid ""
 #~ "It is available a new version of this add-on.\n"
 #~ " Do you want to update?"
 #~ msgstr ""
-#~ "Bu eklentinin yeni sürümü mevcut.\n"
-#~ " Güncellemek istiyor musunuz?"
+#~ "Es ist eine neue Version dieses Add-ons verfügbar.\\n\n"
+#~ " Möchten Sie aktualisieren?"
 
 #~ msgid ""
 #~ "This new version of this add-on is not compatible with your version of "
 #~ "NVDA.\n"
 #~ " The update process will be terminated."
 #~ msgstr ""
-#~ "Bu yeni sürüm, NVDA sürümünüzle uyumlu değil.\n"
-#~ " Güncelleme işlemi sonlandırılacak."
-
-#~ msgid "&Import language"
-#~ msgstr "&İthalat dili"
+#~ "Diese neue Version dieses Add-ons ist nicht mit Ihrer Version von NVDA "
+#~ "kompatibel.\\n\n"
+#~ " Der Update-Vorgang wird abgebrochen."

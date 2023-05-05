@@ -2,114 +2,106 @@
 
 
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos do Nascimento Jr.
-* Actualizado em 08/04/2023
-* Descarregar a [versão estável][1]
-* Compatibilidade: NVDA 2019.3 e seguintes
+* Actualizado em 04/05/2023
+* Descarregar [versão estável][1]
+Compatibilidade: NVDA versão 2019.3 e posteriores
 
 
 ## Informações
 
 Este extra utiliza o motor de OCR Tesseract, de código aberto e gratuito, para executar o reconhecimento óptico de caracteres a um documento de imagem, seja PDF, JPG, TIF ou outro, sem necessidade de abrir o documento.
-Também usa o módulo wia-cmd-scanner para aceder a scanners compatíveis WIA para digitalizar e reconhecer um documento em papel.
-No menu do NVDA, Preferências é adicionada uma secção TesseractOCR, onde poderá configurar os idiomas a utilizar no reconhecimento e o tipo de documentos a reconhecer.
-Neste diálogo, para poder fazer OCR a ficheiros PDF protegidos por palavra-passe, pode marcar para ser solicitada uma palavra-passe.
-Se esta opção estiver marcada, e o PDF não necessitar de palavra-passe, basta pressionar Enter na caixa de diálogo a pedir a palavra-passe.
+Também permite o acesso a scanners compatíveis WIA para efectuar OCR a um documento em papel.
+No menu NVDA, Preferências, é adicionada uma secção TesseractOCR, onde pode configurar o seguinte:
+- Idiomas a utilizar no reconhecimento;
+- o tipo de documentos a reconhecer;
+- se deve ou não ser pedida uma palavra-passe para o PDF. Se esta opção estiver seleccionada e o PDF não tiver uma palavra-passe, basta premir Enter na caixa de diálogo que pede a palavra-passe;
+- Seleccionar o scanner a ser utilizado;
+- definir a resolução do scanner entre 150 e 400PPP .
+
 À excepção dos idiomas português e inglês, que já são incluidos no extra, os restantes idiomas serão descarregados e instalados quando for seleccionado um idioma que ainda não exista no extra.
 Note que à medida que aumenta o número de idiomas de reconhecimento seleccionados, o processo de OCR será mais longo.
 Por isso, recomendamos a utilização apenas dos idiomas necessários.
 Note também que a qualidade do reconhecimento pode variar de acordo com a ordem dos idiomas.
-Portanto, se o resultado do reconhecimento não for satisfatório, pode tentar outra ordenação dos idiomas.
+Por conseguinte, se o resultado do reconhecimento não for satisfatório, pode tentar outra ordenação.
 
 
 ## Comandos
 
 Os comandos predefinidos são:
-
 Windows+Control+r - Para reconhecer o ficheiro seleccionado;
-Windows+Control+w - Para digitalizar e reconhecer um documento através do scanner.
+Windows+Control+w - Para digitalizar e reconhecer um documento através do scanner;
+Windows+Control+c - Para cancelar o processo de digitalização.
+Nota: Tem de ser executado antes de aparecer a caixa de diálogo que pergunta se pretende digitalizar mais páginas!
 
-Depois é só esperar que se abra o ficheiro ocr.pdf.
+Depois é só esperar que a mensagem navegável apareça com o texto reconhecido.
 Se pretender preservar o texto reconhecido, não se esqueça de guardar o documento com outro nome e noutro local, pois todos os ficheiros da pasta temporária são eliminados no início do próximo processo de OCR!
 
-
-## Atualização automática
-
-Este extra inclui um recurso de atualização automática.
-A verificação de existência de nova versão será executada cada vez que o NVDA é carregado.
-Se não desejar que isso aconteça, vá ao menu do NVDA, Preferências, Configurações e na categoria do extra desmarque a caixa de verificação.
+Estes comandos podem ser modificados na caixa de diálogo \"Definir comandos\" na secção \"TesseractOCR\".
 
 
 ## Problemas conhecidos
 
-* Em alguns sistemas é possível que o add-on se recuse a trabalhar devido a um erro nos comtypes...
-Em alguns sistemas é suficiente ir à pasta temp, e apagar a pasta comtypes_cache.
-* Quando se selecciona a opção "Documentos variados" na caixa combinada "Tipo de documento", é provável que o texto reconhecido fique com demasiadas linhas em branco.
+* Quando se selecciona a opção \"Documentos variados\" na caixa combinada \"Tipo de documento\", é provável que o texto reconhecido fique com demasiadas linhas em branco
+Este é um problema conhecido do Tesseract e, sem consumir muito tempo de processamento, ainda não encontrámos nenhuma solução. Mas, ainda assim, não desistimos!
 
 
 ## Idiomas suportados
-
 Os idiomas suportados nesta versão são:
 * Africânder
 * Albanês
-* Alemão
 * Amárico
 * Árabe
 * Arménio
 * Assamês
-* Azerbaijanês (Latim)
-* Bangla
+* Azerbaijano (Latim)
 * Basco
-* Belarrusso
-* Bósnio (Latim)
+* Bielorrusso
+* Bengalês
+* Bósnio
 * Bretão
-* búlgaro
+* Búlgaro
 * Burnês
-* Canarim
 * Catalão/Valenciano
-* Cazaquistanês
 * Cebuano
-* Checo
 * Cheroqui
 * Chinês simplificado
 * Chinês tradicional
-* Coreano
 * Corso
 * Croata
-* Curdo Central
+* Checo
 * Dinamarquês
-* Divehi
+* Alemão
+* Dhivehi
+* Neerlandês (flamengo)
 * Dzongkha
-* Equações matemáticas
-* Eslovaco
-* Esloveno
-* Espanhol
+* Inglês
 * Esperanto
 * Estónio
-* Feroês
+* Faroês
 * Filipino
 * Finlandês
 * Francês
-* Frísico Ocidental
 * Galego
-* Galês
-* Galês da Escócia
 * Georgiano
 * Grego
 * Guzarate
-* Haitian
+* Haitiano
 * Hebraico
 * Hindi
 * Húngaro
+* Islandês
 * Indonésio
-* Inglês
-* Inuktitut (Latim)
+* Inuktitut
 * Irlandês
-* Islandêsv
 * Italiano
 * Javanês
 * Japonês
-* Kiswahili
-* Kurdo do norte
+* Kannada
+* Cazaque
+* Khmer (Central)
+* Quirguizistanês
+* Coreano
+* Curdo Kurmanji
 * Laosiano
 * Latim
 * Letão
@@ -121,47 +113,53 @@ Os idiomas suportados nesta versão são:
 * Maltês
 * Maori
 * Marati
+* Equações matemáticas
 * Mongol
-* Neerlandês
-* Nepalês 
+* Nepalês
 * Norueguês
-* Ocitano
-* Odia
-* Pastó
+* Occitano
+* Oriya
+* Panjabi
+* Afegão
 * Persa
 * Polaco
 * Português
-* Punjabi
-* Quechua
-* Quirguize
-* Romeno / Moldavo
+* Quíchua
+* Romeno/Moldavo
 * Russo
 * Sânscrito
-* Sérvio (Latino)
-* Sindhi
-* Sinhala
-* Sudanês
+* Gaélico escocês
+* Sérvio (Latim)
+* Eslovaco
+* Esloveno
+* Sindi
+* Cingalês
+* Espanhol
+* Sundanês
+* Swahili
 * Sueco
-* Siriaque
-* Tailandês
-* Tajique (Cirílico)
+* Siríaco
+* Tajique
 * Tamil
-* Tatar
-* Télego
+* Tártaro
+* Telugu
+* Tailandês
 * Tibetano
 * Tigrínia
-* Tonganês
+Tonganês
 * Turco
-* Ucraniano
 * Uigur
-* Urdu
-* Usbeque (Latim)
+* Ucraniano
+* Urdu 
+* Uzbeque (Latim)
 * Vietnamita
-* Yiddish
-* Yoruba
+* Galês
+* Frísico Ocidental
+* Iídiche
+* Iorubá
 
- 
-## Tipos de imagens suportados
+
+## Tipos de imagem suportados
 
 Este extra suporta os seguintes tipos de ficheiros:
 * PDF
@@ -180,5 +178,4 @@ Este extra suporta os seguintes tipos de ficheiros:
 * spix
 * webp
 
-
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.04.08/tesseractOCR-2023.04.08.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.05.04/tesseractOCR-2023.05.04.nvda-addon

@@ -24,12 +24,12 @@ addon_info = {
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""
-Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a document through a scanner and shows the results in a PDF file.
+Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a document through a scanner and shows the results in a browseable message.
 Windows+Control+r - Performs OCR to the selected image file
 Windows+Control+w - Scans and recognize the document in the scanner
 """),
 	# version
-	"addon_version": "2023.04.08",
+	"addon_version": "2023.05.04",
 	# Author(s)
 	"addon_author": _("Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"),
 	# URL for the add-on documentation support
