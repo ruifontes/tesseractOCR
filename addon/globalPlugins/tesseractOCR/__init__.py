@@ -6,6 +6,10 @@
 
 # import the necessary modules.
 import globalPluginHandler
+from .vars import *
+from .configPanel import *
+from .runInThread import *
+from .scanFromWia import *
 import sys
 import subprocess
 import api
@@ -25,16 +29,10 @@ else:
 from comtypes.client import CreateObject as COMCreate
 import time
 import shutil
-import ui
-import gui
-from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
-from gui import guiHelper
 from scriptHandler import script
 import languageHandler
-from .runInThread import *
-from .vars import *
-from .scanFromWia import *
-# For translation process
+
+# To start the translation process
 addonHandler.initTranslation()
 
 # Place tessdata in PYTHONPATH
@@ -61,13 +59,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Call of the constructor of the parent class.
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
 		# Adding a NVDA configurations section
-		from .configPanel import OCRSettingsPanel
 		gui.NVDASettingsDialog.categoryClasses.append(OCRSettingsPanel)
 		self._thread = None
 
 	def terminate(self):
 		super(GlobalPlugin, self).terminate()
-		from .configPanel import OCRSettingsPanel
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(OCRSettingsPanel)
 
 	def deleteFiles(self):

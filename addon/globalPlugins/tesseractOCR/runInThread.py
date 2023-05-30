@@ -11,8 +11,9 @@ from logHandler import log
 import tones
 import threading
 import ui
-# For translation process
 import addonHandler
+
+# To start the translation process
 addonHandler.initTranslation()
 
 

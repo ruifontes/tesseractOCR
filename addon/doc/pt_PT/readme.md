@@ -2,7 +2,7 @@
 
 
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos do Nascimento Jr.
-* Actualizado em 04/05/2023
+* Actualizado em 30/05/2023
 * Descarregar [versão estável][1]
 Compatibilidade: NVDA versão 2019.3 e posteriores
 
@@ -178,4 +178,4 @@ Este extra suporta os seguintes tipos de ficheiros:
 * spix
 * webp
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.05.04/tesseractOCR-2023.05.04.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.05.30/tesseractOCR-2023.05.30.nvda-addon

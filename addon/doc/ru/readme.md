@@ -3,7 +3,7 @@
 TesseractOCR: Дополнение для распознавания текста.
 
 * Авторы: Rui Fontes, Ângelo Abrantes и Abel Passos do Nascimento Jr.
-* Обновлено 08/04/2023
+* Обновлено 30/05/2023
 * Скачать [стабильную версию][1]
 * Совместимость: NVDA версии 2019.3 и новее
 * [Страница дополнения на GitHub](https://github.com/ruifontes/tesseractOCR)
@@ -119,4 +119,4 @@ TesseractOCR: Дополнение для распознавания текст�
 * Русский язык: Валентин Куприянов.
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.04.08/tesseractOCR-2023.04.08.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.05.30/tesseractOCR-2023.05.30.nvda-addon

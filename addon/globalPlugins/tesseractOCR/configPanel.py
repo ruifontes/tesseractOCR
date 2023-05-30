@@ -13,7 +13,8 @@ import gui
 from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
 from gui import guiHelper
 import functools
-# For translation process
+
+# To start the translation process
 addonHandler.initTranslation()
 
 lista = []
@@ -94,6 +95,9 @@ class OCRSettingsPanel(gui.SettingsPanel):
 			style = 0
 		)
 		# Set selection to the item set in configurations
+		from .vars import noScanner, scanner
+		if noScanner == True:
+			scanner = _("No scanner found")
 		self.deviceCB.SetSelection(WIAList.index(scanner))
 
 		# Translators: Label of a  combobox used to choose a value for DPI used to digitalize from scanner
@@ -109,7 +113,7 @@ class OCRSettingsPanel(gui.SettingsPanel):
 
 		# Translators: Name  of a checkbox in the configuration dialog ask or not for a password
 		self.askPwd = sHelper.addItem(wx.CheckBox(self, label=_("Ask for password")))
-		self.askPwd.SetValue(config.conf[ourAddon.name]["askPassword"])
+		self.askPwd.SetValue(bool(config.conf["tesseractOCR"]["askPassword"]))
 
 	def onAdd(self, evt):
 		# Move the language add to the enabled languages list
@@ -168,14 +172,14 @@ class OCRSettingsPanel(gui.SettingsPanel):
 
 	def onSave (self):
 		global lista, langsDesc, lang, doc, DPI,scanner,  shouldAskPwd
-		# Saving OCR languages
+		# Get OCR languages
 		lista = self.recogLanguageCB.Items
 		langsDesc = self.enabledLangs.Items
 		lang = ""
 		lang = "+".join(availableLangs[l] for l in langsDesc)
 		config.conf["tesseractOCR"]["language"] = lang
 
-		# Saving OCR doc types
+		# Get OCR doc types
 		doc = docTypesChoices[self.recogDocTypeCB.GetSelection()]
 		if doc == pgettext("docType", _("Text")):
 			doc = 6
@@ -185,17 +189,21 @@ class OCRSettingsPanel(gui.SettingsPanel):
 			doc = 1
 		config.conf["tesseractOCR"]["docType"] = doc
 
-		# Saving device to use
+		# Get the need of asking for a password
+		shouldAskPwd = self.askPwd.GetValue()
+		config.conf["tesseractOCR"]["askPassword"] = shouldAskPwd
+
+		# Get device to use
 		scanner = WIAList[self.deviceCB.GetSelection()]
 		config.conf["tesseractOCR"]["device"] = scanner
 
-		# Saving OCR DPI resolution
+		# Get OCR DPI resolution
 		DPI = dpiList[self.dpiCB.GetSelection()]
 		config.conf["tesseractOCR"]["dpi"] = DPI
 
-		# Saving the need of asking for a password
-		shouldAskPwd = self.askPwd.GetValue()
-		config.conf[ourAddon.name]["askPassword"] = shouldAskPwd
+		# Reactivate profiles triggers
+		config.conf.enableProfileTriggers()
+		self.Hide()
 
 		# Routine to download the files to the right folder...
 		# Get the language name of file to download
@@ -204,6 +212,16 @@ class OCRSettingsPanel(gui.SettingsPanel):
 		self._downloadThread = threading.Thread(target = self._download)
 		self._downloadThread.setDaemon(True)
 		self._downloadThread.start()
+
+	def onPanelActivated(self):
+		# Deactivate all profile triggers and active profiles
+		config.conf.disableProfileTriggers()
+		self.Show()
+
+	def onPanelDeactivated(self):
+		# Reactivate profiles triggers
+		config.conf.enableProfileTriggers()
+		self.Hide()
 
 	def _download(self):
 		self.doDownload = RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)

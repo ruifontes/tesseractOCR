@@ -8,8 +8,9 @@
 import os
 import config
 import languageHandler
-# For translation
 import addonHandler
+
+# To start the translation process
 addonHandler.initTranslation()
 
 # Language codes of NVDA, or customized language name, and Tesseract language codes

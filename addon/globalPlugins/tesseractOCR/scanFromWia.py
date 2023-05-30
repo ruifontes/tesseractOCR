@@ -6,18 +6,13 @@
 # This file is covered by the GNU General Public License.
 
 # import the necessary modules.
-import globalPluginHandler
-import comtypes.client
-import os
-import threading
-import time
-import ui
-import gui
-import wx
 from .runInThread import *
 from .vars import *
 from .configPanel import *
-# For translation process
+import comtypes.client
+import time
+
+# To start the translation process
 addonHandler.initTranslation()
 
 endTask = False
@@ -88,10 +83,6 @@ class ScanFromWia():
 		global endTask
 		endTask = False
 		DevMan = comtypes.client.CreateObject("WIA.DeviceManager")
-		if not DevMan.DeviceInfos.count:
-			# Translators: Reported when no WIA devices are available
-			ui.message(_("No WIA devices available. Please check if your scanner is conected and if is WIA compatible"))
-			return
 		scan = ScanThread()
 		scan.start()
 		scan.join()

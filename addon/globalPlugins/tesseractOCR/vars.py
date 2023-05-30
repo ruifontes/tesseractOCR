@@ -12,14 +12,10 @@ import ui
 import globalVars
 import config
 import comtypes.client
-# For translation
 import addonHandler
+
+# To start the translation process
 addonHandler.initTranslation()
-
-def getOurAddon():
-	return addonHandler.getCodeAddon()
-
-ourAddon = getOurAddon()
 
 # Location of executables:
 PLUGIN_DIR = os.path.dirname(__file__)
@@ -42,7 +38,7 @@ def initConfiguration():
 		"dpi": "string(default="")",
 		"device" : "string(default="")",
 	}
-	config.conf.spec[ourAddon.name] = confspec
+	config.conf.spec["tesseractOCR"] = confspec
 
 initConfiguration()
 
@@ -93,12 +89,14 @@ except KeyError:
 dpiList = ["150", "200", "300", "400"]
 
 # Create a list of WIA devices for settings panel
+global noScanner
+noScanner = False
 # Create WIA connection
 d = comtypes.client.CreateObject("WIA.DeviceManager")
 # Check if WIA devices are present
 if not d.DeviceInfos.count:
-	# Translators: Reported when no WIA devices are available
-	ui.message(_("No WIA devices available. Please check if your scanner is conected and if is WIA compatible"))
+	noScanner = True
+	WIAList = [_("No scanner found")]
 else:
 	k = d.DeviceInfos.count
 	n = 0
