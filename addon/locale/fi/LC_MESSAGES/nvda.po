@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'tesseractOCR' '2023.04.08'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2023-07-22 01:00+0100\n"
-"PO-Revision-Date: 2023-07-22 01:08+0100\n"
+"PO-Revision-Date: 2023-07-22 16:19+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: fi_FI <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 1.6.11\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:212
 msgid "It is not a true PDF file!"
@@ -124,7 +124,7 @@ msgstr "&Skanneri:"
 #: addon\globalPlugins\tesseractOCR\configPanel.py:100
 #: addon\globalPlugins\tesseractOCR\vars.py:99
 msgid "No scanner found"
-msgstr "Skanneria ei löytynyt"
+msgstr "Skanneria ei löydy"
 
 #. Translators: Label of a  combobox used to choose a value for DPI used to digitalize from scanner
 #: addon\globalPlugins\tesseractOCR\configPanel.py:104
@@ -158,15 +158,15 @@ msgstr "esperanto"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:45
 msgid "Math equations"
-msgstr "Matemaattiset yhtälöt"
+msgstr "matemaattiset yhtälöt"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:48
 msgid "Filipino"
-msgstr "filippiini"
+msgstr "filipino"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:57
 msgid "Haitian"
-msgstr "haiti"
+msgstr "haitilainen kreoli"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:67
 msgid "Javanese"
@@ -196,8 +196,8 @@ msgid ""
 "No WIA devices available. Please check if your scanner is conected and if is "
 "WIA compatible"
 msgstr ""
-"WIA-laitteita ei käytettävissä. Tarkista, että skanneri on liitetty ja että "
-"se on WIA-yhteensopiva."
+"WIA-laitteita ei käytettävissä. Tarkista, että skanneri on kytketty "
+"tietokoneeseen ja että se on WIA-yhteensopiva."
 
 #. Check if are more pages to scan...
 #: addon\globalPlugins\tesseractOCR\scanFromWia.py:61
@@ -229,7 +229,7 @@ msgid ""
 msgstr ""
 "\n"
 "Suorittaa tekstintunnistuksen valitulle kuvatiedostolle (PDF, JPG, TIF, "
-"jne.), tai skannerissa olevalle asiakirjalle ja näyttää tulokset erillisessä "
+"jne.) tai skannerissa olevalle asiakirjalle ja näyttää tulokset erillisessä "
 "ikkunassa.\n"
 "Win+Ctrl+R: Suorittaa tekstintunnistuksen valitulle kuvatiedostolle\n"
 "Win+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille "
@@ -242,7 +242,7 @@ msgid ""
 "com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 msgstr ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
-"com> ja Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
+"com> ja Abel Passos do Nascimento nuorempi <abel.passos@gmail.com>"
 
 #~ msgid "Process wia-cmd-scanner failed:\n"
 #~ msgstr "Prosessin wia-cmd-scanner suorittaminen epäonnistui:\n"
