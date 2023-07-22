@@ -2,12 +2,12 @@
 
 
 * Authors: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
-* Updated in 30/05/2023
+* Updated in 22/07/2023
 * Download [stable version][1]
 * Compatibility: NVDA version 2019.3 and beyond
 
 
-## Informations
+## Information
 
 This add-on uses the free and open source Tesseract OCR engine, to perform optical character recognition on an image file, PDF, JPG, TIF or other, without the need to open it.
 It also allows access to WIA enabled scanners to perform OCR to a paper document.
@@ -180,4 +180,4 @@ This add-on supports the following types of files:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.05.30/tesseractOCR-2023.05.30.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.07.22/tesseractOCR-2023.07.22.nvda-addon

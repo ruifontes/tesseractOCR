@@ -2,7 +2,7 @@
 
 
 * Yazarlar: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
-* 30/05/2023'de güncellendi
+* 22/07/2023'de güncellendi
 * [Kararlı sürümü indirin][1]
 * Uyumluluk: NVDA sürüm 2019.3 ve sonrası
 
@@ -183,4 +183,4 @@ Bu eklenti aşağıdaki dosya türlerini destekler:
 * webp,  
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.05.30/tesseractOCR-2023.05.30.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.07.22/tesseractOCR-2023.07.22.nvda-addon

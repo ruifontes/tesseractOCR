@@ -30,7 +30,7 @@ from .vars import PLUGIN_DIR, docTypesChoices, docTypesLabel, doc, DOC_OSD, DOC_
 initConfiguration()
 
 
-class OCRSettingsPanel(gui.SettingsPanel):
+class OCRSettingsPanel(gui.settingsDialogs.SettingsPanel):
 	title = "TesseractOCR"
 
 	def makeSettings(self, settingsSizer):

@@ -292,12 +292,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Processing... Please wait... This operation can takes some seconds..."))
 			from .configPanel import shouldAskPwd
 			if shouldAskPwd == True:
-				gui.mainFrame._popupSettingsDialog(Password)
+				dialog0 = Password(gui.mainFrame)
+				if not dialog0.IsShown():
+					gui.mainFrame.prePopup()
+					dialog0.Show()
+					gui.mainFrame.postPopup()
 			else:
-				# Starting the PDF recognition process
-				self.recogPDF = threading.Thread(target = self.doRoutines)
-				self.recogPDF.setDaemon(True)
-				self.recogPDF.start()
+				pass
+			# Starting the PDF recognition process
+			self.recogPDF = threading.Thread(target = self.doRoutines)
+			self.recogPDF.setDaemon(True)
+			self.recogPDF.start()
 		elif ext in suppFiles:
 			# Translators: Asking to wait untill the process is concluded
 			ui.message(_("Processing... Please wait... This operation can takes some seconds..."))
@@ -383,10 +388,7 @@ class Password(wx.Dialog):
 		global pwd
 		pwd = self.text_ctrl_1.GetValue()
 		self.Destroy()
-		# Starting the PDF recognition process
-		self.recogPDF = threading.Thread(target = self.doRoutines())
-		self.recogPDF.setDaemon(True)
-		self.recogPDF.start()
+		return pwd
 		event.Skip()
 		# To reset the password...
 		pwd = ""

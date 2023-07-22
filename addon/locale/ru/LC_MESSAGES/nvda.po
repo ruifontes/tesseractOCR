@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tesseractOCR\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-05-30 01:07+0100\n"
-"PO-Revision-Date: 2023-05-30 01:14+0100\n"
+"POT-Creation-Date: 2023-07-22 01:00+0100\n"
+"PO-Revision-Date: 2023-07-22 01:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: ../../../globalPlugins\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -43,35 +43,35 @@ msgstr ""
 
 #. Translators: Asking to wait untill the process is concluded
 #: addon\globalPlugins\tesseractOCR\__init__.py:292
-#: addon\globalPlugins\tesseractOCR\__init__.py:303
-#: addon\globalPlugins\tesseractOCR\__init__.py:321
+#: addon\globalPlugins\tesseractOCR\__init__.py:308
+#: addon\globalPlugins\tesseractOCR\__init__.py:326
 msgid "Processing... Please wait... This operation can takes some seconds..."
 msgstr ""
 "Обработка... Пожалуйста, подождите... Эта операция может занять несколько "
 "секунд..."
 
 #. Translators: Informing that the file is not from supported types...
-#: addon\globalPlugins\tesseractOCR\__init__.py:310
+#: addon\globalPlugins\tesseractOCR\__init__.py:315
 msgid "File not supported"
 msgstr "Файл не поддерживается"
 
 #. For translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:314
+#: addon\globalPlugins\tesseractOCR\__init__.py:319
 msgid "Performs OCR to a document on the scanner"
 msgstr "Выполняет распознавание текста документа на сканере"
 
 #. Translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:329
+#: addon\globalPlugins\tesseractOCR\__init__.py:334
 msgid "Cancel scanning"
 msgstr ""
 
 #. Translators: Informing user the process was terminated
-#: addon\globalPlugins\tesseractOCR\__init__.py:339
+#: addon\globalPlugins\tesseractOCR\__init__.py:344
 msgid "Scanning process terminated!"
 msgstr ""
 
 #. Translators: Asking user to enter the PDF password
-#: addon\globalPlugins\tesseractOCR\__init__.py:351
+#: addon\globalPlugins\tesseractOCR\__init__.py:356
 msgid "Enter your password"
 msgstr ""
 

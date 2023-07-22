@@ -5,26 +5,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tesseractOCR 1.0\n"
+"Project-Id-Version: 'tesseractOCR' '2023.04.08'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2023-07-22 01:00+0100\n"
-"PO-Revision-Date: 2023-07-22 01:11+0100\n"
-"Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
-"Language-Team: Equipa Portuguesa do NVDA <angelomiguelabrantes@gmail.com; "
-"rui.fontes@tiflotecnia.com>\n"
-"Language: pt_PT\n"
+"PO-Revision-Date: 2023-07-22 01:08+0100\n"
+"Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
+"Language-Team: fi_FI <janikinnunen340@gmail.com>\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../../../globalPlugins/tesseractOCR\n"
-"X-Poedit-SearchPath-0: __init__.py\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:212
 msgid "It is not a true PDF file!"
-msgstr "Não é um ficheiro PDF autêntico!"
+msgstr "Tämä ei ole todellinen PDF-tiedosto."
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:216
 msgid ""
@@ -35,166 +31,164 @@ msgid ""
 "Otherwise, please go to NVDA configurations, TesseractOCR options and mark "
 "the checkbox 'Ask for password'"
 msgstr ""
-"O PDF está protegido por palavra-passe.\n"
+"PDF on suojattu salasanalla.\n"
 "\n"
-"Se introduziu a palavra-passe, certifique-se de que é a correcta.\n"
+"Mikäli olet antanut salasanan, varmista, että se on oikein.\n"
 "\n"
-"Caso contrário, por favor vá às configurações do NVDA, secção TesseractOCR e "
-"marque a caixa de verificação \"Pedir palavra-passe\""
+"Siirry muussa tapauksessa NVDA:n asetusvalintaikkunaan, siellä TesseractOCR-"
+"kategoriaan ja valitse \"Pyydä salasanaa\" -valintaruutu."
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:269
 msgid "Performs OCR to focused file in File Explorer"
-msgstr "Executa OCR ao ficheiro seleccionado no Explorador de ficheiros"
+msgstr ""
+"Suorittaa tekstintunnistuksen valitulle tiedostolle resurssienhallinnassa"
 
 #. Translators: Announcing we are not in File Explorer and the key stroke will not do anything...
 #: addon\globalPlugins\tesseractOCR\__init__.py:278
 msgid "You are not in File Explorer to perform OCR on a image file..."
-msgstr ""
-"Não está no Explorador de Ficheiros para efectuar o OCR num ficheiro de "
-"imagem..."
+msgstr "Et ole resurssienhallinnassa kuvatiedoston kohdalla."
 
 #. Translators: Asking to wait untill the process is concluded
 #: addon\globalPlugins\tesseractOCR\__init__.py:292
 #: addon\globalPlugins\tesseractOCR\__init__.py:308
 #: addon\globalPlugins\tesseractOCR\__init__.py:326
 msgid "Processing... Please wait... This operation can takes some seconds..."
-msgstr ""
-"A processar… Por favor aguarde… Esta operação pode demorar alguns momentos..."
+msgstr "Käsitellään, odota... Tämä voi kestää joitakin sekunteja."
 
 #. Translators: Informing that the file is not from supported types...
 #: addon\globalPlugins\tesseractOCR\__init__.py:315
 msgid "File not supported"
-msgstr "Ficheiro não suportado"
+msgstr "Tiedostoa ei tueta"
 
 #. For translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:319
 msgid "Performs OCR to a document on the scanner"
-msgstr "Executa OCR a um documento no scanner"
+msgstr "Suorittaa tekstintunnistuksen skannerissa olevalle asiakirjalle"
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:334
 msgid "Cancel scanning"
-msgstr "Cancelar a digitalização"
+msgstr "Peruuta skannaus"
 
 #. Translators: Informing user the process was terminated
 #: addon\globalPlugins\tesseractOCR\__init__.py:344
 msgid "Scanning process terminated!"
-msgstr "Processo de digitalização terminado!"
+msgstr "Skannaus keskeytetty."
 
 #. Translators: Asking user to enter the PDF password
 #: addon\globalPlugins\tesseractOCR\__init__.py:356
 msgid "Enter your password"
-msgstr "Introduza a palavra-passe"
+msgstr "Kirjoita salasana"
 
 #. Translators: Label of a  combobox used to choose a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:42
 msgid "Available recognition &language"
-msgstr "&Idiomas de reconhecimento disponíveis"
+msgstr "Käytettävissä olevat tunnistus&kielet"
 
 #. Translators: Label of a  button used to add more recognition languages
 #: addon\globalPlugins\tesseractOCR\configPanel.py:53
 msgid "&Add"
-msgstr "&Adicionar"
+msgstr "&Lisää"
 
 #. Translators: Name of a list with the languages selected for OCR use
 #: addon\globalPlugins\tesseractOCR\configPanel.py:57
 msgid "Selected languages"
-msgstr "Idiomas seleccionados"
+msgstr "Valitut kielet"
 
 #. Translators: Label of a  button used to remove a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:65
 msgid "&Remove"
-msgstr "&Remover"
+msgstr "&Poista"
 
 #. Translators: Label of a  button used to move up a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:69
 msgid "Move &up"
-msgstr "Mover para &cima"
+msgstr "Siirrä &ylös"
 
 #. Translators: Label of a  button used to move down a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:73
 msgid "&Move down"
-msgstr "Mover para &baixo"
+msgstr "Siirrä &alas"
 
 #. Translators: Label of a  combobox used to choose a type of document to recognize
 #: addon\globalPlugins\tesseractOCR\configPanel.py:79
 msgid "&Type of document"
-msgstr "&Tipo de documento"
+msgstr "As&iakirjan tyyppi"
 
 #. Translators: Label of a  combobox used to choose the device  to be used to digitalize
 #: addon\globalPlugins\tesseractOCR\configPanel.py:90
 msgid "&Scanner:"
-msgstr "&Scanner:"
+msgstr "&Skanneri:"
 
 #: addon\globalPlugins\tesseractOCR\configPanel.py:100
 #: addon\globalPlugins\tesseractOCR\vars.py:99
 msgid "No scanner found"
-msgstr "Nenhum scanner encontrado"
+msgstr "Skanneria ei löytynyt"
 
 #. Translators: Label of a  combobox used to choose a value for DPI used to digitalize from scanner
 #: addon\globalPlugins\tesseractOCR\configPanel.py:104
 msgid "Resolution in &DPI"
-msgstr "Resolução em &PPP"
+msgstr "Skannerin tar&kkuus (pistettä tuumalla)"
 
 #. Translators: Name  of a checkbox in the configuration dialog ask or not for a password
 #: addon\globalPlugins\tesseractOCR\configPanel.py:115
 msgid "Ask for password"
-msgstr "Pedir palavra-passe"
+msgstr "Pyydä salasanaa"
 
 #. Translators: The entry for text only, like books and letters for instance...
 #: addon\globalPlugins\tesseractOCR\configPanel.py:184
 #: addon\globalPlugins\tesseractOCR\vars.py:70
 msgid "Text"
-msgstr "Livros e cartas"
+msgstr "Teksti"
 
 #. Translators: The entry for various types of docs, invoices, bills, magazines and so on...
 #: addon\globalPlugins\tesseractOCR\configPanel.py:186
 #: addon\globalPlugins\tesseractOCR\vars.py:68
 msgid "Various"
-msgstr "Documentos variados"
+msgstr "Useita"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:30
 msgid "Cebuan"
-msgstr "Cebuano"
+msgstr "cebuano"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:43
 msgid "Esperanto"
-msgstr "Esperanto"
+msgstr "esperanto"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:45
 msgid "Math equations"
-msgstr "Equações matemáticas"
+msgstr "Matemaattiset yhtälöt"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:48
 msgid "Filipino"
-msgstr "Filipino"
+msgstr "filippiini"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:57
 msgid "Haitian"
-msgstr "Haitiano"
+msgstr "haiti"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:67
 msgid "Javanese"
-msgstr "Javanês"
+msgstr "jaava"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:109
 msgid "Sundanese"
-msgstr "Sudanês"
+msgstr "sunda"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:112
 msgid "Syriac"
-msgstr "Siriaque"
+msgstr "syyria"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:119
 msgid "Tonga"
-msgstr "Tonganês"
+msgstr "tonga"
 
 #. interrupted before stop
 #. Translators: message to user to report an interuption before stop.
 #: addon\globalPlugins\tesseractOCR\runInThread.py:47
 msgid "interrupted"
-msgstr "interrompido"
+msgstr "Keskeytetty"
 
 #. Translators: Reported when no WIA devices are available
 #: addon\globalPlugins\tesseractOCR\scanFromWia.py:37
@@ -202,26 +196,26 @@ msgid ""
 "No WIA devices available. Please check if your scanner is conected and if is "
 "WIA compatible"
 msgstr ""
-"Não existem dispositivos WIA disponíveis. Verifique se o seu scanner está "
-"ligado e se é compatível com WIA"
+"WIA-laitteita ei käytettävissä. Tarkista, että skanneri on liitetty ja että "
+"se on WIA-yhteensopiva."
 
 #. Check if are more pages to scan...
 #: addon\globalPlugins\tesseractOCR\scanFromWia.py:61
 #: addon\globalPlugins\tesseractOCR\scanFromWia.py:72
 msgid "Do you want to scan one more page?"
-msgstr "Deseja digitalizar mais uma página?"
+msgstr "Haluatko skannata yhden sivun lisää?"
 
 #. Translators: The entry for various docs,  with auto-orientation...
 #: addon\globalPlugins\tesseractOCR\vars.py:66
 msgid "With auto-orientation"
-msgstr "Com auto-orientação"
+msgstr "Automaattinen suunta"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
 #: buildVars.py:23
 msgid "TesseractOCR: An OCR add-on"
-msgstr "TesseractOCR: um extra de OCR"
+msgstr "TesseractOCR: Tekstintunnistuslisäosa"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
@@ -234,11 +228,12 @@ msgid ""
 "Windows+Control+w - Scans and recognize the document in the scanner\n"
 msgstr ""
 "\n"
-"Permite executar OCR a um ficheiro de imagem seleccionado, PDF, JPG, TIF, "
-"etc, ou a um documento através de um scanner e mostra os resultados numa "
-"mensagem navegável.\n"
-"Windows+Control+r - Executa o OCR ao ficheiro de imagem seleccionado\n"
-"Windows+Control+w - Digitaliza e reconhece o documento no scanner\n"
+"Suorittaa tekstintunnistuksen valitulle kuvatiedostolle (PDF, JPG, TIF, "
+"jne.), tai skannerissa olevalle asiakirjalle ja näyttää tulokset erillisessä "
+"ikkunassa.\n"
+"Win+Ctrl+R: Suorittaa tekstintunnistuksen valitulle kuvatiedostolle\n"
+"Win+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille "
+"tekstintunnistuksen\n"
 
 #. Author(s)
 #: buildVars.py:34
@@ -247,10 +242,10 @@ msgid ""
 "com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 msgstr ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
-"com> e Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
+"com> ja Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 
 #~ msgid "Process wia-cmd-scanner failed:\n"
-#~ msgstr "O processo wia-cmd-scanner falhou:\n"
+#~ msgstr "Prosessin wia-cmd-scanner suorittaminen epäonnistui:\n"
 
 #~ msgid ""
 #~ "\n"
@@ -258,58 +253,8 @@ msgstr ""
 #~ "application before trying again!"
 #~ msgstr ""
 #~ "\n"
-#~ "Por favor certifique-se de que o seu scanner é compatível com WIA e pode "
-#~ "digitalizar noutra aplicação antes de tentar novamente!"
+#~ "Varmista, että skanneri on WIA-yhteensopiva ja skannaus onnistuu toisessa "
+#~ "sovelluksessa ennen kuin yrität uudelleen."
 
 #~ msgid "TesseractOCR"
 #~ msgstr "TesseractOCR"
-
-#~ msgid "Show password"
-#~ msgstr "Mostrar Palavra-passe"
-
-#~ msgid "Check for updates at startup"
-#~ msgstr "Verificar por actualizações no arranque"
-
-#~ msgid ""
-#~ "It is available a new version of this add-on.\n"
-#~ " Do you want to update?"
-#~ msgstr ""
-#~ "Está disponível uma nova versão deste extra.\n"
-#~ " Quer actualizar?"
-
-#~ msgid ""
-#~ "This new version of this add-on is not compatible with your version of "
-#~ "NVDA.\n"
-#~ " The update process will be terminated."
-#~ msgstr ""
-#~ "Esta nova versão deste extra não é compatível com a sua versão do NVDA.\n"
-#~ " O processo de actualização será terminado."
-
-#~ msgid "&Second recognition language"
-#~ msgstr "&Segundo idioma de reconhecimento"
-
-#~ msgid "&Import language"
-#~ msgstr "Im&portar idioma"
-
-#~ msgid "All types"
-#~ msgstr "Todos os ficheiros"
-
-#~ msgid "Announce Dropbox state and make preferences tabs accessible"
-#~ msgstr ""
-#~ "Anuncia o estado do Dropbox e torna as páginas de Preferências acessíveis."
-
-#~ msgid ""
-#~ "Announces Dropbox status, version or open the Dropbox systray menu.\n"
-#~ "Shortcut: NVDA+Alt+D\n"
-#~ "Page tabs are also working in the preferences dialog with Ctrl+tab and "
-#~ "Shift+Ctrl+Tab.\n"
-#~ "Ctrl+Alt+T announce the active tab.\n"
-#~ "You can activate cancel by pressing the escape key."
-#~ msgstr ""
-#~ "Anuncia o estado do Dropbox, a versão ou abre o menu do Dropbox, na barra "
-#~ "do sistema.\n"
-#~ "Tecla de atalho: NVDA+Shift+D\n"
-#~ "As páginas de Preferências também estão a funcionar, alternando entre "
-#~ "elas com Ctrl+tab e Shift+Ctrl+Tab.\n"
-#~ "Ctrl+Alt+T anuncia o título da página activa.\n"
-#~ "Pode activar o botão Cancelar pressionando a tecla Escape."
