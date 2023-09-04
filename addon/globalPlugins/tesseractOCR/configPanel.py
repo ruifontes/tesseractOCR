@@ -171,13 +171,26 @@ class OCRSettingsPanel(gui.settingsDialogs.SettingsPanel):
 		self.removeButton.Disable() if len(self.enabledLangs.Items) == 0 else self.removeButton.Enable()
 
 	def onSave (self):
-		global lista, langsDesc, lang, doc, DPI,scanner,  shouldAskPwd
-		# Get OCR languages
-		lista = self.recogLanguageCB.Items
+		global langsDesc, lang, doc, DPI,scanner,  shouldAskPwd
+		# Get old langs
+		oldLangs = []
+		for item in langsDesc:
+			oldLangs.append(availableLangs[item])
+		# Get new OCR languages
 		langsDesc = self.enabledLangs.Items
 		lang = ""
 		lang = "+".join(availableLangs[l] for l in langsDesc)
 		config.conf["tesseractOCR"]["language"] = lang
+		config.conf.save()
+		print(oldLangs)
+		for item in oldLangs:
+			if str(item) not in lang:
+				print(item)
+				# Construct the file name to delete
+				filepath = os.path.join(os.path.dirname(__file__), "tesseract", "tessdata")
+				file = os.path.join(filepath, item+".traineddata")
+				# Delete the file
+				os.remove(file)
 
 		# Get OCR doc types
 		doc = docTypesChoices[self.recogDocTypeCB.GetSelection()]

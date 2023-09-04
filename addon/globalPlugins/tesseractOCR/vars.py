@@ -52,6 +52,7 @@ except KeyError:
 	lang = "eng"
 
 # Reading or setting OCR doc type...
+doc = 3
 try:
 	if config.conf["tesseractOCR"]["docType"]:
 		doc = int(config.conf["tesseractOCR"]["docType"])
