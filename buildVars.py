@@ -29,7 +29,7 @@ Windows+Control+r - Performs OCR to the selected image file
 Windows+Control+w - Scans and recognize the document in the scanner
 """),
 	# version
-	"addon_version": "2023.09.04",
+	"addon_version": "2023.09.26",
 	# Author(s)
 	"addon_author": _("Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"),
 	# URL for the add-on documentation support
@@ -41,7 +41,7 @@ Windows+Control+w - Scans and recognize the document in the scanner
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
 	"addon_minimumNVDAVersion": "2019.3",
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": "2023.1",
+	"addon_lastTestedNVDAVersion": "2024.1",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!

@@ -180,4 +180,4 @@ Tämä lisäosa tukee seuraavia tiedostotyyppejä:
 * WebP
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.09.04/tesseractOCR-2023.09.04.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.09.26/tesseractOCR-2023.09.26.nvda-addon
