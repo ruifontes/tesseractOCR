@@ -2,7 +2,7 @@
 
 
 * Auteurs: Rui Fontes, Ângelo Abrantes et Abel Passos do Nascimento Jr.
-* Mis à jour le 04/09/2023
+* Mis à jour le 12/11/2023
 * Télécharger [version stable][1]
 * Compatibilité NVDA: version 2019.3 et ultérieure
 
@@ -176,4 +176,4 @@ Cette extension supporte les types de fichiers suivants:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.09.26/tesseractOCR-2023.09.26.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.12/tesseractOCR-2023.11.12.nvda-addon

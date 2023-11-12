@@ -163,24 +163,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Removing the extension in order to use the file name as new file name with the txt extension
 		jpgFilePath = "\"" + jpgFilePath[:-4] + "\""
 		global scanning, endTask, pngFilesPath
-		# If we are digitalizing from scanner is better have auto-orientation of the text...
-		if doc == 1:
-			global lang
-			lang = "osd" + "+" + lang
 		self.ocr = runInThread.RepeatBeep(delay=2.0, beep=(300, 300), isRunning=None)
 		self.ocr.start()
 		# Perform OCR to the selected image file
 		# Different command for scanned documents or files
 		if scanning == True:
+			# If we are digitalizing from scanner is better have auto-orientation of the text...
+			lang = "osd" + "+" + lang
 			# Thai language is writen without spaces, so it is necessary the parameter "preserve_interword_spaces=1"
 			if "tha" in lang:
-				command = "{} {} {} --dpi 300 --psm {} --oem 1 -c preserve_interword_spaces=1 -l {} quiet".format(tesseractPath, path, jpgFilePath, doc, lang)
+				command = "{} {} {} --dpi 300 --psm 1 --oem 1 -c preserve_interword_spaces=1 -l {} quiet".format(tesseractPath, path, jpgFilePath, lang)
 			else:
-				command = "{} {} {} --dpi 300 --psm {} --oem 1 -c tessedit_do_invert=0 -l {} quiet".format(tesseractPath, path, jpgFilePath, doc, lang)
+				command = "{} {} {} --dpi 300 --psm 1 --oem 1 -c tessedit_do_invert=0 -l {} quiet".format(tesseractPath, path, jpgFilePath, lang)
 			self.backgroundProcessing(command)
 			self.ocr.stop()
 			self.creatTXTFromVariousTXT()
 		else:
+			if doc == 1:
+				lang = "osd" + "+" + lang
 			# Thai language is writen without spaces, so it is necessary the parameter "preserve_interword_spaces=1"
 			if "tha" in lang:
 				command = "{} {} {} --dpi 300 --psm {} --oem 1 -c preserve_interword_spaces=1 -l {} quiet".format(tesseractPath, path, pngFilesPath, doc, lang)
@@ -224,6 +224,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def showResults(self):
 		self.ocr.stop()
 		from .vars import lang
+		# Opening the TXT file with OCR results.
+		z = ctypes.windll.shell32.ShellExecuteW(None, "open", ocrTxtPath, None, None, 10)
+		"""
 		# Getting the content of the TXT file to show it in a HTML message
 		with open(os.path.join(PLUGIN_DIR, "images", "ocr.txt"), "r", encoding = "utf-8") as f:
 			text = f.readlines()
@@ -240,6 +243,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			"TesseractOCR",
 			True
 		)
+		"""
 
 	def doRoutines(self):
 		self.conv = runInThread.RepeatBeep(delay=2.0, beep=(200, 200), isRunning=None)

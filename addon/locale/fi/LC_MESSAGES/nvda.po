@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'tesseractOCR' '2023.04.08'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2023-07-22 01:00+0100\n"
-"PO-Revision-Date: 2023-09-04 17:03+0100\n"
+"PO-Revision-Date: 2023-09-26 17:42+0200\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: fi_FI <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 1.6.11\n"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:212
 msgid "It is not a true PDF file!"
-msgstr "Tämä ei ole todellinen PDF-tiedosto!"
+msgstr "Tämä ei ole aito PDF-tiedosto!"
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:216
 msgid ""

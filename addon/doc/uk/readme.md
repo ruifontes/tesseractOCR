@@ -2,7 +2,7 @@
 
 
 * Автори: Rui Fontes, Ângelo Abrantes і Abel Passos do Nascimento Jr.
-* Оновлено 04/09/2023
+* Оновлено 12/11/2023
 * Завантажити [стабільну версію][1]
 * Сумісність: NVDA версія 2019.3 і вище
 
@@ -183,4 +183,4 @@ Windows+Control+c - для скасування процесу скануван�
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.09.26/tesseractOCR-2023.09.26.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.12/tesseractOCR-2023.11.12.nvda-addon

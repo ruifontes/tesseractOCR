@@ -2,7 +2,7 @@
 
 
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos do Nascimento Jr.
-* Actualizado em 04/09/2023
+* Actualizado em 12/11/2023
 * Descarregar [versão estável][1]
 Compatibilidade: NVDA versão 2019.3 e posteriores
 
@@ -33,7 +33,7 @@ Windows+Control+w - Para digitalizar e reconhecer um documento através do scann
 Windows+Control+c - Para cancelar o processo de digitalização.
 Nota: Tem de ser executado antes de aparecer a caixa de diálogo que pergunta se pretende digitalizar mais páginas!
 
-Depois é só esperar que a mensagem navegável apareça com o texto reconhecido.
+Depois é só esperar que o ficheiro ocr.txt apareça com o texto reconhecido.
 Se pretender preservar o texto reconhecido, não se esqueça de guardar o documento com outro nome e noutro local, pois todos os ficheiros da pasta temporária são eliminados no início do próximo processo de OCR!
 
 Estes comandos podem ser modificados na caixa de diálogo \"Definir comandos\" na secção \"TesseractOCR\".
@@ -178,4 +178,4 @@ Este extra suporta os seguintes tipos de ficheiros:
 * spix
 * webp
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.09.26/tesseractOCR-2023.09.26.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.12/tesseractOCR-2023.11.12.nvda-addon
