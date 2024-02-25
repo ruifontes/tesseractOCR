@@ -2,7 +2,7 @@
 
 
 * Autoren: Rui Fontes, Ângelo Abrantes und Abel Passos do Nascimento Jr.
-* Aktualisiert am 12.11.2023
+* Aktualisiert am 25.02.2024
 * Laden Sie die [stabile Version][1] herunter
 * Kompatibilität: NVDA-Version 2019.3 und höher
 
@@ -11,6 +11,7 @@
 
 Dieses Add-on verwendet die kostenlose und Open-Source-OCR-Engine Tesseract, um eine optische Zeichenerkennung für eine Bilddatei, PDF, JPG, TIF oder andere durchzuführen, ohne sie öffnen zu müssen.
 Es verwendet auch wia-cmd-scanner, um auf WIA-fähige Scanner zuzugreifen und OCR für ein Papierdokument durchzuführen.
+Finally, it also can get the accessible text from an accessible PDF.
 Im NVDA-Menü, Einstellungen, wird ein Abschnitt TesseractOCR hinzugefügt, in dem Sie die für die Erkennung zu verwendenden Sprachen und die Art der zu erkennenden Dokumente konfigurieren können.
 In diesem Dialog können Sie, um OCR an passwortgeschützten PDF-Dateien durchführen zu können, markieren, dass Sie nach einem Passwort gefragt werden.
 Wenn Sie diese Option aktiviert haben und das PDF kein Passwort hat, drücken Sie einfach die Eingabetaste im Dialogfeld, in dem Sie nach dem Passwort gefragt werden.
@@ -26,8 +27,11 @@ Wenn das Erkennungsergebnis nicht zufriedenstellend ist, sollten Sie es daher mi
 Die Standardbefehle sind:
 Windows+Strg+r - um das ausgewählte Dokument zu erkennen;
 Windows+Strg+w - zum Scannen und Erkennen eines Dokuments über den WIA-Scanner.
+Windows+Control+t - To get the text from an accessible PDF;
+Windows+Control+c - To cancel the scanning process.
+Please note: It must be issued before the dialog asking if you want to scan more pages appear!
 
-Warten Sie dann einfach, bis sich ocr.pdf mit dem erkannten Text öffnet.
+Warten Sie dann einfach, bis sich ocr.txt mit dem erkannten Text öffnet.
 Wenn Sie den erkannten Text erhalten möchten, vergessen Sie nicht, das Dokument unter einem anderen Namen und an einem anderen Ort zu speichern, da alle Dateien im temporären Verzeichnis beim Start des nächsten OCR-Vorgangs gelöscht werden!
 
 Diese Befehle können im Dialog "Eingabegesten" im Abschnitt "TesseractOCR" geändert werden.
@@ -174,4 +178,4 @@ Dieses Add-On unterstützt die folgenden Dateitypen:
 * spix
 * webp
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.13/tesseractOCR-2023.11.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon

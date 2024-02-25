@@ -2,7 +2,7 @@
 
 
 * Tekijät: Rui Fontes, Ângelo Abrantes ja Abel Passos do Nascimento nuorempi
-* Päivitetty 12.11.2023
+* Päivitetty 25.02.2024
 * Lataa [vakaa versio][1]
 * Yhteensopivuus: NVDA 2019.3 ja uudemmat
 
@@ -11,6 +11,7 @@
 
 Tämä lisäosa käyttää ilmaista, avoimen lähdekoodin Tesseract-tekstintunnistusmoottoria tekstintunnistuksen suorittamiseen kuvatiedostolle (PDF, JPG, TIF ja muut) tarvitsematta avata sitä.
 Se mahdollistaa myös WIA-yhteensopivan scannerin käytön tekstintunnistuksen suorittamiseen paperimuotoisille asiakirjoille.
+Finally, it also can get the accessible text from an accessible PDF.
 NVDA:n asetusvalintaikkunaan on lisätty TesseractOCR-kategoria, jossa voit muuttaa seuraavia asetuksia:
 - Tunnistuksessa käytettävät kielet
 - Tunnistettavat asiakirjaformaatit
@@ -30,6 +31,7 @@ Siksi kannattaa kokeilla järjestää kielet eri tavalla, jos tunnistuksen tulos
 Oletuskomennot ovat:
 Win+Ctrl+R: Suorittaa tekstintunnistuksen valitulle asiakirjalle
 Win+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille tekstintunnistuksen
+Windows+Control+t - To get the text from an accessible PDF;
 Win+Ctrl+C: Peruuttaa skannauksen
 Huom: Komentoa on käytettävä ennen lisäsivujen skannausta kysyvän valintaikkunan ilmestymistä.
 
@@ -180,4 +182,4 @@ Tämä lisäosa tukee seuraavia tiedostotyyppejä:
 * WebP
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.13/tesseractOCR-2023.11.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon

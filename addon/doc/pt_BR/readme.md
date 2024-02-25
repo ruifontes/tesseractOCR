@@ -2,7 +2,7 @@
 
 
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos do Nascimento Jr.
-* Actualizado em 12/11/2023
+* Actualizado em 25/02/2024
 * Descarregar a [versão estável][1]
 * Compatibilidade: NVDA 2019.3 e seguintes
 
@@ -11,6 +11,7 @@
 
 Este extra utiliza o motor de OCR Tesseract, de código aberto e gratuito, para executar o reconhecimento óptico de caracteres a um documento de imagem, seja PDF, JPG, TIF ou outro, sem necessidade de abrir o documento.
 Também usa o módulo wia-cmd-scanner para aceder a scanners compatíveis WIA para digitalizar e reconhecer um documento em papel.
+Por último, pode obter o texto de um PDF acessível e mostrá-lo no Bloco de notas.
 No menu do NVDA, Preferências é adicionada uma secção TesseractOCR, onde poderá configurar os idiomas a utilizar no reconhecimento e o tipo de documentos a reconhecer.
 Neste diálogo, para poder fazer OCR a arquivos PDF protegidos por senha, pode marcar para ser solicitada uma senha.
 Se esta opção estiver marcada, e o PDF não necessitar de senha, basta pressionar Enter na caixa de diálogo a pedir a senha.
@@ -25,8 +26,11 @@ Portanto, se o resultado do reconhecimento não for satisfatório, pode tentar o
 
 Os comandos predefinidos são:
 
+Windows+Control+w - Para digitalizar e reconhecer um documento através do scanner;
 Windows+Control+r - Para reconhecer o ficheiro seleccionado;
-Windows+Control+w - Para digitalizar e reconhecer um documento através do scanner.
+Windows+Control+t - Para obter o texto de um PDF acessível.
+Windows+Control+c - Para cancelar o processo de digitalização.
+Nota: Tem de ser executado antes de aparecer a caixa de diálogo que pergunta se pretende digitalizar mais páginas!
 
 Depois é só esperar que se abra o ficheiro ocr.txt.
 Se pretender preservar o texto reconhecido, não se esqueça de guardar o documento com outro nome e noutro local, pois todos os ficheiros da pasta temporária são eliminados no início do próximo processo de OCR!
@@ -34,7 +38,7 @@ Se pretender preservar o texto reconhecido, não se esqueça de guardar o docume
 
 ## Problemas conhecidos
 
-* * Em alguns sistemas é possível que o add-on se recuse a trabalhar devido a um erro nos comtypes...
+* Em alguns sistemas é possível que o add-on se recuse a trabalhar devido a um erro nos comtypes...
 Em alguns sistemas é suficiente ir à pasta temp, e apagar a pasta comtypes_cache.
 * Quando se selecciona a opção "Documentos variados" na caixa combinada "Tipo de documento", é provável que o texto reconhecido fique com demasiadas linhas em branco.
 
@@ -174,4 +178,4 @@ Este extra suporta os seguintes tipos de ficheiros:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.13/tesseractOCR-2023.11.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon

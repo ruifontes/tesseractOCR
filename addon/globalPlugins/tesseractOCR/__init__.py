@@ -1,14 +1,14 @@
 #-*- coding: utf-8 -*-
 # Main file for Tesseract OCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
-# Copyright (C) 2020-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2020-2024 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
 # import the necessary modules.
 import globalPluginHandler
-from .vars import *
-from .configPanel import *
-from .runInThread import *
+#from .vars import *
+#from .configPanel import *
+#from .runInThread import *
 from .scanFromWia import *
 import sys
 import subprocess
@@ -25,7 +25,7 @@ if hasattr(controlTypes, "State"):
 else:
 	setattr(controlTypes, "State", type('Enum', (), dict([(x.split("STATE_")[1], getattr(controlTypes, x)) for x in dir(controlTypes) if x.startswith("STATE_")])))
 
-	import comtypes.client
+import comtypes.client
 from comtypes.client import CreateObject as COMCreate
 import time
 import shutil
@@ -40,6 +40,7 @@ sys.path.append(os.path.join(PLUGIN_DIR, "tesseract", "tessdata"))
 del sys.path[-1]
 os.environ["OMP_THREAD_LIMIT"] = "1"
 
+# Global vars
 docPath = ""
 showPwdValue = False
 pwd = ""
@@ -197,6 +198,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		endTask = False
 		self.showResults()
 
+	def convertPDFToTXT(self):
+		# Get the accessible text from the PDF file
+		command = "{} -layout {} {}".format(pdf2TextPath, docPath, textFilesPath)
+		self.backgroundProcessing(command)
+
 	def backgroundProcessing(self, command):
 		global endTask
 		Command = command
@@ -219,10 +225,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				pass
 			elif stdout == b"":
 				pass
-			self.conv.stop()
+			try:
+				self.conv.stop()
+			except AttributeError:
+				pass
 
 	def showResults(self):
-		self.ocr.stop()
+		try:
+			self.ocr.stop()
+		except AttributeError:
+			pass
 		from .vars import lang
 		# Opening the TXT file with OCR results.
 		z = ctypes.windll.shell32.ShellExecuteW(None, "open", ocrTxtPath, None, None, 10)
@@ -268,6 +280,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.scan.stop()
 		self.createJPGList()
 
+	def doRoutines3(self):
+		# Get the text from the PDF
+		self.convertPDFToTXT()
+		self.showResults()
+
 	@script(
 		# Translators: Message to be announced during Keyboard Help
 		description=_("Performs OCR to focused file in File Explorer"),
@@ -305,14 +322,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				pass
 			# Starting the PDF recognition process
 			self.recogPDF = threading.Thread(target = self.doRoutines)
-			self.recogPDF.setDaemon(True)
+			self.recogPDF.daemon = True
 			self.recogPDF.start()
 		elif ext in suppFiles:
 			# Translators: Asking to wait untill the process is concluded
 			ui.message(_("Processing... Please wait... This operation can takes some seconds..."))
 			# Starting the image file recognition process
 			self.recogFile = threading.Thread(target = self.doRoutines1)
-			self.recogFile.setDaemon(True)
+			self.recogFile.daemon = True
 			self.recogFile.start()
 		else:
 			# Translators: Informing that the file is not from supported types...
@@ -330,8 +347,39 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		ui.message(_("Processing... Please wait... This operation can takes some seconds..."))
 		# Starting the scanning and recognition process
 		self.digitalize = threading.Thread(target = self.doRoutines2)
-		self.digitalize.setDaemon(True)
+		self.digitalize.daemon = True
 		self.digitalize.start()
+
+	@script(
+		# Translators: Message to be announced during Keyboard Help
+		description=_("Gets the text from focused accessible PDF file in File Explorer"),
+		category="TesseractOCR",
+		gesture="kb:control+windows+t")
+	def script_GetText(self, gesture):
+		# Check if we are in the Windows Explorer.
+		fg = api.getForegroundObject()
+		if fg.appModule.appName != "explorer":
+			# Translators: Announcing we are not in File Explorer and the key stroke will not do anything...
+			ui.message(_("You are not in File Explorer to perform OCR on a image file..."))
+			return
+		else:
+			pass
+		# Delete the files from previous OCR
+		self.deleteFiles()
+		# Obtain the full path of the selected file
+		global docPath
+		docPath = self.getDocName()
+		# Check if is a supported file, and if yes if it is PDF or image file
+		# The last [:-1] is to remove the last quote sign...
+		ext = docPath.split(".")[-1].lower()[:-1]
+		if ext == "pdf":
+			# Translators: Asking to wait untill the process is concluded
+			ui.message(_("Processing... Please wait... This operation can takes some seconds..."))
+			# Starting the process
+			self.doRoutines3()
+		else:
+			# Translators: Informing that the file is not from supported types...
+			ui.message(_("File not supported"))
 
 	@script(
 		# Translators: Message to be announced during Keyboard Help

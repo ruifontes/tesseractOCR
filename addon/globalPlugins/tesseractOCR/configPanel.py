@@ -182,10 +182,8 @@ class OCRSettingsPanel(gui.settingsDialogs.SettingsPanel):
 		lang = "+".join(availableLangs[l] for l in langsDesc)
 		config.conf["tesseractOCR"]["language"] = lang
 		config.conf.save()
-		print(oldLangs)
 		for item in oldLangs:
 			if str(item) not in lang:
-				print(item)
 				# Construct the file name to delete
 				filepath = os.path.join(os.path.dirname(__file__), "tesseract", "tessdata")
 				file = os.path.join(filepath, item+".traineddata")
@@ -207,8 +205,12 @@ class OCRSettingsPanel(gui.settingsDialogs.SettingsPanel):
 		config.conf["tesseractOCR"]["askPassword"] = shouldAskPwd
 
 		# Get device to use
-		scanner = WIAList[self.deviceCB.GetSelection()]
-		config.conf["tesseractOCR"]["device"] = scanner
+		from .vars import noScanner
+		if noScanner == True:
+			pass
+		else:
+			scanner = WIAList[self.deviceCB.GetSelection()]
+			config.conf["tesseractOCR"]["device"] = scanner
 
 		# Get OCR DPI resolution
 		DPI = dpiList[self.dpiCB.GetSelection()]

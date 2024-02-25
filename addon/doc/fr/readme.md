@@ -2,7 +2,7 @@
 
 
 * Auteurs: Rui Fontes, Ângelo Abrantes et Abel Passos do Nascimento Jr.
-* Mis à jour le 12/11/2023
+* Mis à jour le 25/02/2024
 * Télécharger [version stable][1]
 * Compatibilité NVDA: version 2019.3 et ultérieure
 
@@ -11,6 +11,7 @@
 
 Cette extension utilise le moteur gratuit et à source ouverte Tesseract OCR pour effectuer une reconnaissance de caractères optiques dans un fichier d'image, PDF, JPG, TIF ou autre type, sans qu'il soit nécessaire de l'ouvrir.
 Elle peut également numériser et reconnaître un document papier à partir  d'un scanner compatible WIA.
+Finally, it also can get the accessible text from an accessible PDF.
 Dans les Préférences de NVDA, la catégorie TesseractOCR est ajoutée, où vous pouvez configurer les langues à utiliser pendant la reconnaissance et les types de documents à reconnaître.
 Dans cette boîte de dialogue, pour pouvoir faire une reconnaissance de texte aux fichiers PDF protégés par mot de passe, vous pouvez cocher pour demander le mot de passe.
 Si vous avez cette option cochée et que le PDF n'a pas de mot de passe, appuyez simplement sur Entrée dans la boîte de dialogue demandant le mot de passe.
@@ -26,6 +27,9 @@ Par conséquent, si le résultat de reconnaissance n'est pas satisfaisant, Vous 
 Les commandes clavier par défaut sont:
 Windows+Contrôle+r - Pour reconnaître le document sélectionné;
 Windows+Contrôle+w - Pour numériser et reconnaître un document à partir du scanner.
+Windows+Control+t - To get the text from an accessible PDF;
+Windows+Control+c - To cancel the scanning process.
+Please note: It must be issued before the dialog asking if you want to scan more pages appear!
 
 Ensuite, attendez que le fichier ocr.pdf s'ouvre avec le texte reconnu.
 Si vous souhaitez conserver le texte reconnu, n'oubliez pas d'enregistrer le document avec un autre nom et dans un autre endroit, car tous les fichiers du dossier temporaire sont éliminés au début du processus OCR suivant!
@@ -176,4 +180,4 @@ Cette extension supporte les types de fichiers suivants:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.13/tesseractOCR-2023.11.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon

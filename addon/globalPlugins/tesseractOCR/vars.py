@@ -2,7 +2,7 @@
 # Variables for the TesseractOCR add-on
 # written by Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>
 # Colaboration of Chatt GPT ito list available scanners...
-# Copyright (C) 2022-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2022-2024 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
 # import the necessary modules.
@@ -21,6 +21,7 @@ addonHandler.initTranslation()
 PLUGIN_DIR = os.path.dirname(__file__)
 tesseractPath = "\""+os.path.join (PLUGIN_DIR, "tesseract", "tesseract.exe")+"\""
 pdf2PNGPath = "\""+os.path.join (PLUGIN_DIR, "xpdf-tools", "pdftopng.exe")+"\""
+pdf2TextPath = "\""+os.path.join (PLUGIN_DIR, "xpdf-tools", "pdftotext.exe")+"\""
 
 # Supported file types:
 suppFiles = ["bmp", "pnm", "pbm", "pgm", "png", "jpg", "jp2", "gif", "tif", "jfif", "jpeg", "tiff", "spix", "webp"]
@@ -29,6 +30,7 @@ suppFiles = ["bmp", "pnm", "pbm", "pgm", "png", "jpg", "jp2", "gif", "tif", "jfi
 pngFilesPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr")+"\""    # Folder where to place the PNG files extracted from the PDF file
 listPath = "\""+os.path.join (PLUGIN_DIR, "list.txt")+"\""             # Location of the PNG files list
 ocrTxtPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr.txt")+"\""  # Location of the text file with the results
+textFilesPath = "\""+os.path.join (PLUGIN_DIR, "images", "ocr.txt")+"\"" # Folder where to place the txt file extracted from the PDF file
 
 def initConfiguration():
 	confspec = {
@@ -101,7 +103,7 @@ if not d.DeviceInfos.count:
 else:
 	k = d.DeviceInfos.count
 	n = 0
-	WIAList = []
+	WIAList = [_("No scanner found")]
 	for n in range(k):
 		WIAList.append(d.DeviceInfos[n+1].Properties["Name"].Value)
 

@@ -2,7 +2,7 @@
 
 
 * Authors: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
-* Updated in 12/11/2023
+* Updated in 25/02/2024
 * Download [stable version][1]
 * Compatibility: NVDA version 2019.3 and beyond
 
@@ -11,6 +11,7 @@
 
 This add-on uses the free and open source Tesseract OCR engine, to perform optical character recognition on an image file, PDF, JPG, TIF or other, without the need to open it.
 It also allows access to WIA enabled scanners to perform OCR to a paper document.
+At last, it also can get the accessible text from an accessible PDF.
 In the NVDA menu, Preferences, a TesseractOCR section is added, where you can configure the following:
 - languages to be used in recognition;
 - the type of documents to be recognized;
@@ -28,8 +29,9 @@ Therefore, if the recognition result is not satisfactory, you may want to try an
 ## Shortcut
 
 The default commands are:
-Windows+Control+r - to recognize the selected document;
 Windows+Control+w - to scan and recognize a document through the scanner;
+Windows+Control+r - to recognize the selected document;
+Windows+Control+t - To get the text from an accessible PDF;
 Windows+Control+c - To cancel the scanning process.
 Please note: It must be issued before the dialog asking if you want to scan more pages appear!
 
@@ -180,4 +182,4 @@ This add-on supports the following types of files:
 * webp
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.13/tesseractOCR-2023.11.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon

@@ -39,7 +39,10 @@ class ScanThread(threading.Thread):
 			# Connect with scanner devices
 			from .configPanel import scanner
 			# Getting the selected device in config or the first available...
-			DEV = WIAList.index(scanner) + 1
+			if scanner == _("No scanner found"):
+				DEV = WIAList.index(scanner) + 1
+			else:
+				DEV = WIAList.index(scanner)
 			s = d.DeviceInfos(str(DEV)).Connect
 			item = s().Items(1)
 			# Set scanner properties

@@ -2,7 +2,7 @@
 
 
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos do Nascimento Jr.
-* Actualizado em 12/11/2023
+* Actualizado em 25/02/2024
 * Descarregar [versão estável][1]
 Compatibilidade: NVDA versão 2019.3 e posteriores
 
@@ -11,6 +11,7 @@ Compatibilidade: NVDA versão 2019.3 e posteriores
 
 Este extra utiliza o motor de OCR Tesseract, de código aberto e gratuito, para executar o reconhecimento óptico de caracteres a um documento de imagem, seja PDF, JPG, TIF ou outro, sem necessidade de abrir o documento.
 Também permite o acesso a scanners compatíveis WIA para efectuar OCR a um documento em papel.
+Por último, pode obter o texto de um PDF acessível e mostrá-lo no Bloco de notas.
 No menu NVDA, Preferências, é adicionada uma secção TesseractOCR, onde pode configurar o seguinte:
 - Idiomas a utilizar no reconhecimento;
 - o tipo de documentos a reconhecer;
@@ -28,8 +29,9 @@ Por conseguinte, se o resultado do reconhecimento não for satisfatório, pode t
 ## Comandos
 
 Os comandos predefinidos são:
-Windows+Control+r - Para reconhecer o ficheiro seleccionado;
 Windows+Control+w - Para digitalizar e reconhecer um documento através do scanner;
+Windows+Control+r - Para reconhecer o ficheiro seleccionado;
+Windows+Control+t - Para obter o texto de um PDF acessível.
 Windows+Control+c - Para cancelar o processo de digitalização.
 Nota: Tem de ser executado antes de aparecer a caixa de diálogo que pergunta se pretende digitalizar mais páginas!
 
@@ -178,4 +180,4 @@ Este extra suporta os seguintes tipos de ficheiros:
 * spix
 * webp
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.13/tesseractOCR-2023.11.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon

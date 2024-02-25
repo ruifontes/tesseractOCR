@@ -2,7 +2,7 @@
 
 
 * Yazarlar: Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr.
-* 12/11/2023'de güncellendi
+* 25/02/2024'de güncellendi
 * [Kararlı sürümü indirin][1]
 * Uyumluluk: NVDA sürüm 2019.3 ve sonrası
 
@@ -11,6 +11,7 @@
 
 Bu eklenti, bir görüntü dosyası, PDF, JPG, TIF veya diğerleri üzerinde açmaya gerek kalmadan optik karakter tanıma gerçekleştirmek için ücretsiz ve açık kaynaklı Tesseract OCR motorunu kullanır.  
 Ayrıca, WIA özellikli tarayıcılara erişebilmek ve bir kağıt belgeye OCR yapabilmek için wia-cmd-Tarayıcı'sı kullanır.  
+Finally, it also can get the accessible text from an accessible PDF.
 NVDA menüsü, Tercihler, Ayarlar içerisinde tanımada kullanılacak dilleri ve tanınacak belge türlerini yapılandırabileceğiniz bir TesseractOCR bölümü eklenmiştir.  
 Bu iletişim kutusunda, parola korumalı PDF dosyalarına OCR yapabilmek için parola sorulmasını işaretleyebilirsiniz.  
 Bu seçeneği işaretlediyseniz ve PDF'nin bir parolası yoksa, parola soran iletişim kutusunda Enter'a basmanız yeterlidir.  
@@ -24,8 +25,11 @@ Bu nedenle, tanıma sonucu tatmin edici değilse, başka bir dil sıralaması de
 ## Kısayollar:
 
 Varsayılan komutlar şunlardır:  
-Windows+Control+r - seçilen belgeyi tanımak için;  
-Windows+Control+w - tarayıcı aracılığıyla bir belgeyi taramak ve OCR yapmak için.  
+Windows+Control+w - tarayıcı aracılığıyla bir belgeyi taramak ve OCR yapmak için;
+Windows+Control+r - to recognize the selected document;
+Windows+Control+t - To get the text from an accessible PDF;
+Windows+Control+c - To cancel the scanning process.
+Please note: It must be issued before the dialog asking if you want to scan more pages appear!
 
 Ardından, tanınan metinle ocr.txt dosyasının açılmasını bekleyin.  
 Tanınan metni korumak istiyorsanız, geçici dizindeki tüm dosyalar bir sonraki OCR işleminin başlangıcında silineceğinden, belgeyi başka bir ad altında ve başka bir konuma kaydetmeyi unutmayın!  
@@ -183,4 +187,4 @@ Bu eklenti aşağıdaki dosya türlerini destekler:
 * webp,  
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2023.11.13/tesseractOCR-2023.11.13.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon

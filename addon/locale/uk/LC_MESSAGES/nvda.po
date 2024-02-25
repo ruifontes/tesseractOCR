@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tesseractOCR\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-07-22 01:00+0100\n"
-"PO-Revision-Date: 2023-07-22 01:13+0100\n"
+"POT-Creation-Date: 2024-02-25 16:55+0000\n"
+"PO-Revision-Date: 2024-02-25 17:16+0000\n"
 "Last-Translator: Heorhii <nvda.translation.uk@gmail.com>\n"
 "Language-Team: Heorhii\n"
 "Language: uk\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ../../../globalPlugins/tesseractOCR\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
 "X-Poedit-SearchPath-1: configPanel.py\n"
@@ -23,11 +23,11 @@ msgstr ""
 "X-Poedit-SearchPath-6: update.py\n"
 "X-Poedit-SearchPath-7: vars.py\n"
 
-#: addon\globalPlugins\tesseractOCR\__init__.py:212
+#: addon\globalPlugins\tesseractOCR\__init__.py:218
 msgid "It is not a true PDF file!"
 msgstr "Це несправжній файл PDF!"
 
-#: addon\globalPlugins\tesseractOCR\__init__.py:216
+#: addon\globalPlugins\tesseractOCR\__init__.py:222
 msgid ""
 "The PDF is password protected.\n"
 "\n"
@@ -44,47 +44,57 @@ msgstr ""
 "TesseractOCR і позначте прапорець 'Запитувати пароль'"
 
 #. Translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:269
+#: addon\globalPlugins\tesseractOCR\__init__.py:290
 msgid "Performs OCR to focused file in File Explorer"
 msgstr "Виконує оптичне розпізнавання для вибраного файлу у Провіднику файлів"
 
 #. Translators: Announcing we are not in File Explorer and the key stroke will not do anything...
-#: addon\globalPlugins\tesseractOCR\__init__.py:278
+#: addon\globalPlugins\tesseractOCR\__init__.py:299
+#: addon\globalPlugins\tesseractOCR\__init__.py:363
 msgid "You are not in File Explorer to perform OCR on a image file..."
 msgstr ""
 "Ви не перебуваєте у файловому провіднику, щоб виконати розпізнавання "
 "зображення..."
 
 #. Translators: Asking to wait untill the process is concluded
-#: addon\globalPlugins\tesseractOCR\__init__.py:292
-#: addon\globalPlugins\tesseractOCR\__init__.py:308
-#: addon\globalPlugins\tesseractOCR\__init__.py:326
+#: addon\globalPlugins\tesseractOCR\__init__.py:313
+#: addon\globalPlugins\tesseractOCR\__init__.py:329
+#: addon\globalPlugins\tesseractOCR\__init__.py:347
+#: addon\globalPlugins\tesseractOCR\__init__.py:377
 msgid "Processing... Please wait... This operation can takes some seconds..."
 msgstr ""
 "Обробка... Зачекайте, будь ласка... Ця операція може зайняти кілька секунд..."
 
 #. Translators: Informing that the file is not from supported types...
-#: addon\globalPlugins\tesseractOCR\__init__.py:315
+#: addon\globalPlugins\tesseractOCR\__init__.py:336
+#: addon\globalPlugins\tesseractOCR\__init__.py:382
 msgid "File not supported"
 msgstr "Файл не підтримується"
 
 #. For translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:319
+#: addon\globalPlugins\tesseractOCR\__init__.py:340
 msgid "Performs OCR to a document on the scanner"
 msgstr "Виконує оптичне розпізнавання для документа на сканері"
 
 #. Translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\tesseractOCR\__init__.py:334
+#: addon\globalPlugins\tesseractOCR\__init__.py:355
+#, fuzzy
+#| msgid "Performs OCR to focused file in File Explorer"
+msgid "Gets the text from focused accessible PDF file in File Explorer"
+msgstr "Виконує оптичне розпізнавання для вибраного файлу у Провіднику файлів"
+
+#. Translators: Message to be announced during Keyboard Help
+#: addon\globalPlugins\tesseractOCR\__init__.py:386
 msgid "Cancel scanning"
 msgstr "Скасувати сканування"
 
 #. Translators: Informing user the process was terminated
-#: addon\globalPlugins\tesseractOCR\__init__.py:344
+#: addon\globalPlugins\tesseractOCR\__init__.py:396
 msgid "Scanning process terminated!"
 msgstr "Процес сканування припинено!"
 
 #. Translators: Asking user to enter the PDF password
-#: addon\globalPlugins\tesseractOCR\__init__.py:356
+#: addon\globalPlugins\tesseractOCR\__init__.py:408
 msgid "Enter your password"
 msgstr "Введіть ваш пароль"
 
@@ -128,8 +138,11 @@ msgstr "&Тип документа"
 msgid "&Scanner:"
 msgstr "&Сканер:"
 
+#. Getting the selected device in config or the first available...
 #: addon\globalPlugins\tesseractOCR\configPanel.py:100
-#: addon\globalPlugins\tesseractOCR\vars.py:99
+#: addon\globalPlugins\tesseractOCR\scanFromWia.py:42
+#: addon\globalPlugins\tesseractOCR\vars.py:102
+#: addon\globalPlugins\tesseractOCR\vars.py:106
 msgid "No scanner found"
 msgstr "Сканер не знайдено"
 
@@ -144,52 +157,88 @@ msgid "Ask for password"
 msgstr "Запитувати пароль"
 
 #. Translators: The entry for text only, like books and letters for instance...
-#: addon\globalPlugins\tesseractOCR\configPanel.py:184
-#: addon\globalPlugins\tesseractOCR\vars.py:70
+#: addon\globalPlugins\tesseractOCR\configPanel.py:195
+#: addon\globalPlugins\tesseractOCR\vars.py:73
 msgid "Text"
 msgstr "Текст"
 
 #. Translators: The entry for various types of docs, invoices, bills, magazines and so on...
-#: addon\globalPlugins\tesseractOCR\configPanel.py:186
-#: addon\globalPlugins\tesseractOCR\vars.py:68
+#: addon\globalPlugins\tesseractOCR\configPanel.py:197
+#: addon\globalPlugins\tesseractOCR\vars.py:71
 msgid "Various"
 msgstr "Різне"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:30
+#: addon\globalPlugins\tesseractOCR\languages.py:144
 msgid "Cebuan"
 msgstr "Себуанська"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:43
+#: addon\globalPlugins\tesseractOCR\languages.py:145
+msgid "Cherokee"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:147
 msgid "Esperanto"
 msgstr "Есперанто"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:45
+#: addon\globalPlugins\tesseractOCR\languages.py:148
 msgid "Math equations"
 msgstr "Математичні вирази"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:48
+#: addon\globalPlugins\tesseractOCR\languages.py:149
 msgid "Filipino"
 msgstr "Філіппінська"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:57
+#: addon\globalPlugins\tesseractOCR\languages.py:150
+msgid "Scottish Gaelic"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:151
 msgid "Haitian"
 msgstr "Гаїтянська"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:67
+#: addon\globalPlugins\tesseractOCR\languages.py:152
 msgid "Javanese"
 msgstr "Яванська"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:109
+#: addon\globalPlugins\tesseractOCR\languages.py:153
+msgid "Latin"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:154
+msgid "Punjabi"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:155
+msgid "Quechua"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:156
+msgid "Sindhi"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:157
 msgid "Sundanese"
 msgstr "Сунданська"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:112
+#: addon\globalPlugins\tesseractOCR\languages.py:158
 msgid "Syriac"
 msgstr "Сирійська"
 
-#: addon\globalPlugins\tesseractOCR\languages.py:119
+#: addon\globalPlugins\tesseractOCR\languages.py:159
+msgid "Tigrinya"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:160
 msgid "Tonga"
 msgstr "Тонганська"
+
+#: addon\globalPlugins\tesseractOCR\languages.py:161
+msgid "Uyghur"
+msgstr ""
+
+#: addon\globalPlugins\tesseractOCR\languages.py:162
+msgid "Yiddish"
+msgstr ""
 
 #. interrupted before stop
 #. Translators: message to user to report an interuption before stop.
@@ -207,13 +256,13 @@ msgstr ""
 "підключено та чи він сумісний з WIA"
 
 #. Check if are more pages to scan...
-#: addon\globalPlugins\tesseractOCR\scanFromWia.py:61
-#: addon\globalPlugins\tesseractOCR\scanFromWia.py:72
+#: addon\globalPlugins\tesseractOCR\scanFromWia.py:64
+#: addon\globalPlugins\tesseractOCR\scanFromWia.py:75
 msgid "Do you want to scan one more page?"
 msgstr "Хочете відсканувати ще одну сторінку?"
 
 #. Translators: The entry for various docs,  with auto-orientation...
-#: addon\globalPlugins\tesseractOCR\vars.py:66
+#: addon\globalPlugins\tesseractOCR\vars.py:69
 msgid "With auto-orientation"
 msgstr "З автоорієнтацією"
 
@@ -227,12 +276,23 @@ msgstr "TesseractOCR: додаток для розпізнавання текс�
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:26
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
+#| "document through a scanner and shows the results in a browseable "
+#| "message.\n"
+#| "Windows+Control+r - Performs OCR to the selected image file\n"
+#| "Windows+Control+w - Scans and recognize the document in the scanner\n"
 msgid ""
 "\n"
-"Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
-"document through a scanner and shows the results in a browseable message.\n"
+"Performs OCR on the selected image file, PDF, JPG, TIF, etc, or  a document "
+"through a scanner and also can get the text from an accessible PDF file.\n"
+"The results are shown in a text file, ocr.txt.\n"
+"\n"
 "Windows+Control+r - Performs OCR to the selected image file\n"
 "Windows+Control+w - Scans and recognize the document in the scanner\n"
+"Windows+Control+t - To get the text from an accessible PDF\n"
 msgstr ""
 "\n"
 "Виконує розпізнавання вибраного файлу зображення, PDF, JPG, TIF тощо, або "
@@ -242,7 +302,7 @@ msgstr ""
 "Windows+Керування+w - сканує та розпізнає документ у сканері\n"
 
 #. Author(s)
-#: buildVars.py:34
+#: buildVars.py:37
 msgid ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
 "com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
