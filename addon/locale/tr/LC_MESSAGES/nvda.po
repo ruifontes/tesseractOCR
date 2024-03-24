@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'tesseractOCR' '2023.04.30'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2024-02-25 16:55+0000\n"
-"PO-Revision-Date: 2024-02-25 17:15+0000\n"
+"PO-Revision-Date: 2024-02-26 21:16+0300\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
@@ -74,10 +74,9 @@ msgstr "Tarayıcı kullanarak taranan belgeye OCR işlemi uygulanır"
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:355
-#, fuzzy
 #| msgid "Performs OCR to focused file in File Explorer"
 msgid "Gets the text from focused accessible PDF file in File Explorer"
-msgstr "Dosya Gezgini'nde odaklanmış dosyaya OCR gerçekleştirir"
+msgstr "Dosya Gezgini'nde odaklanmış erişilebilir PDF dosyasından metni alır"
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:386
@@ -107,7 +106,7 @@ msgstr "&Ekle"
 #. Translators: Name of a list with the languages selected for OCR use
 #: addon\globalPlugins\tesseractOCR\configPanel.py:57
 msgid "Selected languages"
-msgstr "Seçilen diller"
+msgstr "Seçili diller"
 
 #. Translators: Label of a  button used to remove a recognition language
 #: addon\globalPlugins\tesseractOCR\configPanel.py:65
@@ -140,7 +139,7 @@ msgstr "&Tarayıcı:"
 #: addon\globalPlugins\tesseractOCR\vars.py:102
 #: addon\globalPlugins\tesseractOCR\vars.py:106
 msgid "No scanner found"
-msgstr "Tarayıcı Bulunamadı"
+msgstr "Tarayıcı bulunamadı"
 
 #. Translators: Label of a  combobox used to choose a value for DPI used to digitalize from scanner
 #: addon\globalPlugins\tesseractOCR\configPanel.py:104
@@ -170,7 +169,7 @@ msgstr "Cebuan"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:145
 msgid "Cherokee"
-msgstr ""
+msgstr "Çeroki"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:147
 msgid "Esperanto"
@@ -186,7 +185,7 @@ msgstr "Filipince"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:150
 msgid "Scottish Gaelic"
-msgstr ""
+msgstr "İskoç Galcesi"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:151
 msgid "Haitian"
@@ -198,19 +197,19 @@ msgstr "Javanese"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:153
 msgid "Latin"
-msgstr ""
+msgstr "Latince"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:154
 msgid "Punjabi"
-msgstr ""
+msgstr "Pencap"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:155
 msgid "Quechua"
-msgstr ""
+msgstr "Keçuva dili"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:156
 msgid "Sindhi"
-msgstr ""
+msgstr "Sindhi"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:157
 msgid "Sundanese"
@@ -222,7 +221,7 @@ msgstr "Süryanice"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:159
 msgid "Tigrinya"
-msgstr ""
+msgstr "Tigrinya"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:160
 msgid "Tonga"
@@ -230,11 +229,11 @@ msgstr "Tonga"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:161
 msgid "Uyghur"
-msgstr ""
+msgstr "Uygur"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:162
 msgid "Yiddish"
-msgstr ""
+msgstr "Yidiş"
 
 #. interrupted before stop
 #. Translators: message to user to report an interuption before stop.
@@ -272,7 +271,6 @@ msgstr "TesseractOCR: Bir OCR eklentisi"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:26
-#, fuzzy
 #| msgid ""
 #| "\n"
 #| "Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
@@ -291,11 +289,14 @@ msgid ""
 "Windows+Control+t - To get the text from an accessible PDF\n"
 msgstr ""
 "\n"
-"Seçilen görüntü dosyası, PDF, JPG, TIF, vb. üzerinde veya bir tarayıcı "
-"aracılığıyla bir belgede OCR gerçekleştirir ve sonuçları göz atılabilir bir "
-"iletişim kutusunda gösterir\n"
-"Windows+Control+r - Seçilen görüntü dosyasına OCR uygular\n"
-"Windows+Control+Shift+r - Tarayıcıdaki belgeyi tarar ve tanır\n"
+"Seçilen görüntü dosyası, PDF, JPG, TIF vb. üzerinde veya bir tarayıcı "
+"aracılığıyla belge üzerinde OCR gerçekleştirir ve ayrıca erişilebilir bir "
+"PDF dosyasından metni alabilir.\n"
+"Sonuçlar bir metin dosyası olan ocr.txt dosyasında gösterilir.\n"
+"\n"
+"Windows+Control+r - Seçilen görüntü dosyasına OCR gerçekleştirir\n"
+"Windows+Control+w - Tarayıcıdaki belgeyi tarar ve tanır\n"
+"Windows+Control+t - Metni erişilebilir bir PDF'den almak için\n"
 
 #. Author(s)
 #: buildVars.py:37

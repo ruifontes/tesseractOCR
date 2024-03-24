@@ -2,7 +2,6 @@
 
 
 * Autoren: Rui Fontes, Ângelo Abrantes und Abel Passos do Nascimento Jr.
-* Aktualisiert am 25.02.2024
 * Laden Sie die [stabile Version][1] herunter
 * Kompatibilität: NVDA-Version 2019.3 und höher
 
@@ -178,4 +177,4 @@ Dieses Add-On unterstützt die folgenden Dateitypen:
 * spix
 * webp
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.03.24/tesseractOCR-2024.03.24.nvda-addon

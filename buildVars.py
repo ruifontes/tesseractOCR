@@ -23,8 +23,7 @@ addon_info = {
 	"addon_summary": _("TesseractOCR: An OCR add-on"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("""
-Performs OCR on the selected image file, PDF, JPG, TIF, etc, or  a document through a scanner and also can get the text from an accessible PDF file.
+	"addon_description": _("""Performs OCR on the selected image file, PDF, JPG, TIF, etc, or  a document through a scanner and also can get the text from an accessible PDF file.
 The results are shown in a text file, ocr.txt.
 
 Windows+Control+r - Performs OCR to the selected image file
@@ -32,7 +31,7 @@ Windows+Control+w - Scans and recognize the document in the scanner
 Windows+Control+t - To get the text from an accessible PDF
 """),
 	# version
-	"addon_version": "2024.02.25",
+	"addon_version": "2024.03.24",
 	# Author(s)
 	"addon_author": _("Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail.com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"),
 	# URL for the add-on documentation support

@@ -2,7 +2,6 @@
 
 
 * Tekijät: Rui Fontes, Ângelo Abrantes ja Abel Passos do Nascimento nuorempi
-* Päivitetty 25.02.2024
 * Lataa [vakaa versio][1]
 * Yhteensopivuus: NVDA 2019.3 ja uudemmat
 
@@ -182,4 +181,4 @@ Tämä lisäosa tukee seuraavia tiedostotyyppejä:
 * WebP
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.02.25/tesseractOCR-2024.02.25.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.03.24/tesseractOCR-2024.03.24.nvda-addon
