@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'tesseractOCR' '2023.04.08'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2024-04-15 12:55+0300\n"
-"PO-Revision-Date: 2024-04-15 15:03+0300\n"
+"PO-Revision-Date: 2024-04-15 15:38+0300\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: fi_FI <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -294,6 +294,7 @@ msgstr ""
 "Win+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille "
 "tekstintunnistuksen\n"
 "Win+Ctrl+T: Poimii tekstin saavutettavasta PDF-tiedostosta\n"
+"Win+Ctrl+C: Peruuttaa skannauksen\n"
 
 #. Author(s)
 #: buildVars.py:36
