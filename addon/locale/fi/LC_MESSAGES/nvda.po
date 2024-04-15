@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'tesseractOCR' '2023.04.08'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-02-25 16:55+0000\n"
-"PO-Revision-Date: 2024-02-25 17:07+0000\n"
+"POT-Creation-Date: 2024-04-15 12:55+0300\n"
+"PO-Revision-Date: 2024-04-15 15:03+0300\n"
 "Last-Translator: Jani Kinnunen <janikinnunen340@gmail.com>\n"
 "Language-Team: fi_FI <janikinnunen340@gmail.com>\n"
 "Language: fi\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:218
 msgid "It is not a true PDF file!"
-msgstr "Tämä ei ole aito PDF-tiedosto!"
+msgstr "Tämä ei ole kelvollinen PDF-tiedosto."
 
 #: addon\globalPlugins\tesseractOCR\__init__.py:222
 msgid ""
@@ -71,11 +71,10 @@ msgstr "Suorittaa tekstintunnistuksen skannerissa olevalle asiakirjalle"
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:355
-#, fuzzy
-#| msgid "Performs OCR to focused file in File Explorer"
 msgid "Gets the text from focused accessible PDF file in File Explorer"
 msgstr ""
-"Suorittaa tekstintunnistuksen valitulle tiedostolle resurssienhallinnassa"
+"Poimii tekstin valitusta saavutettavasta PDF-tiedostosta "
+"resurssienhallinnassa"
 
 #. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\tesseractOCR\__init__.py:386
@@ -168,7 +167,7 @@ msgstr "Cebuano"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:145
 msgid "Cherokee"
-msgstr ""
+msgstr "Cherokee"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:147
 msgid "Esperanto"
@@ -184,7 +183,7 @@ msgstr "Filipino"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:150
 msgid "Scottish Gaelic"
-msgstr ""
+msgstr "skottilainen gaeli"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:151
 msgid "Haitian"
@@ -196,19 +195,19 @@ msgstr "Jjaava"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:153
 msgid "Latin"
-msgstr ""
+msgstr "latina"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:154
 msgid "Punjabi"
-msgstr ""
+msgstr "punjabi"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:155
 msgid "Quechua"
-msgstr ""
+msgstr "ketšua"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:156
 msgid "Sindhi"
-msgstr ""
+msgstr "sindhi"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:157
 msgid "Sundanese"
@@ -220,7 +219,7 @@ msgstr "Syyria"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:159
 msgid "Tigrinya"
-msgstr ""
+msgstr "tigrinja"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:160
 msgid "Tonga"
@@ -228,11 +227,11 @@ msgstr "Tonga"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:161
 msgid "Uyghur"
-msgstr ""
+msgstr "uiguuri"
 
 #: addon\globalPlugins\tesseractOCR\languages.py:162
 msgid "Yiddish"
-msgstr ""
+msgstr "jiddiš"
 
 #. interrupted before stop
 #. Translators: message to user to report an interuption before stop.
@@ -270,7 +269,6 @@ msgstr "TesseractOCR: Tekstintunnistuslisäosa"
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:26
-#, fuzzy
 #| msgid ""
 #| "\n"
 #| "Performs OCR on the selected image file, PDF, JPG, TIF, etc, or in a "
@@ -279,7 +277,6 @@ msgstr "TesseractOCR: Tekstintunnistuslisäosa"
 #| "Windows+Control+r - Performs OCR to the selected image file\n"
 #| "Windows+Control+w - Scans and recognize the document in the scanner\n"
 msgid ""
-"\n"
 "Performs OCR on the selected image file, PDF, JPG, TIF, etc, or  a document "
 "through a scanner and also can get the text from an accessible PDF file.\n"
 "The results are shown in a text file, ocr.txt.\n"
@@ -288,16 +285,18 @@ msgid ""
 "Windows+Control+w - Scans and recognize the document in the scanner\n"
 "Windows+Control+t - To get the text from an accessible PDF\n"
 msgstr ""
-"\n"
 "Suorittaa tekstintunnistuksen valitulle kuvatiedostolle (PDF, JPG, TIF, "
-"jne.) tai skannerissa olevalle asiakirjalle ja näyttää tulokset erillisessä "
-"ikkunassa.\n"
+"jne.) tai skannerissa olevalle asiakirjalle ja voi lisäksi poimia tekstin "
+"saavutettavasta PDF-tiedostosta.\n"
+"Tulokset näytetään tiedostossa ocr.txt.\n"
+"\n"
 "Win+Ctrl+R: Suorittaa tekstintunnistuksen valitulle kuvatiedostolle\n"
 "Win+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille "
 "tekstintunnistuksen\n"
+"Win+Ctrl+T: Poimii tekstin saavutettavasta PDF-tiedostosta\n"
 
 #. Author(s)
-#: buildVars.py:37
+#: buildVars.py:36
 msgid ""
 "Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
 "com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
