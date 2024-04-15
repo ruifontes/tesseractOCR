@@ -10,7 +10,7 @@
 
 Tämä lisäosa käyttää ilmaista, avoimen lähdekoodin Tesseract-tekstintunnistusmoottoria tekstintunnistuksen suorittamiseen kuvatiedostolle (PDF, JPG, TIF ja muut) tarvitsematta avata sitä.
 Se mahdollistaa myös WIA-yhteensopivan scannerin käytön tekstintunnistuksen suorittamiseen paperimuotoisille asiakirjoille.
-Finally, it also can get the accessible text from an accessible PDF.
+Lisäosa voi myös poimia tekstin saavutettavasta PDF-tiedostosta.
 NVDA:n asetusvalintaikkunaan on lisätty TesseractOCR-kategoria, jossa voit muuttaa seuraavia asetuksia:
 - Tunnistuksessa käytettävät kielet
 - Tunnistettavat asiakirjaformaatit
@@ -20,7 +20,7 @@ NVDA:n asetusvalintaikkunaan on lisätty TesseractOCR-kategoria, jossa voit muut
 
 Lisäosaan sisältyviä englantia ja portugalia lukuun ottamatta tunnistuskielet ladataan ja asennetaan niitä valittaessa.
 Huom: Tekstintunnistus kestää sitä kauemmin, mitä enemmän tunnistuskieliä on valittuna.
-Siksi suosittelemme, että käytät vain tarvitsemiasi kieliä.
+Tämän vuoksi suosittelemme, että käytät vain tarvitsemiasi kieliä.
 Huomaa myös, että tunnistuksen laatu voi vaihdella sen mukaan, missä järjestyksessä kielet ovat.
 Siksi kannattaa kokeilla järjestää kielet eri tavalla, jos tunnistuksen tulos ei ole tyydyttävä.
 
@@ -30,12 +30,12 @@ Siksi kannattaa kokeilla järjestää kielet eri tavalla, jos tunnistuksen tulos
 Oletuskomennot ovat:
 Win+Ctrl+R: Suorittaa tekstintunnistuksen valitulle asiakirjalle
 Win+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille tekstintunnistuksen
-Windows+Control+t - To get the text from an accessible PDF;
+Win+Ctrl+T: Poimii tekstin saavutettavasta PDF-tiedostosta
 Win+Ctrl+C: Peruuttaa skannauksen
 Huom: Komentoa on käytettävä ennen lisäsivujen skannausta kysyvän valintaikkunan ilmestymistä.
 
-Tunnistettu teksti ilmestyy jonkin ajan kuluttua erilliseen ikkunaan, jossa voit tarkastella sitä.
-Muista tallentaa tunnistettu teksti, jos haluat säilyttää sen, koska tunnistuksen tulokset poistetaan, kun seuraava tunnistusprosessi alkaa.
+Tunnistuksen tulokset  ilmestyvät jonkin ajan kuluttua ocr.txt-nimiseen tekstitiedostoon, joka avautuu automaattisesti.
+Muista tallentaa teksti, jos haluat säilyttää sen, koska tunnistuksen tulokset poistetaan, kun seuraava tunnistusprosessi alkaa.
 
 Näitä komentoja on mahdollista muuttaa \"Näppäinkomennot\"-valintaikkunan \"TesseractOCR\"-osiossa.
 
