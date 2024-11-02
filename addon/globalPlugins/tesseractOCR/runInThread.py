@@ -7,6 +7,7 @@
 # See the file COPYING for more details.
 
 # Import the necessary modules
+from .vars import *
 from logHandler import log
 import tones
 import threading
@@ -59,6 +60,9 @@ class RepeatBeep(RepeatTask):
 		super(RepeatBeep, self).__init__(isRunning)
 
 	def task(self):
+		# Verify if beeps should be used
+		if not config.conf["tesseractOCR"].get("enableBeep", True):
+			return  # If beeps are desabilited do nothing
 		if self._stopevent.is_set():
 			return
 		(frequence, length) = self.beep
