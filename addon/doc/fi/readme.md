@@ -9,14 +9,17 @@
 ## Tiedot
 
 Tämä lisäosa käyttää ilmaista, avoimen lähdekoodin Tesseract-tekstintunnistusmoottoria tekstintunnistuksen suorittamiseen kuvatiedostolle (PDF, JPG, TIF ja muut) tarvitsematta avata sitä.
+Tunnistuksen tulokset tallennetaan tekstitiedostoon, joka sijoitetaan samaan kansioon tunnistettavan tiedoston kanssa, ja sen nimi on sama kuin alkuperäisen tiedoston, mutta tiedostopääte on .txt.
 Se mahdollistaa myös WIA-yhteensopivan scannerin käytön tekstintunnistuksen suorittamiseen paperimuotoisille asiakirjoille.
-Finally, it also can get the accessible text from an accessible PDF.
+Tulokset näytetään OCR.txt-nimisessä tiedostossa, joka sijoitetaan käyttäjän Tiedostot-kansioon.
+Lisäksi se voi hakea tekstin saavutettavasta PDF-tiedostosta XPDF-työkaluja käyttäen.
 NVDA:n asetusvalintaikkunaan on lisätty TesseractOCR-kategoria, jossa voit muuttaa seuraavia asetuksia:
 - Tunnistuksessa käytettävät kielet
-- Tunnistettavat asiakirjaformaatit
-- Kysytäänkö PDF-asiakirjan salasanaa. Jos tämä asetus on valittuna ja PDF-ää ei ole suojattu salasanalla, paina Enter salasanaa pyytävässä valintaikkunassa.
-- Valitse käytettävä skanneri
-- Määritä skannerin tarkkuus väliltä 150–400 pistettä tuumalla.
+- Tunnistettavat asiakirjamuodot
+- Pyydetäänkö PDF-asiakirjan salasanaa. Jos tämä asetus on valittuna ja PDF-ää ei ole suojattu salasanalla, paina Enter salasanaa pyytävässä valintaikkunassa.
+- Määritä skannerin tarkkuus väliltä 150–400 pistettä tuumalla
+- Paperin asennon tunnistaminen
+- Käytetäänkö tunnistuksen edistymistä ilmaisevia äänimerkkejä
 
 Lisäosaan sisältyviä englantia ja portugalia lukuun ottamatta tunnistuskielet ladataan ja asennetaan niitä valittaessa.
 Huom: Tekstintunnistus kestää sitä kauemmin, mitä enemmän tunnistuskieliä on valittuna.
@@ -28,14 +31,13 @@ Siksi kannattaa kokeilla järjestää kielet eri tavalla, jos tunnistuksen tulos
 ## Pikanäppäimet
 
 Oletuskomennot ovat:
-Win+Ctrl+R: Suorittaa tekstintunnistuksen valitulle asiakirjalle
-Win+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille tekstintunnistuksen
-Windows+Control+t - To get the text from an accessible PDF;
-Win+Ctrl+C: Peruuttaa skannauksen
+Windows+Ctrl+W: Skannaa skannerissa olevan asiakirjan ja suorittaa sille tekstintunnistuksen
+Windows+Ctrl+R: Suorittaa tekstintunnistuksen valitulle asiakirjalle
+Windows+Ctrl+T: Hakee tekstin saavutettavasta PDF-tiedostosta
+Windows+Ctrl+C: Peruuttaa skannauksen
 Huom: Komentoa on käytettävä ennen lisäsivujen skannausta kysyvän valintaikkunan ilmestymistä.
 
-Tunnistettu teksti ilmestyy jonkin ajan kuluttua erilliseen ikkunaan, jossa voit tarkastella sitä.
-Muista tallentaa tunnistettu teksti, jos haluat säilyttää sen, koska tunnistuksen tulokset poistetaan, kun seuraava tunnistusprosessi alkaa.
+Tunnistetun tekstin sisältävä tekstitiedosto avautuu jonkin ajan kuluttua.
 
 Näitä komentoja on mahdollista muuttaa \"Näppäinkomennot\"-valintaikkunan \"TesseractOCR\"-osiossa.
 
@@ -130,7 +132,7 @@ Tämä versio tukee seuraavia kieliä:
 * romania/moldova
 * venäjä
 * sanskrit
-* gaeli
+* skottilainen gaeli
 * serbia (latinalainen)
 * slovakki
 * sloveeni
@@ -181,4 +183,4 @@ Tämä lisäosa tukee seuraavia tiedostotyyppejä:
 * WebP
 
 
-[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.03.24/tesseractOCR-2024.03.24.nvda-addon
+[1]: https://github.com/ruifontes/tesseractOCR/releases/download/2024.11.02/tesseractOCR-2024.11.02.nvda-addon
