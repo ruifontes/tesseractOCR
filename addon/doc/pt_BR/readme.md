@@ -9,7 +9,9 @@
 ## Informações
 
 Este extra utiliza o motor de OCR Tesseract, de código aberto e gratuito, para executar o reconhecimento óptico de caracteres a um documento de imagem, seja PDF, JPG, TIF ou outro, sem necessidade de abrir o documento.
+O resultado é mostrado num documento de texto com o mesmo nome do original, mas com extensão .txt colocado na mesma pasta.
 Também usa o módulo wia-cmd-scanner para aceder a scanners compatíveis WIA para digitalizar e reconhecer um documento em papel.
+Neste caso, o documento com o resultado é colocado na pasta Documentos do usuário com o nome ocr.txt.
 Por último, pode obter o texto de um PDF acessível e mostrá-lo no Bloco de notas.
 No menu do NVDA, Preferências é adicionada uma secção TesseractOCR, onde poderá configurar os idiomas a utilizar no reconhecimento e o tipo de documentos a reconhecer.
 Neste diálogo, para poder fazer OCR a arquivos PDF protegidos por senha, pode marcar para ser solicitada uma senha.
@@ -32,7 +34,6 @@ Windows+Control+c - Para cancelar o processo de digitalização.
 Nota: Tem de ser executado antes de aparecer a caixa de diálogo que pergunta se pretende digitalizar mais páginas!
 
 Depois é só esperar que se abra o ficheiro ocr.txt.
-Se pretender preservar o texto reconhecido, não se esqueça de guardar o documento com outro nome e noutro local, pois todos os ficheiros da pasta temporária são eliminados no início do próximo processo de OCR!
 
 
 ## Problemas conhecidos

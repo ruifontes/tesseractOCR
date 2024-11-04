@@ -1,0 +1,18 @@
+#----- display fonts
+fontFile Symbol			%appdata%\Roaming\nvda\addons\tesseract-OCR\globalPlugins\tesseractOCR\xpdf-tools\xpdf-t1fonts/s050000l.pfb
+fontFile ZapfDingbats			%appdata%\nvda\addons\tesseract-OCR\globalPlugins\tesseractOCR\xpdf-tools\xpdf-t1fonts/d050000l.pfb
+
+#----- PostScript output control
+psPaperSize		A4
+
+#----- text output control
+textEncoding		UTF-8
+
+# Choose the end-of-line convention for multi-line copy-and-past and
+# for pdftotext output.  The available options are unix, mac, and dos.
+textEOL		dos
+
+#----- misc settings
+enableFreeType		yes
+antialias		yes
+

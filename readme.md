@@ -9,14 +9,17 @@
 ## Information
 
 This add-on uses the free and open source Tesseract OCR engine, to perform optical character recognition on an image file, PDF, JPG, TIF or other, without the need to open it.
+The text file will bve placed at same folder with the same name of the original file but with .TXT extension.
 It also allows access to WIA enabled scanners to perform OCR to a paper document.
-At last, it also can get the accessible text from an accessible PDF.
+The results are shown in a file named OCR.txt placed in users Documents folder.
+At last, it also can get the accessible text from an accessible PDF, using XPDF tools.
 In the NVDA menu, Preferences, a TesseractOCR section is added, where you can configure the following:
 - languages to be used in recognition;
 - the type of documents to be recognized;
 - if should be asked or not a PDF password. If you have this option checked, and the PDF does not have a password, just press Enter in the dialog asking for password;
-- Select the scanner to be used;
-- set the scanner resolution between 150 and 400 dpi.
+- set the scanner resolution between 150 and 400 dpi;
+- Option to detect the paper orientation;
+- Option to use or not tones to signalize the work progress.
 
 With the exception of English and Portuguese, which are already included in add-on, the other languages will be downloaded and installed when you select a language that does not already exist in the add-on.
 Note that as the number of selected recognition languages increases, the OCR process will take longer.
@@ -35,7 +38,6 @@ Windows+Control+c - To cancel the scanning process.
 Please note: It must be issued before the dialog asking if you want to scan more pages appear!
 
 Then just wait the text file appears with the recognized text.
-If you want to preserve the recognized text, don't forget to save it in some folder, as the results are deleted at the start of the next OCR process!
 
 This commands can be modified in the "Input gestures" dialog in the "TesseractOCR" section.
 

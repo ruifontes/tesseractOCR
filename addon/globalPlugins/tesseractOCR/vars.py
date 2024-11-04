@@ -14,7 +14,7 @@ import config
 import comtypes.client
 import addonHandler
 
-# To start the translation process
+# Start the translation process
 addonHandler.initTranslation()
 
 # Location of executables:
@@ -38,8 +38,10 @@ def initConfiguration():
 		"docType" : "integer(default=6)",
 		"askPassword" : "boolean(default=false)",
 		"dpi": "string(default="")",
-		"device" : "string(default="")",
+		"detectOrientation" : "boolean(default=false)",
+		"enableBeep" : "boolean(default=True)",
 	}
+
 	config.conf.spec["tesseractOCR"] = confspec
 
 initConfiguration()
@@ -91,25 +93,16 @@ except KeyError:
 
 dpiList = ["150", "200", "300", "400"]
 
-# Create a list of WIA devices for settings panel
-global noScanner
-noScanner = False
-# Create WIA connection
-d = comtypes.client.CreateObject("WIA.DeviceManager")
-# Check if WIA devices are present
-if not d.DeviceInfos.count:
-	noScanner = True
-	WIAList = [_("No scanner found")]
-else:
-	k = d.DeviceInfos.count
-	n = 0
-	WIAList = [_("No scanner found")]
-	for n in range(k):
-		WIAList.append(d.DeviceInfos[n+1].Properties["Name"].Value)
-
-# Reading or setting device to use
+# Reading if is needed to detect paper orientation
 try:
-	if config.conf["tesseractOCR"]["device"]:
-		scanner = config.conf["tesseractOCR"]["device"]
+	if config.conf["tesseractOCR"]["detectOrientation"]:
+		shouldDetect = config.conf["tesseractOCR"]["detectOrientation"]
 except KeyError:
-	scanner = WIAList[0]
+	shouldDetect = False
+
+# Reading if beeps should be used or not
+try:
+	if config.conf["tesseractOCR"]["enableBeep"] is not None:
+		enableBeep = config.conf["tesseractOCR"]["enableBeep"]
+except KeyError:
+	enableBeep = True
