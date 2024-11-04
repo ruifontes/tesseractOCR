@@ -9,7 +9,7 @@
 ## Information
 
 This add-on uses the free and open source Tesseract OCR engine, to perform optical character recognition on an image file, PDF, JPG, TIF or other, without the need to open it.
-The text file will bve placed at same folder with the same name of the original file but with .TXT extension.
+The text file will be placed at same folder with the same name of the original file but with .TXT extension.
 It also allows access to WIA enabled scanners to perform OCR to a paper document.
 The results are shown in a file named OCR.txt placed in users Documents folder.
 At last, it also can get the accessible text from an accessible PDF, using XPDF tools.
