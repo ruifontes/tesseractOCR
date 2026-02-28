@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: tesseractOCR 1.0\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2025-02-20 10:12+0500\n"
-"PO-Revision-Date: 2025-02-20 10:12+0500\n"
+"PO-Revision-Date: 2026-02-28 07:24+0300\n"
 "Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: ../../../..\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -26,20 +26,19 @@ msgstr ""
 
 #: addon/globalPlugins/tesseractOCR/__init__.py:182
 msgid "Page is rotated to the right. Do you want to process the OCR?"
-msgstr "Страница повёрнута вправо. Вы хотите выполнить распознавание текста?"
+msgstr "Страница повёрнута вправо. Хотите выполнить распознавание текста?"
 
 #: addon/globalPlugins/tesseractOCR/__init__.py:187
 msgid "Page is upside down. Do you want to process the OCR?"
-msgstr "Страница перевёрнута. Вы хотите выполнить распознавание текста?"
+msgstr "Страница перевёрнута. Хотите выполнить распознавание текста?"
 
 #: addon/globalPlugins/tesseractOCR/__init__.py:192
 msgid "Page is rotated to the left. Do you want to process the OCR?"
-msgstr "Страница повёрнута влево. Вы хотите выполнить распознавание текста?"
+msgstr "Страница повёрнута влево. Хотите выполнить распознавание текста?"
 
 #: addon/globalPlugins/tesseractOCR/__init__.py:197
 msgid "Page is positioned correctly. Do you want to process the OCR?"
-msgstr ""
-"Страница расположена правильно. Вы хотите выполнить распознавание текста?"
+msgstr "Страница расположена правильно. Хотите выполнить распознавание текста?"
 
 #: addon/globalPlugins/tesseractOCR/__init__.py:270
 msgid "It is not a true PDF file!"
@@ -55,12 +54,6 @@ msgid ""
 "the checkbox 'Ask for password'"
 msgstr ""
 "PDF-файл защищён паролем.\n"
-"\n"
-"Если вы ввели пароль, убедитесь, что он правильный.\n"
-"\n"
-"В противном случае, пожалуйста, перейдите в настройки NVDA, параметры "
-"TesseractOCR и установите флажок \"Запрашивать пароль\"PDF-файл защищён "
-"паролем.\n"
 "\n"
 "Если вы ввели пароль, убедитесь, что он правильный.\n"
 "\n"
@@ -118,7 +111,7 @@ msgstr "Сканирование завершено!"
 
 #: addon/globalPlugins/tesseractOCR/__init__.py:457
 msgid "Enter your password"
-msgstr "Введите свой пароль"
+msgstr "Введите пароль PDF-файла"
 
 #: addon/globalPlugins/tesseractOCR/configPanel.py:43
 msgid "Available recognition &language"
@@ -264,7 +257,7 @@ msgstr "Доступные сканеры"
 
 #: addon/globalPlugins/tesseractOCR/scanFromWia.py:68
 msgid "Do you want to scan one more page?"
-msgstr "Вы хотите отсканировать ещё одну страницу?"
+msgstr "Хотите отсканировать ещё одну страницу?"
 
 #: addon/globalPlugins/tesseractOCR/scanFromWia.py:91
 msgid "Error during scanning: {}"
@@ -308,11 +301,12 @@ msgstr ""
 
 #: buildVars.py:36
 msgid ""
-"Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
-"com> and Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
+"Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes "
+"<ampa4374@gmail.com> and Abel Passos do Nascimento Jr. "
+"<abel.passos@gmail.com>"
 msgstr ""
-"Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes <ampa4374@gmail."
-"com> и Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
+"Rui Fontes <rui.fontes@tiflotecnia.com>, Ângelo Abrantes "
+"<ampa4374@gmail.com> и Abel Passos do Nascimento Jr. <abel.passos@gmail.com>"
 
 #~ msgid "All types"
 #~ msgstr "Todos os ficheiros"
